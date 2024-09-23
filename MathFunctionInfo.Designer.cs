@@ -28,47 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 400);
-            this.Text = "MathFunctionInfo";
-
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.richTextBoxLeft = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxRight = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-
-            // SplitContainer
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.splitContainer.SplitterDistance = 75; // Adjust the distance to make the left panel wider
-
-            // RichTextBoxLeft
-            this.richTextBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.richTextBoxLeft.ReadOnly = true;
-            this.richTextBoxLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-            // RichTextBoxRight
-            this.richTextBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.richTextBoxRight.ReadOnly = true;
-            this.richTextBoxRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-            // Set tab stops
-            SetTabStops(this.richTextBoxLeft);
-            SetTabStops(this.richTextBoxRight);
-
-            // Adding content to RichTextBoxes
-            AddFunctionInfo();
-
-            // Adding controls to splitContainer panels
-            this.splitContainer.Panel1.Controls.Add(this.richTextBoxLeft);
-            this.splitContainer.Panel2.Controls.Add(this.richTextBoxRight);
-
-            // Adding splitContainer to the form
-            this.Controls.Add(this.splitContainer);
-            this.ResumeLayout(false);
+            splitContainer = new System.Windows.Forms.SplitContainer();
+            richTextBoxLeft = new System.Windows.Forms.RichTextBox();
+            richTextBoxRight = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
+            splitContainer.Panel1.SuspendLayout();
+            splitContainer.Panel2.SuspendLayout();
+            splitContainer.SuspendLayout();
+            SuspendLayout();
+            // 
+            // splitContainer
+            // 
+            splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            splitContainer.Location = new System.Drawing.Point(0, 0);
+            splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            splitContainer.Panel1.Controls.Add(richTextBoxLeft);
+            // 
+            // splitContainer.Panel2
+            // 
+            splitContainer.Panel2.Controls.Add(richTextBoxRight);
+            splitContainer.Size = new System.Drawing.Size(1110, 589);
+            splitContainer.SplitterDistance = 555;
+            splitContainer.TabIndex = 0;
+            // 
+            // richTextBoxLeft
+            // 
+            richTextBoxLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            richTextBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            richTextBoxLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            richTextBoxLeft.Location = new System.Drawing.Point(0, 0);
+            richTextBoxLeft.Name = "richTextBoxLeft";
+            richTextBoxLeft.ReadOnly = true;
+            richTextBoxLeft.Size = new System.Drawing.Size(555, 589);
+            richTextBoxLeft.TabIndex = 0;
+            richTextBoxLeft.Text = "";
+            // 
+            // richTextBoxRight
+            // 
+            richTextBoxRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            richTextBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            richTextBoxRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            richTextBoxRight.Location = new System.Drawing.Point(0, 0);
+            richTextBoxRight.Name = "richTextBoxRight";
+            richTextBoxRight.ReadOnly = true;
+            richTextBoxRight.Size = new System.Drawing.Size(551, 589);
+            richTextBoxRight.TabIndex = 0;
+            richTextBoxRight.Text = "";
+            // 
+            // MathFunctionInfo
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1110, 589);
+            Controls.Add(splitContainer);
+            Name = "MathFunctionInfo";
+            Text = "MathFunctionInfo";
+            splitContainer.Panel1.ResumeLayout(false);
+            splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
+            splitContainer.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.SplitContainer splitContainer;

@@ -15,6 +15,12 @@ namespace GmicDrosteAnimate
         public MathFunctionInfo()
         {
             InitializeComponent();
+            AddFunctionInfo();
+        }
+
+        private void richTextBoxLeft_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
