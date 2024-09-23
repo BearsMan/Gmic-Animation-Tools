@@ -116,12 +116,12 @@
             // 
             // nudTotalFrames
             // 
-            nudTotalFrames.Location = new System.Drawing.Point(80, 208);
-            nudTotalFrames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudTotalFrames.Location = new System.Drawing.Point(114, 347);
+            nudTotalFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudTotalFrames.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudTotalFrames.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             nudTotalFrames.Name = "nudTotalFrames";
-            nudTotalFrames.Size = new System.Drawing.Size(91, 23);
+            nudTotalFrames.Size = new System.Drawing.Size(130, 31);
             nudTotalFrames.TabIndex = 28;
             nudTotalFrames.Value = new decimal(new int[] { 2, 0, 0, 0 });
             nudTotalFrames.ValueChanged += nudTotalFrames_ValueChanged;
@@ -130,12 +130,12 @@
             // 
             nudMasterParamIncrement.DecimalPlaces = 2;
             nudMasterParamIncrement.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            nudMasterParamIncrement.Location = new System.Drawing.Point(341, 211);
-            nudMasterParamIncrement.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudMasterParamIncrement.Location = new System.Drawing.Point(487, 352);
+            nudMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudMasterParamIncrement.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudMasterParamIncrement.Minimum = new decimal(new int[] { 1, 0, 0, 589824 });
             nudMasterParamIncrement.Name = "nudMasterParamIncrement";
-            nudMasterParamIncrement.Size = new System.Drawing.Size(93, 23);
+            nudMasterParamIncrement.Size = new System.Drawing.Size(133, 31);
             nudMasterParamIncrement.TabIndex = 10;
             nudMasterParamIncrement.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudMasterParamIncrement.ValueChanged += nudMasterParamIncrement_ValueChanged;
@@ -143,28 +143,28 @@
             // lblInputFile
             // 
             lblInputFile.AutoSize = true;
-            lblInputFile.Location = new System.Drawing.Point(14, 17);
-            lblInputFile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblInputFile.Location = new System.Drawing.Point(20, 28);
+            lblInputFile.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblInputFile.Name = "lblInputFile";
-            lblInputFile.Size = new System.Drawing.Size(56, 15);
+            lblInputFile.Size = new System.Drawing.Size(85, 25);
             lblInputFile.TabIndex = 0;
             lblInputFile.Text = "Input File";
             // 
             // txtInputFilePath
             // 
-            txtInputFilePath.Location = new System.Drawing.Point(18, 36);
-            txtInputFilePath.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtInputFilePath.Location = new System.Drawing.Point(26, 60);
+            txtInputFilePath.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtInputFilePath.Name = "txtInputFilePath";
             txtInputFilePath.ReadOnly = true;
-            txtInputFilePath.Size = new System.Drawing.Size(349, 23);
+            txtInputFilePath.Size = new System.Drawing.Size(497, 31);
             txtInputFilePath.TabIndex = 1;
             // 
             // btnSelectInputFile
             // 
-            btnSelectInputFile.Location = new System.Drawing.Point(374, 33);
-            btnSelectInputFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSelectInputFile.Location = new System.Drawing.Point(534, 55);
+            btnSelectInputFile.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSelectInputFile.Name = "btnSelectInputFile";
-            btnSelectInputFile.Size = new System.Drawing.Size(88, 27);
+            btnSelectInputFile.Size = new System.Drawing.Size(126, 45);
             btnSelectInputFile.TabIndex = 2;
             btnSelectInputFile.Text = "Select File";
             btnSelectInputFile.UseVisualStyleBackColor = true;
@@ -173,60 +173,60 @@
             // lblStartParams
             // 
             lblStartParams.AutoSize = true;
-            lblStartParams.Location = new System.Drawing.Point(14, 69);
-            lblStartParams.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblStartParams.Location = new System.Drawing.Point(20, 115);
+            lblStartParams.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblStartParams.Name = "lblStartParams";
-            lblStartParams.Size = new System.Drawing.Size(144, 15);
+            lblStartParams.Size = new System.Drawing.Size(216, 25);
             lblStartParams.TabIndex = 3;
             lblStartParams.Text = "Starting Parameter Values:";
             // 
             // txtStartParams
             // 
             txtStartParams.BackColor = System.Drawing.SystemColors.Window;
-            txtStartParams.Location = new System.Drawing.Point(18, 88);
-            txtStartParams.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtStartParams.Location = new System.Drawing.Point(26, 147);
+            txtStartParams.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtStartParams.Name = "txtStartParams";
-            txtStartParams.Size = new System.Drawing.Size(444, 23);
+            txtStartParams.Size = new System.Drawing.Size(633, 31);
             txtStartParams.TabIndex = 4;
             txtStartParams.TextChanged += txtStartParams_TextChanged;
             // 
             // lblEndParams
             // 
             lblEndParams.AutoSize = true;
-            lblEndParams.Location = new System.Drawing.Point(14, 121);
-            lblEndParams.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblEndParams.Location = new System.Drawing.Point(20, 202);
+            lblEndParams.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblEndParams.Name = "lblEndParams";
-            lblEndParams.Size = new System.Drawing.Size(140, 15);
+            lblEndParams.Size = new System.Drawing.Size(210, 25);
             lblEndParams.TabIndex = 5;
             lblEndParams.Text = "Ending Parameter Values:";
             // 
             // txtEndParams
             // 
-            txtEndParams.Location = new System.Drawing.Point(18, 140);
-            txtEndParams.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtEndParams.Location = new System.Drawing.Point(26, 233);
+            txtEndParams.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtEndParams.Name = "txtEndParams";
-            txtEndParams.Size = new System.Drawing.Size(444, 23);
+            txtEndParams.Size = new System.Drawing.Size(633, 31);
             txtEndParams.TabIndex = 6;
             txtEndParams.TextChanged += txtEndParams_TextChanged;
             // 
             // lblMasterParamIndex
             // 
             lblMasterParamIndex.AutoSize = true;
-            lblMasterParamIndex.Location = new System.Drawing.Point(14, 175);
-            lblMasterParamIndex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMasterParamIndex.Location = new System.Drawing.Point(20, 292);
+            lblMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblMasterParamIndex.Name = "lblMasterParamIndex";
-            lblMasterParamIndex.Size = new System.Drawing.Size(135, 15);
+            lblMasterParamIndex.Size = new System.Drawing.Size(202, 25);
             lblMasterParamIndex.TabIndex = 7;
             lblMasterParamIndex.Text = "Master Parameter Index:";
             // 
             // nudMasterParamIndex
             // 
-            nudMasterParamIndex.Location = new System.Drawing.Point(158, 173);
-            nudMasterParamIndex.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudMasterParamIndex.Location = new System.Drawing.Point(226, 288);
+            nudMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudMasterParamIndex.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nudMasterParamIndex.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudMasterParamIndex.Name = "nudMasterParamIndex";
-            nudMasterParamIndex.Size = new System.Drawing.Size(58, 23);
+            nudMasterParamIndex.Size = new System.Drawing.Size(83, 31);
             nudMasterParamIndex.TabIndex = 8;
             nudMasterParamIndex.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudMasterParamIndex.ValueChanged += nudMasterParamIndex_ValueChanged;
@@ -234,11 +234,11 @@
             // lblMasterParamIncrement
             // 
             lblMasterParamIncrement.AutoSize = true;
-            lblMasterParamIncrement.Location = new System.Drawing.Point(172, 216);
-            lblMasterParamIncrement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMasterParamIncrement.Location = new System.Drawing.Point(246, 360);
+            lblMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblMasterParamIncrement.Name = "lblMasterParamIncrement";
             lblMasterParamIncrement.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            lblMasterParamIncrement.Size = new System.Drawing.Size(154, 15);
+            lblMasterParamIncrement.Size = new System.Drawing.Size(222, 25);
             lblMasterParamIncrement.TabIndex = 9;
             lblMasterParamIncrement.Text = ".................Master Increment:";
             lblMasterParamIncrement.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -247,10 +247,10 @@
             // 
             rbNoExponents.AutoSize = true;
             rbNoExponents.Checked = true;
-            rbNoExponents.Location = new System.Drawing.Point(18, 240);
-            rbNoExponents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbNoExponents.Location = new System.Drawing.Point(26, 400);
+            rbNoExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             rbNoExponents.Name = "rbNoExponents";
-            rbNoExponents.Size = new System.Drawing.Size(135, 19);
+            rbNoExponents.Size = new System.Drawing.Size(201, 29);
             rbNoExponents.TabIndex = 11;
             rbNoExponents.TabStop = true;
             rbNoExponents.Text = "Linear Interopolation";
@@ -260,10 +260,10 @@
             // rbMasterExponent
             // 
             rbMasterExponent.AutoSize = true;
-            rbMasterExponent.Location = new System.Drawing.Point(18, 267);
-            rbMasterExponent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbMasterExponent.Location = new System.Drawing.Point(26, 445);
+            rbMasterExponent.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             rbMasterExponent.Name = "rbMasterExponent";
-            rbMasterExponent.Size = new System.Drawing.Size(120, 19);
+            rbMasterExponent.Size = new System.Drawing.Size(180, 29);
             rbMasterExponent.TabIndex = 12;
             rbMasterExponent.TabStop = true;
             rbMasterExponent.Text = "Master Expression";
@@ -273,10 +273,10 @@
             // rbDefaultExponents
             // 
             rbDefaultExponents.AutoSize = true;
-            rbDefaultExponents.Location = new System.Drawing.Point(18, 324);
-            rbDefaultExponents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbDefaultExponents.Location = new System.Drawing.Point(26, 540);
+            rbDefaultExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             rbDefaultExponents.Name = "rbDefaultExponents";
-            rbDefaultExponents.Size = new System.Drawing.Size(121, 19);
+            rbDefaultExponents.Size = new System.Drawing.Size(181, 29);
             rbDefaultExponents.TabIndex = 13;
             rbDefaultExponents.TabStop = true;
             rbDefaultExponents.Text = "Default Exponents";
@@ -286,10 +286,10 @@
             // rbCustomExponents
             // 
             rbCustomExponents.AutoSize = true;
-            rbCustomExponents.Location = new System.Drawing.Point(18, 296);
-            rbCustomExponents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbCustomExponents.Location = new System.Drawing.Point(26, 493);
+            rbCustomExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             rbCustomExponents.Name = "rbCustomExponents";
-            rbCustomExponents.Size = new System.Drawing.Size(131, 19);
+            rbCustomExponents.Size = new System.Drawing.Size(196, 29);
             rbCustomExponents.TabIndex = 14;
             rbCustomExponents.TabStop = true;
             rbCustomExponents.Text = "Custom Expressions";
@@ -300,20 +300,20 @@
             // 
             txtMasterExponent.Enabled = false;
             txtMasterExponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            txtMasterExponent.Location = new System.Drawing.Point(158, 267);
-            txtMasterExponent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtMasterExponent.Location = new System.Drawing.Point(226, 445);
+            txtMasterExponent.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtMasterExponent.Name = "txtMasterExponent";
-            txtMasterExponent.Size = new System.Drawing.Size(125, 22);
+            txtMasterExponent.Size = new System.Drawing.Size(177, 29);
             txtMasterExponent.TabIndex = 16;
             txtMasterExponent.TextChanged += txtMasterExponent_TextChanged;
             // 
             // txtExponentArray
             // 
             txtExponentArray.Enabled = false;
-            txtExponentArray.Location = new System.Drawing.Point(158, 296);
-            txtExponentArray.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtExponentArray.Location = new System.Drawing.Point(226, 493);
+            txtExponentArray.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtExponentArray.Name = "txtExponentArray";
-            txtExponentArray.Size = new System.Drawing.Size(276, 23);
+            txtExponentArray.Size = new System.Drawing.Size(393, 31);
             txtExponentArray.TabIndex = 18;
             txtExponentArray.TextChanged += txtExponentArray_TextChanged;
             // 
@@ -322,10 +322,10 @@
             chkCreateGif.AutoSize = true;
             chkCreateGif.Checked = true;
             chkCreateGif.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkCreateGif.Location = new System.Drawing.Point(18, 410);
-            chkCreateGif.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            chkCreateGif.Location = new System.Drawing.Point(26, 683);
+            chkCreateGif.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             chkCreateGif.Name = "chkCreateGif";
-            chkCreateGif.Size = new System.Drawing.Size(80, 19);
+            chkCreateGif.Size = new System.Drawing.Size(119, 29);
             chkCreateGif.TabIndex = 16;
             chkCreateGif.Text = "Create GIF";
             chkCreateGif.UseVisualStyleBackColor = true;
@@ -333,10 +333,10 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new System.Drawing.Point(18, 487);
-            btnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnStart.Location = new System.Drawing.Point(26, 812);
+            btnStart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnStart.Name = "btnStart";
-            btnStart.Size = new System.Drawing.Size(140, 35);
+            btnStart.Size = new System.Drawing.Size(200, 58);
             btnStart.TabIndex = 17;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
@@ -344,10 +344,10 @@
             // 
             // btnViewOutputDirectory
             // 
-            btnViewOutputDirectory.Location = new System.Drawing.Point(18, 555);
-            btnViewOutputDirectory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnViewOutputDirectory.Location = new System.Drawing.Point(26, 925);
+            btnViewOutputDirectory.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnViewOutputDirectory.Name = "btnViewOutputDirectory";
-            btnViewOutputDirectory.Size = new System.Drawing.Size(140, 35);
+            btnViewOutputDirectory.Size = new System.Drawing.Size(200, 58);
             btnViewOutputDirectory.TabIndex = 18;
             btnViewOutputDirectory.Text = "View Output Directory";
             btnViewOutputDirectory.UseVisualStyleBackColor = true;
@@ -355,10 +355,10 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(18, 487);
-            btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCancel.Location = new System.Drawing.Point(26, 812);
+            btnCancel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(140, 35);
+            btnCancel.Size = new System.Drawing.Size(200, 58);
             btnCancel.TabIndex = 19;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -368,8 +368,8 @@
             // InfoIconMasterParamIndex
             // 
             InfoIconMasterParamIndex.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIndex.Image");
-            InfoIconMasterParamIndex.Location = new System.Drawing.Point(219, 176);
-            InfoIconMasterParamIndex.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconMasterParamIndex.Location = new System.Drawing.Point(313, 293);
+            InfoIconMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIndex.Name = "InfoIconMasterParamIndex";
             InfoIconMasterParamIndex.Size = new System.Drawing.Size(16, 16);
             InfoIconMasterParamIndex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -380,8 +380,8 @@
             // InfoIconMasterParamIncrement
             // 
             InfoIconMasterParamIncrement.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIncrement.Image");
-            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(440, 213);
-            InfoIconMasterParamIncrement.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(629, 355);
+            InfoIconMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIncrement.Name = "InfoIconMasterParamIncrement";
             InfoIconMasterParamIncrement.Size = new System.Drawing.Size(16, 16);
             InfoIconMasterParamIncrement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -392,8 +392,8 @@
             // InfoIconMasterExponent
             // 
             InfoIconMasterExponent.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterExponent.Image");
-            InfoIconMasterExponent.Location = new System.Drawing.Point(290, 269);
-            InfoIconMasterExponent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconMasterExponent.Location = new System.Drawing.Point(414, 448);
+            InfoIconMasterExponent.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterExponent.Name = "InfoIconMasterExponent";
             InfoIconMasterExponent.Size = new System.Drawing.Size(16, 16);
             InfoIconMasterExponent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -404,8 +404,8 @@
             // InfoIconCustomExponents
             // 
             InfoIconCustomExponents.Image = (System.Drawing.Image)resources.GetObject("InfoIconCustomExponents.Image");
-            InfoIconCustomExponents.Location = new System.Drawing.Point(441, 299);
-            InfoIconCustomExponents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconCustomExponents.Location = new System.Drawing.Point(630, 498);
+            InfoIconCustomExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconCustomExponents.Name = "InfoIconCustomExponents";
             InfoIconCustomExponents.Size = new System.Drawing.Size(16, 16);
             InfoIconCustomExponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -416,8 +416,8 @@
             // InfoIconDefaultExponents
             // 
             InfoIconDefaultExponents.Image = (System.Drawing.Image)resources.GetObject("InfoIconDefaultExponents.Image");
-            InfoIconDefaultExponents.Location = new System.Drawing.Point(140, 326);
-            InfoIconDefaultExponents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconDefaultExponents.Location = new System.Drawing.Point(200, 543);
+            InfoIconDefaultExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconDefaultExponents.Name = "InfoIconDefaultExponents";
             InfoIconDefaultExponents.Size = new System.Drawing.Size(16, 16);
             InfoIconDefaultExponents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -428,8 +428,8 @@
             // InfoIconLinearInterpolation
             // 
             InfoIconLinearInterpolation.Image = (System.Drawing.Image)resources.GetObject("InfoIconLinearInterpolation.Image");
-            InfoIconLinearInterpolation.Location = new System.Drawing.Point(152, 242);
-            InfoIconLinearInterpolation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconLinearInterpolation.Location = new System.Drawing.Point(217, 403);
+            InfoIconLinearInterpolation.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconLinearInterpolation.Name = "InfoIconLinearInterpolation";
             InfoIconLinearInterpolation.Size = new System.Drawing.Size(16, 16);
             InfoIconLinearInterpolation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -440,8 +440,8 @@
             // InfoIconCreateGif
             // 
             InfoIconCreateGif.Image = (System.Drawing.Image)resources.GetObject("InfoIconCreateGif.Image");
-            InfoIconCreateGif.Location = new System.Drawing.Point(95, 410);
-            InfoIconCreateGif.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            InfoIconCreateGif.Location = new System.Drawing.Point(136, 683);
+            InfoIconCreateGif.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconCreateGif.Name = "InfoIconCreateGif";
             InfoIconCreateGif.Size = new System.Drawing.Size(16, 16);
             InfoIconCreateGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -452,8 +452,8 @@
             // infoIconUseSameDirectory
             // 
             infoIconUseSameDirectory.Image = (System.Drawing.Image)resources.GetObject("infoIconUseSameDirectory.Image");
-            infoIconUseSameDirectory.Location = new System.Drawing.Point(185, 364);
-            infoIconUseSameDirectory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconUseSameDirectory.Location = new System.Drawing.Point(264, 607);
+            infoIconUseSameDirectory.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconUseSameDirectory.Name = "infoIconUseSameDirectory";
             infoIconUseSameDirectory.Size = new System.Drawing.Size(16, 16);
             infoIconUseSameDirectory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -464,10 +464,10 @@
             // checkBoxAbsoluteModeMain
             // 
             checkBoxAbsoluteModeMain.AutoSize = true;
-            checkBoxAbsoluteModeMain.Location = new System.Drawing.Point(66, 90);
-            checkBoxAbsoluteModeMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxAbsoluteModeMain.Location = new System.Drawing.Point(94, 150);
+            checkBoxAbsoluteModeMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxAbsoluteModeMain.Name = "checkBoxAbsoluteModeMain";
-            checkBoxAbsoluteModeMain.Size = new System.Drawing.Size(107, 19);
+            checkBoxAbsoluteModeMain.Size = new System.Drawing.Size(161, 29);
             checkBoxAbsoluteModeMain.TabIndex = 46;
             checkBoxAbsoluteModeMain.Text = "Absolute Mode";
             toolTip1.SetToolTip(checkBoxAbsoluteModeMain, resources.GetString("checkBoxAbsoluteModeMain.ToolTip"));
@@ -477,8 +477,8 @@
             // pictureBox1
             // 
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(172, 457);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox1.Location = new System.Drawing.Point(246, 762);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(16, 16);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -489,8 +489,8 @@
             // infoIconSingleThread
             // 
             infoIconSingleThread.Image = (System.Drawing.Image)resources.GetObject("infoIconSingleThread.Image");
-            infoIconSingleThread.Location = new System.Drawing.Point(424, 445);
-            infoIconSingleThread.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconSingleThread.Location = new System.Drawing.Point(606, 742);
+            infoIconSingleThread.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconSingleThread.Name = "infoIconSingleThread";
             infoIconSingleThread.Size = new System.Drawing.Size(16, 16);
             infoIconSingleThread.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -501,8 +501,8 @@
             // infoIconRemoveBlankFrames
             // 
             infoIconRemoveBlankFrames.Image = (System.Drawing.Image)resources.GetObject("infoIconRemoveBlankFrames.Image");
-            infoIconRemoveBlankFrames.Location = new System.Drawing.Point(175, 432);
-            infoIconRemoveBlankFrames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconRemoveBlankFrames.Location = new System.Drawing.Point(250, 720);
+            infoIconRemoveBlankFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconRemoveBlankFrames.Name = "infoIconRemoveBlankFrames";
             infoIconRemoveBlankFrames.Size = new System.Drawing.Size(16, 16);
             infoIconRemoveBlankFrames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -513,8 +513,8 @@
             // infoIconFilterSearch
             // 
             infoIconFilterSearch.Image = (System.Drawing.Image)resources.GetObject("infoIconFilterSearch.Image");
-            infoIconFilterSearch.Location = new System.Drawing.Point(18, 598);
-            infoIconFilterSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconFilterSearch.Location = new System.Drawing.Point(26, 997);
+            infoIconFilterSearch.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconFilterSearch.Name = "infoIconFilterSearch";
             infoIconFilterSearch.Size = new System.Drawing.Size(16, 16);
             infoIconFilterSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -525,8 +525,8 @@
             // infoIconAbsoluteModeMain
             // 
             infoIconAbsoluteModeMain.Image = (System.Drawing.Image)resources.GetObject("infoIconAbsoluteModeMain.Image");
-            infoIconAbsoluteModeMain.Location = new System.Drawing.Point(170, 90);
-            infoIconAbsoluteModeMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconAbsoluteModeMain.Location = new System.Drawing.Point(243, 150);
+            infoIconAbsoluteModeMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconAbsoluteModeMain.Name = "infoIconAbsoluteModeMain";
             infoIconAbsoluteModeMain.Size = new System.Drawing.Size(16, 16);
             infoIconAbsoluteModeMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -538,10 +538,10 @@
             // 
             btnShowParamNames.BackColor = System.Drawing.Color.SkyBlue;
             btnShowParamNames.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnShowParamNames.Location = new System.Drawing.Point(295, 482);
-            btnShowParamNames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnShowParamNames.Location = new System.Drawing.Point(421, 803);
+            btnShowParamNames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnShowParamNames.Name = "btnShowParamNames";
-            btnShowParamNames.Size = new System.Drawing.Size(160, 25);
+            btnShowParamNames.Size = new System.Drawing.Size(229, 42);
             btnShowParamNames.TabIndex = 27;
             btnShowParamNames.Text = "Parameters";
             btnShowParamNames.UseVisualStyleBackColor = false;
@@ -550,20 +550,20 @@
             // labelTotalFrames
             // 
             labelTotalFrames.AutoSize = true;
-            labelTotalFrames.Location = new System.Drawing.Point(14, 211);
-            labelTotalFrames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelTotalFrames.Location = new System.Drawing.Point(20, 352);
+            labelTotalFrames.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelTotalFrames.Name = "labelTotalFrames";
-            labelTotalFrames.Size = new System.Drawing.Size(58, 15);
+            labelTotalFrames.Size = new System.Drawing.Size(89, 25);
             labelTotalFrames.TabIndex = 29;
             labelTotalFrames.Text = "# Frames:";
             // 
             // TextLabelNearStartButton
             // 
             TextLabelNearStartButton.AutoSize = true;
-            TextLabelNearStartButton.Location = new System.Drawing.Point(166, 487);
-            TextLabelNearStartButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            TextLabelNearStartButton.Location = new System.Drawing.Point(237, 812);
+            TextLabelNearStartButton.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             TextLabelNearStartButton.Name = "TextLabelNearStartButton";
-            TextLabelNearStartButton.Size = new System.Drawing.Size(39, 15);
+            TextLabelNearStartButton.Size = new System.Drawing.Size(60, 25);
             TextLabelNearStartButton.TabIndex = 30;
             TextLabelNearStartButton.Text = "Status";
             TextLabelNearStartButton.Visible = false;
@@ -571,10 +571,10 @@
             // labelMasterExponent
             // 
             labelMasterExponent.AutoSize = true;
-            labelMasterExponent.Location = new System.Drawing.Point(210, 249);
-            labelMasterExponent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelMasterExponent.Location = new System.Drawing.Point(300, 415);
+            labelMasterExponent.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterExponent.Name = "labelMasterExponent";
-            labelMasterExponent.Size = new System.Drawing.Size(56, 15);
+            labelMasterExponent.Size = new System.Drawing.Size(85, 25);
             labelMasterExponent.TabIndex = 32;
             labelMasterExponent.Text = "InfoLabel";
             labelMasterExponent.Visible = false;
@@ -582,20 +582,20 @@
             // labelMasterParamName
             // 
             labelMasterParamName.AutoSize = true;
-            labelMasterParamName.Location = new System.Drawing.Point(240, 175);
-            labelMasterParamName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelMasterParamName.Location = new System.Drawing.Point(343, 292);
+            labelMasterParamName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterParamName.Name = "labelMasterParamName";
-            labelMasterParamName.Size = new System.Drawing.Size(166, 15);
+            labelMasterParamName.Size = new System.Drawing.Size(248, 25);
             labelMasterParamName.TabIndex = 33;
             labelMasterParamName.Text = "Master Parameter Name Label";
             // 
             // checkBoxUseSameOutputDir
             // 
             checkBoxUseSameOutputDir.AutoSize = true;
-            checkBoxUseSameOutputDir.Location = new System.Drawing.Point(18, 364);
-            checkBoxUseSameOutputDir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxUseSameOutputDir.Location = new System.Drawing.Point(26, 607);
+            checkBoxUseSameOutputDir.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxUseSameOutputDir.Name = "checkBoxUseSameOutputDir";
-            checkBoxUseSameOutputDir.Size = new System.Drawing.Size(169, 19);
+            checkBoxUseSameOutputDir.Size = new System.Drawing.Size(255, 29);
             checkBoxUseSameOutputDir.TabIndex = 34;
             checkBoxUseSameOutputDir.Text = "Use Same Output Directory";
             checkBoxUseSameOutputDir.UseVisualStyleBackColor = true;
@@ -603,10 +603,10 @@
             // 
             // btnSwapStartEndStrings
             // 
-            btnSwapStartEndStrings.Location = new System.Drawing.Point(396, 112);
-            btnSwapStartEndStrings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSwapStartEndStrings.Location = new System.Drawing.Point(566, 187);
+            btnSwapStartEndStrings.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSwapStartEndStrings.Name = "btnSwapStartEndStrings";
-            btnSwapStartEndStrings.Size = new System.Drawing.Size(66, 27);
+            btnSwapStartEndStrings.Size = new System.Drawing.Size(94, 45);
             btnSwapStartEndStrings.TabIndex = 35;
             btnSwapStartEndStrings.Text = "Swap";
             btnSwapStartEndStrings.UseVisualStyleBackColor = true;
@@ -616,10 +616,10 @@
             // 
             labelFFmpegNotFound.AutoSize = true;
             labelFFmpegNotFound.ForeColor = System.Drawing.Color.Red;
-            labelFFmpegNotFound.Location = new System.Drawing.Point(117, 411);
-            labelFFmpegNotFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFFmpegNotFound.Location = new System.Drawing.Point(167, 685);
+            labelFFmpegNotFound.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFFmpegNotFound.Name = "labelFFmpegNotFound";
-            labelFFmpegNotFound.Size = new System.Drawing.Size(177, 15);
+            labelFFmpegNotFound.Size = new System.Drawing.Size(265, 25);
             labelFFmpegNotFound.TabIndex = 36;
             labelFFmpegNotFound.Text = "(Unavailable: ffmpeg not found)";
             labelFFmpegNotFound.Visible = false;
@@ -627,10 +627,10 @@
             // checkBoxLogOnly
             // 
             checkBoxLogOnly.AutoSize = true;
-            checkBoxLogOnly.Location = new System.Drawing.Point(18, 387);
-            checkBoxLogOnly.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxLogOnly.Location = new System.Drawing.Point(26, 645);
+            checkBoxLogOnly.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxLogOnly.Name = "checkBoxLogOnly";
-            checkBoxLogOnly.Size = new System.Drawing.Size(192, 19);
+            checkBoxLogOnly.Size = new System.Drawing.Size(287, 29);
             checkBoxLogOnly.TabIndex = 38;
             checkBoxLogOnly.Text = "Don't Create Images (Log Only)";
             checkBoxLogOnly.UseVisualStyleBackColor = true;
@@ -641,10 +641,10 @@
             radioNormalizeStartEnd.AutoSize = true;
             radioNormalizeStartEnd.Checked = true;
             radioNormalizeStartEnd.ForeColor = System.Drawing.SystemColors.ControlText;
-            radioNormalizeStartEnd.Location = new System.Drawing.Point(7, 12);
-            radioNormalizeStartEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeStartEnd.Location = new System.Drawing.Point(10, 20);
+            radioNormalizeStartEnd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeStartEnd.Name = "radioNormalizeStartEnd";
-            radioNormalizeStartEnd.Size = new System.Drawing.Size(169, 19);
+            radioNormalizeStartEnd.Size = new System.Drawing.Size(251, 29);
             radioNormalizeStartEnd.TabIndex = 40;
             radioNormalizeStartEnd.TabStop = true;
             radioNormalizeStartEnd.Text = "Normalize Within Start/End";
@@ -654,10 +654,10 @@
             // radioNormalizeMaxRanges
             // 
             radioNormalizeMaxRanges.AutoSize = true;
-            radioNormalizeMaxRanges.Location = new System.Drawing.Point(7, 29);
-            radioNormalizeMaxRanges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeMaxRanges.Location = new System.Drawing.Point(10, 48);
+            radioNormalizeMaxRanges.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeMaxRanges.Name = "radioNormalizeMaxRanges";
-            radioNormalizeMaxRanges.Size = new System.Drawing.Size(184, 19);
+            radioNormalizeMaxRanges.Size = new System.Drawing.Size(274, 29);
             radioNormalizeMaxRanges.TabIndex = 41;
             radioNormalizeMaxRanges.Text = "Normalize Within Max Ranges";
             radioNormalizeMaxRanges.UseVisualStyleBackColor = true;
@@ -666,10 +666,10 @@
             // radioNormalizeExtendedRanges
             // 
             radioNormalizeExtendedRanges.AutoSize = true;
-            radioNormalizeExtendedRanges.Location = new System.Drawing.Point(7, 46);
-            radioNormalizeExtendedRanges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeExtendedRanges.Location = new System.Drawing.Point(10, 77);
+            radioNormalizeExtendedRanges.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeExtendedRanges.Name = "radioNormalizeExtendedRanges";
-            radioNormalizeExtendedRanges.Size = new System.Drawing.Size(172, 19);
+            radioNormalizeExtendedRanges.Size = new System.Drawing.Size(258, 29);
             radioNormalizeExtendedRanges.TabIndex = 42;
             radioNormalizeExtendedRanges.Text = "Normalize Extended Ranges";
             radioNormalizeExtendedRanges.UseVisualStyleBackColor = true;
@@ -678,10 +678,10 @@
             // radioNoNormalize
             // 
             radioNoNormalize.AutoSize = true;
-            radioNoNormalize.Location = new System.Drawing.Point(7, 63);
-            radioNoNormalize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNoNormalize.Location = new System.Drawing.Point(10, 105);
+            radioNoNormalize.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNoNormalize.Name = "radioNoNormalize";
-            radioNoNormalize.Size = new System.Drawing.Size(111, 19);
+            radioNoNormalize.Size = new System.Drawing.Size(166, 29);
             radioNoNormalize.TabIndex = 43;
             radioNoNormalize.Text = "Don't Normalize";
             radioNoNormalize.UseVisualStyleBackColor = true;
@@ -697,11 +697,11 @@
             groupBoxNormalizeRadios.Controls.Add(radioNormalizeExtendedRanges);
             groupBoxNormalizeRadios.Enabled = false;
             groupBoxNormalizeRadios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            groupBoxNormalizeRadios.Location = new System.Drawing.Point(261, 324);
-            groupBoxNormalizeRadios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBoxNormalizeRadios.Location = new System.Drawing.Point(373, 540);
+            groupBoxNormalizeRadios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             groupBoxNormalizeRadios.Name = "groupBoxNormalizeRadios";
-            groupBoxNormalizeRadios.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBoxNormalizeRadios.Size = new System.Drawing.Size(196, 115);
+            groupBoxNormalizeRadios.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            groupBoxNormalizeRadios.Size = new System.Drawing.Size(280, 192);
             groupBoxNormalizeRadios.TabIndex = 44;
             groupBoxNormalizeRadios.TabStop = false;
             // 
@@ -709,10 +709,10 @@
             // 
             btnShowExpressionForm.BackColor = System.Drawing.Color.LightCoral;
             btnShowExpressionForm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnShowExpressionForm.Location = new System.Drawing.Point(295, 510);
-            btnShowExpressionForm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnShowExpressionForm.Location = new System.Drawing.Point(421, 850);
+            btnShowExpressionForm.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnShowExpressionForm.Name = "btnShowExpressionForm";
-            btnShowExpressionForm.Size = new System.Drawing.Size(160, 27);
+            btnShowExpressionForm.Size = new System.Drawing.Size(229, 45);
             btnShowExpressionForm.TabIndex = 45;
             btnShowExpressionForm.Text = "Expressions";
             btnShowExpressionForm.UseVisualStyleBackColor = false;
@@ -720,10 +720,10 @@
             // 
             // btnLoadFilters
             // 
-            btnLoadFilters.Location = new System.Drawing.Point(377, 550);
-            btnLoadFilters.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnLoadFilters.Location = new System.Drawing.Point(539, 917);
+            btnLoadFilters.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnLoadFilters.Name = "btnLoadFilters";
-            btnLoadFilters.Size = new System.Drawing.Size(75, 40);
+            btnLoadFilters.Size = new System.Drawing.Size(107, 67);
             btnLoadFilters.TabIndex = 47;
             btnLoadFilters.Text = "Reload Filters";
             btnLoadFilters.UseVisualStyleBackColor = true;
@@ -731,10 +731,10 @@
             // 
             // txtSearchBoxMain
             // 
-            txtSearchBoxMain.Location = new System.Drawing.Point(126, 596);
-            txtSearchBoxMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtSearchBoxMain.Location = new System.Drawing.Point(180, 993);
+            txtSearchBoxMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtSearchBoxMain.Name = "txtSearchBoxMain";
-            txtSearchBoxMain.Size = new System.Drawing.Size(329, 23);
+            txtSearchBoxMain.Size = new System.Drawing.Size(468, 31);
             txtSearchBoxMain.TabIndex = 48;
             txtSearchBoxMain.TextChanged += txtSearchBoxMain_TextChanged;
             // 
@@ -743,10 +743,10 @@
             listBoxFiltersMain.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             listBoxFiltersMain.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             listBoxFiltersMain.FormattingEnabled = true;
-            listBoxFiltersMain.Location = new System.Drawing.Point(18, 625);
-            listBoxFiltersMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            listBoxFiltersMain.Location = new System.Drawing.Point(26, 1042);
+            listBoxFiltersMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             listBoxFiltersMain.Name = "listBoxFiltersMain";
-            listBoxFiltersMain.Size = new System.Drawing.Size(437, 116);
+            listBoxFiltersMain.Size = new System.Drawing.Size(623, 172);
             listBoxFiltersMain.TabIndex = 49;
             listBoxFiltersMain.SelectedIndexChanged += listBoxFiltersMain_SelectedIndexChanged;
             listBoxFiltersMain.DoubleClick += listBoxFiltersMain_DoubleClick;
@@ -755,10 +755,10 @@
             // 
             labelFilterSearch.AutoSize = true;
             labelFilterSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            labelFilterSearch.Location = new System.Drawing.Point(35, 599);
-            labelFilterSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFilterSearch.Location = new System.Drawing.Point(50, 998);
+            labelFilterSearch.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFilterSearch.Name = "labelFilterSearch";
-            labelFilterSearch.Size = new System.Drawing.Size(86, 15);
+            labelFilterSearch.Size = new System.Drawing.Size(126, 21);
             labelFilterSearch.TabIndex = 50;
             labelFilterSearch.Text = "Filters Search:";
             // 
@@ -766,29 +766,29 @@
             // 
             dropdownDebugLog.FormattingEnabled = true;
             dropdownDebugLog.Items.AddRange(new object[] { "None", "Verbose 1", "Verbose 2", "Verbose 3", "Debug" });
-            dropdownDebugLog.Location = new System.Drawing.Point(89, 454);
-            dropdownDebugLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dropdownDebugLog.Location = new System.Drawing.Point(127, 757);
+            dropdownDebugLog.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             dropdownDebugLog.Name = "dropdownDebugLog";
-            dropdownDebugLog.Size = new System.Drawing.Size(75, 23);
+            dropdownDebugLog.Size = new System.Drawing.Size(105, 33);
             dropdownDebugLog.TabIndex = 52;
             // 
             // labelDebugLog
             // 
             labelDebugLog.AutoSize = true;
-            labelDebugLog.Location = new System.Drawing.Point(18, 457);
-            labelDebugLog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelDebugLog.Location = new System.Drawing.Point(26, 762);
+            labelDebugLog.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelDebugLog.Name = "labelDebugLog";
-            labelDebugLog.Size = new System.Drawing.Size(68, 15);
+            labelDebugLog.Size = new System.Drawing.Size(105, 25);
             labelDebugLog.TabIndex = 53;
             labelDebugLog.Text = "Debug Log:";
             // 
             // checkBoxSingleThreadMode
             // 
             checkBoxSingleThreadMode.AutoSize = true;
-            checkBoxSingleThreadMode.Location = new System.Drawing.Point(295, 444);
-            checkBoxSingleThreadMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxSingleThreadMode.Location = new System.Drawing.Point(421, 740);
+            checkBoxSingleThreadMode.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxSingleThreadMode.Name = "checkBoxSingleThreadMode";
-            checkBoxSingleThreadMode.Size = new System.Drawing.Size(131, 19);
+            checkBoxSingleThreadMode.Size = new System.Drawing.Size(197, 29);
             checkBoxSingleThreadMode.TabIndex = 55;
             checkBoxSingleThreadMode.Text = "Single Thread Mode";
             checkBoxSingleThreadMode.UseVisualStyleBackColor = true;
@@ -796,30 +796,34 @@
             // toolStripActiveFilterLabel
             // 
             toolStripActiveFilterLabel.Name = "toolStripActiveFilterLabel";
-            toolStripActiveFilterLabel.Size = new System.Drawing.Size(112, 17);
+            toolStripActiveFilterLabel.Size = new System.Drawing.Size(169, 25);
             toolStripActiveFilterLabel.Text = "toolStripStatusLabel";
             // 
             // statusStrip1
             // 
+            statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripActiveFilterLabel });
-            statusStrip1.Location = new System.Drawing.Point(0, 748);
+            statusStrip1.Location = new System.Drawing.Point(0, 1251);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new System.Drawing.Size(478, 22);
+            statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
+            statusStrip1.Size = new System.Drawing.Size(683, 32);
             statusStrip1.TabIndex = 57;
             statusStrip1.Text = "statusStrip1";
             // 
             // progressBarGeneration
             // 
-            progressBarGeneration.Location = new System.Drawing.Point(18, 528);
+            progressBarGeneration.Location = new System.Drawing.Point(26, 880);
+            progressBarGeneration.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             progressBarGeneration.Name = "progressBarGeneration";
-            progressBarGeneration.Size = new System.Drawing.Size(140, 14);
+            progressBarGeneration.Size = new System.Drawing.Size(200, 23);
             progressBarGeneration.TabIndex = 58;
             // 
             // btnGifTools
             // 
-            btnGifTools.Location = new System.Drawing.Point(295, 550);
+            btnGifTools.Location = new System.Drawing.Point(421, 917);
+            btnGifTools.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnGifTools.Name = "btnGifTools";
-            btnGifTools.Size = new System.Drawing.Size(75, 40);
+            btnGifTools.Size = new System.Drawing.Size(107, 67);
             btnGifTools.TabIndex = 59;
             btnGifTools.Text = "GIF Tools";
             btnGifTools.UseVisualStyleBackColor = true;
@@ -830,18 +834,19 @@
             checkBoxRemoveBlankFrames.AutoSize = true;
             checkBoxRemoveBlankFrames.Checked = true;
             checkBoxRemoveBlankFrames.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxRemoveBlankFrames.Location = new System.Drawing.Point(18, 432);
+            checkBoxRemoveBlankFrames.Location = new System.Drawing.Point(26, 720);
+            checkBoxRemoveBlankFrames.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             checkBoxRemoveBlankFrames.Name = "checkBoxRemoveBlankFrames";
-            checkBoxRemoveBlankFrames.Size = new System.Drawing.Size(162, 19);
+            checkBoxRemoveBlankFrames.Size = new System.Drawing.Size(242, 29);
             checkBoxRemoveBlankFrames.TabIndex = 60;
             checkBoxRemoveBlankFrames.Text = "Remove Blank GIF Frames";
             checkBoxRemoveBlankFrames.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(478, 770);
+            AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            ClientSize = new System.Drawing.Size(683, 1283);
             Controls.Add(infoIconFilterSearch);
             Controls.Add(infoIconRemoveBlankFrames);
             Controls.Add(checkBoxRemoveBlankFrames);
@@ -900,7 +905,7 @@
             Controls.Add(groupBoxNormalizeRadios);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             MaximizeBox = false;
             Name = "MainForm";
             Text = "G'MIC Animator";

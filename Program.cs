@@ -16,6 +16,8 @@ namespace GmicFilterAnimatorApp
         [STAThread]
         static void Main()
         {
+            ApplicationConfiguration.Initialize(); // This is apparently needed to get scaling to work. See: https://eskerahn.dk/?p=5502
+
             // Load and/or handle config file
             var configFilePath = "GmicAnimatorConfig.ini";
             Config = new ConfigFilerManager(configFilePath);

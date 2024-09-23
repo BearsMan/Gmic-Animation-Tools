@@ -3,7 +3,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GmicDrosteAnimate</RootNamespace>
-    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ForceDesignerDPIUnaware>false</ForceDesignerDPIUnaware>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -19,7 +19,7 @@
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ForceDesignerDPIUnaware>false</ForceDesignerDPIUnaware>
     <LangVersion>12.0</LangVersion>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>  
@@ -28,6 +28,7 @@
 	<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
 	<PlatformTarget>AnyCPU</PlatformTarget>
 	<ApplicationIcon>GmicAnimateIcon.ico</ApplicationIcon>
+	<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
 	
 	<!-- Standard Versioning Properties -->
 	<Version>1.0.0</Version>
@@ -45,12 +46,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
     <LangVersion>12.0</LangVersion>
-    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ForceDesignerDPIUnaware>false</ForceDesignerDPIUnaware>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>Releases\</OutputPath>
     <LangVersion>7.3</LangVersion>
-    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ForceDesignerDPIUnaware>false</ForceDesignerDPIUnaware>
     <LangVersion>12.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
