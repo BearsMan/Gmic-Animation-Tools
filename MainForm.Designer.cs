@@ -367,8 +367,9 @@
             // 
             // InfoIconMasterParamIndex
             // 
+            InfoIconMasterParamIndex.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconMasterParamIndex.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIndex.Image");
-            InfoIconMasterParamIndex.Location = new System.Drawing.Point(313, 293);
+            InfoIconMasterParamIndex.Location = new System.Drawing.Point(314, 295);
             InfoIconMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIndex.Name = "InfoIconMasterParamIndex";
             InfoIconMasterParamIndex.Size = new System.Drawing.Size(16, 16);
@@ -379,8 +380,9 @@
             // 
             // InfoIconMasterParamIncrement
             // 
+            InfoIconMasterParamIncrement.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconMasterParamIncrement.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIncrement.Image");
-            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(629, 355);
+            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(629, 358);
             InfoIconMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIncrement.Name = "InfoIconMasterParamIncrement";
             InfoIconMasterParamIncrement.Size = new System.Drawing.Size(16, 16);
@@ -391,8 +393,9 @@
             // 
             // InfoIconMasterExponent
             // 
+            InfoIconMasterExponent.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconMasterExponent.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterExponent.Image");
-            InfoIconMasterExponent.Location = new System.Drawing.Point(414, 448);
+            InfoIconMasterExponent.Location = new System.Drawing.Point(410, 451);
             InfoIconMasterExponent.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterExponent.Name = "InfoIconMasterExponent";
             InfoIconMasterExponent.Size = new System.Drawing.Size(16, 16);
@@ -403,8 +406,9 @@
             // 
             // InfoIconCustomExponents
             // 
+            InfoIconCustomExponents.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconCustomExponents.Image = (System.Drawing.Image)resources.GetObject("InfoIconCustomExponents.Image");
-            InfoIconCustomExponents.Location = new System.Drawing.Point(630, 498);
+            InfoIconCustomExponents.Location = new System.Drawing.Point(626, 501);
             InfoIconCustomExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconCustomExponents.Name = "InfoIconCustomExponents";
             InfoIconCustomExponents.Size = new System.Drawing.Size(16, 16);
@@ -415,8 +419,9 @@
             // 
             // InfoIconDefaultExponents
             // 
+            InfoIconDefaultExponents.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconDefaultExponents.Image = (System.Drawing.Image)resources.GetObject("InfoIconDefaultExponents.Image");
-            InfoIconDefaultExponents.Location = new System.Drawing.Point(200, 543);
+            InfoIconDefaultExponents.Location = new System.Drawing.Point(207, 546);
             InfoIconDefaultExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconDefaultExponents.Name = "InfoIconDefaultExponents";
             InfoIconDefaultExponents.Size = new System.Drawing.Size(16, 16);
@@ -427,8 +432,9 @@
             // 
             // InfoIconLinearInterpolation
             // 
+            InfoIconLinearInterpolation.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconLinearInterpolation.Image = (System.Drawing.Image)resources.GetObject("InfoIconLinearInterpolation.Image");
-            InfoIconLinearInterpolation.Location = new System.Drawing.Point(217, 403);
+            InfoIconLinearInterpolation.Location = new System.Drawing.Point(223, 407);
             InfoIconLinearInterpolation.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconLinearInterpolation.Name = "InfoIconLinearInterpolation";
             InfoIconLinearInterpolation.Size = new System.Drawing.Size(16, 16);
@@ -439,8 +445,9 @@
             // 
             // InfoIconCreateGif
             // 
+            InfoIconCreateGif.Anchor = System.Windows.Forms.AnchorStyles.Left;
             InfoIconCreateGif.Image = (System.Drawing.Image)resources.GetObject("InfoIconCreateGif.Image");
-            InfoIconCreateGif.Location = new System.Drawing.Point(136, 683);
+            InfoIconCreateGif.Location = new System.Drawing.Point(141, 689);
             InfoIconCreateGif.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconCreateGif.Name = "InfoIconCreateGif";
             InfoIconCreateGif.Size = new System.Drawing.Size(16, 16);
@@ -451,8 +458,9 @@
             // 
             // infoIconUseSameDirectory
             // 
+            infoIconUseSameDirectory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             infoIconUseSameDirectory.Image = (System.Drawing.Image)resources.GetObject("infoIconUseSameDirectory.Image");
-            infoIconUseSameDirectory.Location = new System.Drawing.Point(264, 607);
+            infoIconUseSameDirectory.Location = new System.Drawing.Point(277, 613);
             infoIconUseSameDirectory.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconUseSameDirectory.Name = "infoIconUseSameDirectory";
             infoIconUseSameDirectory.Size = new System.Drawing.Size(16, 16);
@@ -476,8 +484,9 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(246, 762);
+            pictureBox1.Location = new System.Drawing.Point(251, 768);
             pictureBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(16, 16);
@@ -488,8 +497,9 @@
             // 
             // infoIconSingleThread
             // 
+            infoIconSingleThread.Anchor = System.Windows.Forms.AnchorStyles.Left;
             infoIconSingleThread.Image = (System.Drawing.Image)resources.GetObject("infoIconSingleThread.Image");
-            infoIconSingleThread.Location = new System.Drawing.Point(606, 742);
+            infoIconSingleThread.Location = new System.Drawing.Point(613, 747);
             infoIconSingleThread.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconSingleThread.Name = "infoIconSingleThread";
             infoIconSingleThread.Size = new System.Drawing.Size(16, 16);
@@ -500,8 +510,9 @@
             // 
             // infoIconRemoveBlankFrames
             // 
+            infoIconRemoveBlankFrames.Anchor = System.Windows.Forms.AnchorStyles.Left;
             infoIconRemoveBlankFrames.Image = (System.Drawing.Image)resources.GetObject("infoIconRemoveBlankFrames.Image");
-            infoIconRemoveBlankFrames.Location = new System.Drawing.Point(250, 720);
+            infoIconRemoveBlankFrames.Location = new System.Drawing.Point(265, 725);
             infoIconRemoveBlankFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconRemoveBlankFrames.Name = "infoIconRemoveBlankFrames";
             infoIconRemoveBlankFrames.Size = new System.Drawing.Size(16, 16);
@@ -512,8 +523,9 @@
             // 
             // infoIconFilterSearch
             // 
+            infoIconFilterSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             infoIconFilterSearch.Image = (System.Drawing.Image)resources.GetObject("infoIconFilterSearch.Image");
-            infoIconFilterSearch.Location = new System.Drawing.Point(26, 997);
+            infoIconFilterSearch.Location = new System.Drawing.Point(32, 1001);
             infoIconFilterSearch.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconFilterSearch.Name = "infoIconFilterSearch";
             infoIconFilterSearch.Size = new System.Drawing.Size(16, 16);
@@ -524,8 +536,9 @@
             // 
             // infoIconAbsoluteModeMain
             // 
+            infoIconAbsoluteModeMain.Anchor = System.Windows.Forms.AnchorStyles.Left;
             infoIconAbsoluteModeMain.Image = (System.Drawing.Image)resources.GetObject("infoIconAbsoluteModeMain.Image");
-            infoIconAbsoluteModeMain.Location = new System.Drawing.Point(243, 150);
+            infoIconAbsoluteModeMain.Location = new System.Drawing.Point(250, 156);
             infoIconAbsoluteModeMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconAbsoluteModeMain.Name = "infoIconAbsoluteModeMain";
             infoIconAbsoluteModeMain.Size = new System.Drawing.Size(16, 16);
@@ -603,7 +616,7 @@
             // 
             // btnSwapStartEndStrings
             // 
-            btnSwapStartEndStrings.Location = new System.Drawing.Point(566, 187);
+            btnSwapStartEndStrings.Location = new System.Drawing.Point(565, 182);
             btnSwapStartEndStrings.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSwapStartEndStrings.Name = "btnSwapStartEndStrings";
             btnSwapStartEndStrings.Size = new System.Drawing.Size(94, 45);
@@ -766,7 +779,7 @@
             // 
             dropdownDebugLog.FormattingEnabled = true;
             dropdownDebugLog.Items.AddRange(new object[] { "None", "Verbose 1", "Verbose 2", "Verbose 3", "Debug" });
-            dropdownDebugLog.Location = new System.Drawing.Point(127, 757);
+            dropdownDebugLog.Location = new System.Drawing.Point(136, 759);
             dropdownDebugLog.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             dropdownDebugLog.Name = "dropdownDebugLog";
             dropdownDebugLog.Size = new System.Drawing.Size(105, 33);
