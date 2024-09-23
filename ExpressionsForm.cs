@@ -191,12 +191,14 @@ namespace GmicAnimate
             // Hide the row headers by setting their visibility to false
             dataGridViewExpressions.RowHeadersVisible = false;
 
-
+            // Increase row height based on DPI
+            int defaultRowHeight = dataGridViewExpressions.RowTemplate.Height;
+            dataGridViewExpressions.RowTemplate.Height = CompensateDPI(defaultRowHeight);
 
             //Add a checkbox column
             DataGridViewCheckBoxColumn chkBoxColumn = new DataGridViewCheckBoxColumn();
             chkBoxColumn.HeaderText = "";
-            chkBoxColumn.Width = 25;
+            chkBoxColumn.Width = CompensateDPI(25);
             chkBoxColumn.Name = "CheckBox";
             chkBoxColumn.TrueValue = true;
             chkBoxColumn.FalseValue = false;
@@ -214,7 +216,7 @@ namespace GmicAnimate
             DataGridViewTextBoxColumn paramNameColumn = new DataGridViewTextBoxColumn();
             paramNameColumn.HeaderText = "Parameter Name";
             paramNameColumn.Name = "ParameterName";
-            paramNameColumn.Width = 140;
+            paramNameColumn.Width = CompensateDPI(140);
             paramNameColumn.ReadOnly = true;
             dataGridViewExpressions.Columns.Add(paramNameColumn);
 
@@ -222,7 +224,8 @@ namespace GmicAnimate
             DataGridViewTextBoxColumn expressionColumn = new DataGridViewTextBoxColumn();
             expressionColumn.HeaderText = "Exponent / Expression";
             expressionColumn.Name = "Expression";
-            expressionColumn.Width = 237;
+            int borderWidth = dataGridViewExpressions.BorderStyle == BorderStyle.None ? 0 : CompensateDPI(2); // Calculate necessary expression column width to fill the remaining space.
+            expressionColumn.Width = dataGridViewExpressions.Width - paramNameColumn.Width - chkBoxColumn.Width - borderWidth;
             expressionColumn.ReadOnly = false;  // Set to false to allow user to enter expressions
             dataGridViewExpressions.Columns.Add(expressionColumn);
 
@@ -329,7 +332,7 @@ namespace GmicAnimate
                 dataGridViewExpressions.Rows[rowIndex].DefaultCellStyle.BackColor = disabledBackgroundColor;
                 dataGridViewExpressions.Rows[rowIndex].DefaultCellStyle.ForeColor = disabledForeColor;
                 dataGridViewExpressions.Rows[rowIndex].DefaultCellStyle.Font = new Font("Arial", 7);
-                dataGridViewExpressions.Rows[rowIndex].Height = 12; // Smaller height for less important data
+                dataGridViewExpressions.Rows[rowIndex].Height = CompensateDPI(12); // Smaller height for less important data
                 //dataGridViewExpressions.Rows[i].Cells["CheckBox"].ReadOnly = true;
                 dataGridViewExpressions.Rows[rowIndex].Cells["Expression"].ReadOnly = true;
             }
@@ -1444,6 +1447,12 @@ namespace GmicAnimate
         {
             // Set text forecolor back to black
             dataGridViewExpressions.Rows[e.RowIndex].DefaultCellStyle.SelectionForeColor = Color.Black;
+        }
+
+        private int CompensateDPI(int originalValue)
+        {
+            float scaleFactor = this.DeviceDpi / 96f; // 96 is the default DPI
+            return (int)(originalValue * scaleFactor);
         }
 
     } //End form class

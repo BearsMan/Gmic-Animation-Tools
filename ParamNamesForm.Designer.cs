@@ -54,10 +54,10 @@
             // btnRandom
             // 
             btnRandom.ForeColor = System.Drawing.Color.Red;
-            btnRandom.Location = new System.Drawing.Point(35, 837);
-            btnRandom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnRandom.Location = new System.Drawing.Point(50, 1395);
+            btnRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnRandom.Name = "btnRandom";
-            btnRandom.Size = new System.Drawing.Size(138, 27);
+            btnRandom.Size = new System.Drawing.Size(197, 45);
             btnRandom.TabIndex = 1;
             btnRandom.Text = "Randomize Selected";
             btnRandom.UseVisualStyleBackColor = true;
@@ -65,48 +65,48 @@
             // 
             // txtCurrentStartParamString
             // 
-            txtCurrentStartParamString.Location = new System.Drawing.Point(31, 722);
-            txtCurrentStartParamString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCurrentStartParamString.Location = new System.Drawing.Point(44, 1203);
+            txtCurrentStartParamString.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtCurrentStartParamString.Name = "txtCurrentStartParamString";
             txtCurrentStartParamString.ReadOnly = true;
-            txtCurrentStartParamString.Size = new System.Drawing.Size(465, 23);
+            txtCurrentStartParamString.Size = new System.Drawing.Size(663, 31);
             txtCurrentStartParamString.TabIndex = 2;
             // 
             // labelCurrentStartParamString
             // 
             labelCurrentStartParamString.AutoSize = true;
-            labelCurrentStartParamString.Location = new System.Drawing.Point(31, 705);
-            labelCurrentStartParamString.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCurrentStartParamString.Location = new System.Drawing.Point(44, 1175);
+            labelCurrentStartParamString.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCurrentStartParamString.Name = "labelCurrentStartParamString";
-            labelCurrentStartParamString.Size = new System.Drawing.Size(187, 15);
+            labelCurrentStartParamString.Size = new System.Drawing.Size(280, 25);
             labelCurrentStartParamString.TabIndex = 3;
             labelCurrentStartParamString.Text = "Current String of Start Parameters:";
             // 
             // labelCurrentEndParamString
             // 
             labelCurrentEndParamString.AutoSize = true;
-            labelCurrentEndParamString.Location = new System.Drawing.Point(31, 755);
-            labelCurrentEndParamString.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCurrentEndParamString.Location = new System.Drawing.Point(44, 1258);
+            labelCurrentEndParamString.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCurrentEndParamString.Name = "labelCurrentEndParamString";
-            labelCurrentEndParamString.Size = new System.Drawing.Size(183, 15);
+            labelCurrentEndParamString.Size = new System.Drawing.Size(274, 25);
             labelCurrentEndParamString.TabIndex = 5;
             labelCurrentEndParamString.Text = "Current String of End Parameters:";
             // 
             // txtCurrentEndParamString
             // 
-            txtCurrentEndParamString.Location = new System.Drawing.Point(31, 772);
-            txtCurrentEndParamString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCurrentEndParamString.Location = new System.Drawing.Point(44, 1287);
+            txtCurrentEndParamString.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtCurrentEndParamString.Name = "txtCurrentEndParamString";
             txtCurrentEndParamString.ReadOnly = true;
-            txtCurrentEndParamString.Size = new System.Drawing.Size(465, 23);
+            txtCurrentEndParamString.Size = new System.Drawing.Size(663, 31);
             txtCurrentEndParamString.TabIndex = 4;
             // 
             // btnCheckAll
             // 
-            btnCheckAll.Location = new System.Drawing.Point(178, 809);
-            btnCheckAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCheckAll.Location = new System.Drawing.Point(254, 1348);
+            btnCheckAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnCheckAll.Name = "btnCheckAll";
-            btnCheckAll.Size = new System.Drawing.Size(88, 27);
+            btnCheckAll.Size = new System.Drawing.Size(126, 45);
             btnCheckAll.TabIndex = 6;
             btnCheckAll.Text = "Check All";
             btnCheckAll.UseVisualStyleBackColor = true;
@@ -114,10 +114,10 @@
             // 
             // btnUncheckAll
             // 
-            btnUncheckAll.Location = new System.Drawing.Point(178, 837);
-            btnUncheckAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnUncheckAll.Location = new System.Drawing.Point(254, 1395);
+            btnUncheckAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnUncheckAll.Name = "btnUncheckAll";
-            btnUncheckAll.Size = new System.Drawing.Size(88, 27);
+            btnUncheckAll.Size = new System.Drawing.Size(126, 45);
             btnUncheckAll.TabIndex = 7;
             btnUncheckAll.Text = "Uncheck All";
             btnUncheckAll.UseVisualStyleBackColor = true;
@@ -125,10 +125,10 @@
             // 
             // btnResetAll
             // 
-            btnResetAll.Location = new System.Drawing.Point(410, 690);
-            btnResetAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnResetAll.Location = new System.Drawing.Point(586, 1150);
+            btnResetAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnResetAll.Name = "btnResetAll";
-            btnResetAll.Size = new System.Drawing.Size(88, 27);
+            btnResetAll.Size = new System.Drawing.Size(126, 45);
             btnResetAll.TabIndex = 8;
             btnResetAll.Text = "Reset All";
             btnResetAll.UseVisualStyleBackColor = true;
@@ -139,10 +139,10 @@
             checkBoxDisableBinaryRandom.AutoSize = true;
             checkBoxDisableBinaryRandom.Checked = true;
             checkBoxDisableBinaryRandom.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxDisableBinaryRandom.Location = new System.Drawing.Point(286, 870);
-            checkBoxDisableBinaryRandom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxDisableBinaryRandom.Location = new System.Drawing.Point(409, 1450);
+            checkBoxDisableBinaryRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxDisableBinaryRandom.Name = "checkBoxDisableBinaryRandom";
-            checkBoxDisableBinaryRandom.Size = new System.Drawing.Size(215, 19);
+            checkBoxDisableBinaryRandom.Size = new System.Drawing.Size(321, 29);
             checkBoxDisableBinaryRandom.TabIndex = 9;
             checkBoxDisableBinaryRandom.Text = "Don't Randomize Binary Parameters";
             checkBoxDisableBinaryRandom.UseVisualStyleBackColor = true;
@@ -153,10 +153,10 @@
             checkBoxSyncFromOtherWindow.AutoSize = true;
             checkBoxSyncFromOtherWindow.Checked = true;
             checkBoxSyncFromOtherWindow.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxSyncFromOtherWindow.Location = new System.Drawing.Point(14, 891);
-            checkBoxSyncFromOtherWindow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxSyncFromOtherWindow.Location = new System.Drawing.Point(20, 1485);
+            checkBoxSyncFromOtherWindow.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxSyncFromOtherWindow.Name = "checkBoxSyncFromOtherWindow";
-            checkBoxSyncFromOtherWindow.Size = new System.Drawing.Size(211, 19);
+            checkBoxSyncFromOtherWindow.Size = new System.Drawing.Size(315, 29);
             checkBoxSyncFromOtherWindow.TabIndex = 10;
             checkBoxSyncFromOtherWindow.Text = "Sync Changes From Other Window";
             checkBoxSyncFromOtherWindow.UseVisualStyleBackColor = true;
@@ -167,10 +167,10 @@
             checkBoxDisableStepRandom.AutoSize = true;
             checkBoxDisableStepRandom.Checked = true;
             checkBoxDisableStepRandom.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxDisableStepRandom.Location = new System.Drawing.Point(286, 849);
-            checkBoxDisableStepRandom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxDisableStepRandom.Location = new System.Drawing.Point(409, 1415);
+            checkBoxDisableStepRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxDisableStepRandom.Name = "checkBoxDisableStepRandom";
-            checkBoxDisableStepRandom.Size = new System.Drawing.Size(225, 19);
+            checkBoxDisableStepRandom.Size = new System.Drawing.Size(339, 29);
             checkBoxDisableStepRandom.TabIndex = 11;
             checkBoxDisableStepRandom.Text = "Don't Randomize Stepped Parameters";
             checkBoxDisableStepRandom.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             // checkBoxExtendedRange
             // 
             checkBoxExtendedRange.AutoSize = true;
-            checkBoxExtendedRange.Location = new System.Drawing.Point(286, 828);
-            checkBoxExtendedRange.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxExtendedRange.Location = new System.Drawing.Point(409, 1380);
+            checkBoxExtendedRange.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxExtendedRange.Name = "checkBoxExtendedRange";
-            checkBoxExtendedRange.Size = new System.Drawing.Size(186, 19);
+            checkBoxExtendedRange.Size = new System.Drawing.Size(281, 29);
             checkBoxExtendedRange.TabIndex = 12;
             checkBoxExtendedRange.Text = "Use Extended Random Ranges";
             checkBoxExtendedRange.UseVisualStyleBackColor = true;
@@ -192,10 +192,10 @@
             // 
             btnSendParmsToMain.BackColor = System.Drawing.Color.LightGreen;
             btnSendParmsToMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            btnSendParmsToMain.Location = new System.Drawing.Point(35, 809);
-            btnSendParmsToMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSendParmsToMain.Location = new System.Drawing.Point(50, 1348);
+            btnSendParmsToMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSendParmsToMain.Name = "btnSendParmsToMain";
-            btnSendParmsToMain.Size = new System.Drawing.Size(136, 27);
+            btnSendParmsToMain.Size = new System.Drawing.Size(194, 45);
             btnSendParmsToMain.TabIndex = 13;
             btnSendParmsToMain.Text = "Use Above Values";
             btnSendParmsToMain.UseVisualStyleBackColor = false;
@@ -206,12 +206,13 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(35, 15);
-            dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dataGridView1.Location = new System.Drawing.Point(50, 25);
+            dataGridView1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 18;
-            dataGridView1.Size = new System.Drawing.Size(456, 670);
+            dataGridView1.Size = new System.Drawing.Size(651, 1117);
             dataGridView1.TabIndex = 14;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
@@ -221,10 +222,10 @@
             checkBoxRecommendedRules.AutoSize = true;
             checkBoxRecommendedRules.Checked = true;
             checkBoxRecommendedRules.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxRecommendedRules.Location = new System.Drawing.Point(286, 808);
-            checkBoxRecommendedRules.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxRecommendedRules.Location = new System.Drawing.Point(409, 1347);
+            checkBoxRecommendedRules.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxRecommendedRules.Name = "checkBoxRecommendedRules";
-            checkBoxRecommendedRules.Size = new System.Drawing.Size(214, 19);
+            checkBoxRecommendedRules.Size = new System.Drawing.Size(321, 29);
             checkBoxRecommendedRules.TabIndex = 15;
             checkBoxRecommendedRules.Text = "Use Recommended Rules && Ranges";
             checkBoxRecommendedRules.UseVisualStyleBackColor = true;
@@ -236,10 +237,10 @@
             toggleRandomEnd.BackColor = System.Drawing.Color.White;
             toggleRandomEnd.Checked = true;
             toggleRandomEnd.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomEnd.Location = new System.Drawing.Point(4, 772);
-            toggleRandomEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            toggleRandomEnd.Location = new System.Drawing.Point(6, 1287);
+            toggleRandomEnd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomEnd.Name = "toggleRandomEnd";
-            toggleRandomEnd.Size = new System.Drawing.Size(23, 23);
+            toggleRandomEnd.Size = new System.Drawing.Size(33, 38);
             toggleRandomEnd.TabIndex = 17;
             paramNamesTooltip.SetToolTip(toggleRandomEnd, "This toggle enables/disables the randomization of end values");
             toggleRandomEnd.UseVisualStyleBackColor = true;
@@ -250,19 +251,19 @@
             toggleRandomStart.BackColor = System.Drawing.Color.White;
             toggleRandomStart.Checked = true;
             toggleRandomStart.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomStart.Location = new System.Drawing.Point(4, 722);
-            toggleRandomStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            toggleRandomStart.Location = new System.Drawing.Point(6, 1203);
+            toggleRandomStart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomStart.Name = "toggleRandomStart";
-            toggleRandomStart.Size = new System.Drawing.Size(23, 23);
+            toggleRandomStart.Size = new System.Drawing.Size(33, 38);
             toggleRandomStart.TabIndex = 16;
             paramNamesTooltip.SetToolTip(toggleRandomStart, "This toggle enables/disables the randomization of end values");
             toggleRandomStart.UseVisualStyleBackColor = true;
             // 
             // ParamNamesForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(533, 918);
+            AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            ClientSize = new System.Drawing.Size(761, 1530);
             Controls.Add(checkBoxRecommendedRules);
             Controls.Add(dataGridView1);
             Controls.Add(btnSendParmsToMain);
@@ -280,7 +281,7 @@
             Controls.Add(btnRandom);
             Controls.Add(toggleRandomStart);
             Controls.Add(toggleRandomEnd);
-            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             Name = "ParamNamesForm";
             Text = "Advanced Parameter Control";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

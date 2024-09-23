@@ -89,17 +89,29 @@ namespace GmicAnimate
             // Add a checkbox column
             DataGridViewCheckBoxColumn chkBoxColumn = new DataGridViewCheckBoxColumn();
             chkBoxColumn.HeaderText = "";
-            chkBoxColumn.Width = 50;
+            chkBoxColumn.Width = CompensateDPI(50);
             chkBoxColumn.Name = "CheckBox";
             chkBoxColumn.TrueValue = true;
             chkBoxColumn.FalseValue = false;
             dataGridView1.Columns.Add(chkBoxColumn);
 
             // Add other columns as previously defined
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Start", Name = "Start", Width = 50, DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight } });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "End", Name = "End", Width = 50, DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight } });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Parameter Name", Name = "ParameterName", Width = 130, ReadOnly = true });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Difference", Name = "Difference", Width = 108, ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Start", Name = "Start", Width = CompensateDPI(50), DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight } });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "End", Name = "End", Width = CompensateDPI(50), DefaultCellStyle = new DataGridViewCellStyle { Alignment = DataGridViewContentAlignment.MiddleRight } });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Parameter Name", Name = "ParameterName", Width = CompensateDPI(130), ReadOnly = true });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Difference", Name = "Difference", Width = CompensateDPI(108), ReadOnly = true });
+
+            // Calculate the width for the "Parameter Name" column
+            int totalWidth = dataGridView1.ClientSize.Width;
+            int borderWidth = dataGridView1.BorderStyle == BorderStyle.None ? 0 : CompensateDPI(2);
+            int otherColumnsWidth = dataGridView1.Columns["Start"].Width + dataGridView1.Columns["End"].Width + dataGridView1.Columns["Difference"].Width + chkBoxColumn.Width + borderWidth;
+            int parameterNameColumnWidth = totalWidth - otherColumnsWidth; // Subtracting a margin for padding
+
+            // Set the calculated width for the "Parameter Name" column
+            dataGridView1.Columns["ParameterName"].Width = parameterNameColumnWidth;
+
+            int defaultRowHeight = dataGridView1.RowTemplate.Height;
+            dataGridView1.RowTemplate.Height = CompensateDPI(defaultRowHeight);
 
             // Don't allow sorting - It messes up the master parameter index highlighting
             foreach (DataGridViewColumn column in dataGridView1.Columns)
@@ -939,6 +951,12 @@ namespace GmicAnimate
         {
             // If user edits cell, disable syncing
             checkBoxSyncFromOtherWindow.Checked = false;
+        }
+
+        private int CompensateDPI(int originalValue)
+        {
+            float scaleFactor = this.DeviceDpi / 96f; // 96 is the default DPI
+            return (int)(originalValue * scaleFactor);
         }
     }
 

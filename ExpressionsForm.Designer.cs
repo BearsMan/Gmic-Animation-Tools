@@ -33,7 +33,7 @@ namespace GmicAnimate
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular);
             chartArea1.Name = "ChartArea1";
             this.chartCurve.ChartAreas.Add(chartArea1);
-            this.chartCurve.Location = new System.Drawing.Point(425, 78);
+            this.chartCurve.Location = new System.Drawing.Point(CompensateDPI(410), CompensateDPI(78));
             this.chartCurve.Name = "chartCurve";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
@@ -49,10 +49,10 @@ namespace GmicAnimate
             series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
             series2.Name = "CompareSeries";
             series2.Color = Color.DarkViolet;
-            series2.BorderWidth = 2;
+            series2.BorderWidth = CompensateDPI(2);
             this.chartCurve.Series.Add(series2);
 
-            this.chartCurve.Size = new System.Drawing.Size(600, 300);
+            this.chartCurve.Size = new System.Drawing.Size(CompensateDPI(560), CompensateDPI(300));
             this.chartCurve.TabIndex = 7;
             this.chartCurve.Text = "Values vs Frames Chart";
 
@@ -67,12 +67,13 @@ namespace GmicAnimate
         }
 
 
+
         #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpressionsForm));
             dataGridViewExpressions = new System.Windows.Forms.DataGridView();
             labelCurrentExpressionString = new System.Windows.Forms.Label();
@@ -138,20 +139,19 @@ namespace GmicAnimate
             dataGridViewExpressions.AllowUserToDeleteRows = false;
             dataGridViewExpressions.AllowUserToResizeRows = false;
             dataGridViewExpressions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dataGridViewExpressions.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewExpressions.Location = new Point(10, 12);
-            dataGridViewExpressions.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewExpressions.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewExpressions.Location = new Point(14, 20);
             dataGridViewExpressions.Name = "dataGridViewExpressions";
             dataGridViewExpressions.RowHeadersWidth = 62;
             dataGridViewExpressions.RowTemplate.Height = 20;
-            dataGridViewExpressions.Size = new Size(405, 703);
+            dataGridViewExpressions.Size = new Size(579, 1066);
             dataGridViewExpressions.TabIndex = 0;
             dataGridViewExpressions.CellBeginEdit += dataGridViewExpressions_CellBeginEdit;
             dataGridViewExpressions.CellClick += dataGridViewExpressions_CellClick_1;
@@ -161,29 +161,29 @@ namespace GmicAnimate
             // labelCurrentExpressionString
             // 
             labelCurrentExpressionString.AutoSize = true;
-            labelCurrentExpressionString.Location = new Point(14, 729);
-            labelCurrentExpressionString.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCurrentExpressionString.Location = new Point(20, 1112);
+            labelCurrentExpressionString.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCurrentExpressionString.Name = "labelCurrentExpressionString";
-            labelCurrentExpressionString.Size = new Size(228, 15);
+            labelCurrentExpressionString.Size = new Size(343, 25);
             labelCurrentExpressionString.TabIndex = 5;
             labelCurrentExpressionString.Text = "Current String of Exponents / Expressions:";
             // 
             // txtCurrentExpressionParamString
             // 
-            txtCurrentExpressionParamString.Location = new Point(14, 747);
-            txtCurrentExpressionParamString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCurrentExpressionParamString.Location = new Point(20, 1142);
+            txtCurrentExpressionParamString.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtCurrentExpressionParamString.Name = "txtCurrentExpressionParamString";
             txtCurrentExpressionParamString.ReadOnly = true;
-            txtCurrentExpressionParamString.Size = new Size(401, 23);
+            txtCurrentExpressionParamString.Size = new Size(571, 31);
             txtCurrentExpressionParamString.TabIndex = 4;
             // 
             // btnSendExpressionsStringToMainWindow
             // 
             btnSendExpressionsStringToMainWindow.BackColor = Color.LightGreen;
-            btnSendExpressionsStringToMainWindow.Location = new Point(14, 785);
-            btnSendExpressionsStringToMainWindow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSendExpressionsStringToMainWindow.Location = new Point(20, 1205);
+            btnSendExpressionsStringToMainWindow.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSendExpressionsStringToMainWindow.Name = "btnSendExpressionsStringToMainWindow";
-            btnSendExpressionsStringToMainWindow.Size = new Size(127, 27);
+            btnSendExpressionsStringToMainWindow.Size = new Size(181, 45);
             btnSendExpressionsStringToMainWindow.TabIndex = 6;
             btnSendExpressionsStringToMainWindow.Text = "Use Above Values";
             btnSendExpressionsStringToMainWindow.UseVisualStyleBackColor = false;
@@ -191,10 +191,10 @@ namespace GmicAnimate
             // 
             // btnTestChart
             // 
-            btnTestChart.Location = new Point(10, 842);
-            btnTestChart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnTestChart.Location = new Point(19, 1260);
+            btnTestChart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnTestChart.Name = "btnTestChart";
-            btnTestChart.Size = new Size(88, 27);
+            btnTestChart.Size = new Size(126, 45);
             btnTestChart.TabIndex = 8;
             btnTestChart.Text = "Test";
             btnTestChart.UseVisualStyleBackColor = true;
@@ -203,10 +203,10 @@ namespace GmicAnimate
             // 
             // btnChartValues
             // 
-            btnChartValues.Location = new Point(433, 386);
-            btnChartValues.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnChartValues.Location = new Point(619, 584);
+            btnChartValues.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnChartValues.Name = "btnChartValues";
-            btnChartValues.Size = new Size(224, 43);
+            btnChartValues.Size = new Size(320, 64);
             btnChartValues.TabIndex = 9;
             btnChartValues.Text = "Graph Preview of Parameter Values (Manually Refresh)\r\n\r\n";
             btnChartValues.UseVisualStyleBackColor = true;
@@ -215,10 +215,10 @@ namespace GmicAnimate
             // checkBoxKeepFramesConstant
             // 
             checkBoxKeepFramesConstant.AutoSize = true;
-            checkBoxKeepFramesConstant.Location = new Point(669, 478);
-            checkBoxKeepFramesConstant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxKeepFramesConstant.Location = new Point(956, 738);
+            checkBoxKeepFramesConstant.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxKeepFramesConstant.Name = "checkBoxKeepFramesConstant";
-            checkBoxKeepFramesConstant.Size = new Size(218, 19);
+            checkBoxKeepFramesConstant.Size = new Size(323, 29);
             checkBoxKeepFramesConstant.TabIndex = 10;
             checkBoxKeepFramesConstant.Text = "Preview With Constant Frame Count";
             checkBoxKeepFramesConstant.UseVisualStyleBackColor = true;
@@ -228,12 +228,12 @@ namespace GmicAnimate
             // 
             nudGraphConstantFrameCount.Enabled = false;
             nudGraphConstantFrameCount.Font = new Font("Microsoft Sans Serif", 10F);
-            nudGraphConstantFrameCount.Location = new Point(890, 475);
-            nudGraphConstantFrameCount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudGraphConstantFrameCount.Location = new Point(1280, 737);
+            nudGraphConstantFrameCount.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudGraphConstantFrameCount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudGraphConstantFrameCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudGraphConstantFrameCount.Name = "nudGraphConstantFrameCount";
-            nudGraphConstantFrameCount.Size = new Size(84, 23);
+            nudGraphConstantFrameCount.Size = new Size(120, 30);
             nudGraphConstantFrameCount.TabIndex = 11;
             nudGraphConstantFrameCount.Value = new decimal(new int[] { 100, 0, 0, 0 });
             nudGraphConstantFrameCount.ValueChanged += nudGraphConstantFrameCount_ValueChanged;
@@ -243,10 +243,10 @@ namespace GmicAnimate
             checkBoxAutoUpdateGraph.AutoSize = true;
             checkBoxAutoUpdateGraph.Checked = true;
             checkBoxAutoUpdateGraph.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxAutoUpdateGraph.Location = new Point(669, 500);
-            checkBoxAutoUpdateGraph.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxAutoUpdateGraph.Location = new Point(956, 774);
+            checkBoxAutoUpdateGraph.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxAutoUpdateGraph.Name = "checkBoxAutoUpdateGraph";
-            checkBoxAutoUpdateGraph.Size = new Size(128, 19);
+            checkBoxAutoUpdateGraph.Size = new Size(193, 29);
             checkBoxAutoUpdateGraph.TabIndex = 12;
             checkBoxAutoUpdateGraph.Text = "Auto Update Graph";
             checkBoxAutoUpdateGraph.UseVisualStyleBackColor = true;
@@ -255,12 +255,12 @@ namespace GmicAnimate
             // nudMasterParamIndexClone
             // 
             nudMasterParamIndexClone.Font = new Font("Microsoft Sans Serif", 12F);
-            nudMasterParamIndexClone.Location = new Point(433, 31);
-            nudMasterParamIndexClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudMasterParamIndexClone.Location = new Point(619, 52);
+            nudMasterParamIndexClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudMasterParamIndexClone.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nudMasterParamIndexClone.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudMasterParamIndexClone.Name = "nudMasterParamIndexClone";
-            nudMasterParamIndexClone.Size = new Size(58, 26);
+            nudMasterParamIndexClone.Size = new Size(83, 35);
             nudMasterParamIndexClone.TabIndex = 13;
             nudMasterParamIndexClone.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudMasterParamIndexClone.ValueChanged += nudMasterParamIndexClone_ValueChanged;
@@ -268,10 +268,10 @@ namespace GmicAnimate
             // labelMasterIndexClone
             // 
             labelMasterIndexClone.AutoSize = true;
-            labelMasterIndexClone.Location = new Point(429, 13);
-            labelMasterIndexClone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelMasterIndexClone.Location = new Point(613, 22);
+            labelMasterIndexClone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterIndexClone.Name = "labelMasterIndexClone";
-            labelMasterIndexClone.Size = new Size(64, 15);
+            labelMasterIndexClone.Size = new Size(95, 25);
             labelMasterIndexClone.TabIndex = 14;
             labelMasterIndexClone.Text = "Parameter:";
             // 
@@ -280,20 +280,20 @@ namespace GmicAnimate
             labelNoGraphToggleParam.AutoSize = true;
             labelNoGraphToggleParam.BackColor = SystemColors.Window;
             labelNoGraphToggleParam.Font = new Font("Microsoft Sans Serif", 10F);
-            labelNoGraphToggleParam.Location = new Point(531, 171);
-            labelNoGraphToggleParam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelNoGraphToggleParam.Location = new Point(759, 285);
+            labelNoGraphToggleParam.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelNoGraphToggleParam.Name = "labelNoGraphToggleParam";
-            labelNoGraphToggleParam.Size = new Size(368, 17);
+            labelNoGraphToggleParam.Size = new Size(501, 25);
             labelNoGraphToggleParam.TabIndex = 15;
             labelNoGraphToggleParam.Text = "Graph Not Applicable - Parameter type can't be graphed.\r\n";
             labelNoGraphToggleParam.Visible = false;
             // 
             // btnHelpExpressionsForm
             // 
-            btnHelpExpressionsForm.Location = new Point(926, 827);
-            btnHelpExpressionsForm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnHelpExpressionsForm.Location = new Point(1319, 1247);
+            btnHelpExpressionsForm.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnHelpExpressionsForm.Name = "btnHelpExpressionsForm";
-            btnHelpExpressionsForm.Size = new Size(106, 32);
+            btnHelpExpressionsForm.Size = new Size(151, 53);
             btnHelpExpressionsForm.TabIndex = 16;
             btnHelpExpressionsForm.Text = "Help";
             btnHelpExpressionsForm.UseVisualStyleBackColor = true;
@@ -303,20 +303,20 @@ namespace GmicAnimate
             // 
             labelExampleExpressionButtons.AutoSize = true;
             labelExampleExpressionButtons.Font = new Font("Arial", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelExampleExpressionButtons.Location = new Point(636, 552);
-            labelExampleExpressionButtons.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelExampleExpressionButtons.Location = new Point(909, 861);
+            labelExampleExpressionButtons.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelExampleExpressionButtons.Name = "labelExampleExpressionButtons";
-            labelExampleExpressionButtons.Size = new Size(199, 22);
+            labelExampleExpressionButtons.Size = new Size(289, 32);
             labelExampleExpressionButtons.TabIndex = 18;
             labelExampleExpressionButtons.Text = "Example Expressions:";
             // 
             // btnExampleCosine
             // 
             btnExampleCosine.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExampleCosine.Location = new Point(636, 717);
-            btnExampleCosine.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnExampleCosine.Location = new Point(898, 1092);
+            btnExampleCosine.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnExampleCosine.Name = "btnExampleCosine";
-            btnExampleCosine.Size = new Size(185, 45);
+            btnExampleCosine.Size = new Size(264, 75);
             btnExampleCosine.TabIndex = 19;
             btnExampleCosine.Text = "cos(2*pi*t)";
             btnExampleCosine.UseVisualStyleBackColor = true;
@@ -327,10 +327,10 @@ namespace GmicAnimate
             labelErrorWhileGraphing.AutoSize = true;
             labelErrorWhileGraphing.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelErrorWhileGraphing.ForeColor = Color.Red;
-            labelErrorWhileGraphing.Location = new Point(520, 59);
-            labelErrorWhileGraphing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelErrorWhileGraphing.Location = new Point(743, 98);
+            labelErrorWhileGraphing.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelErrorWhileGraphing.Name = "labelErrorWhileGraphing";
-            labelErrorWhileGraphing.Size = new Size(387, 15);
+            labelErrorWhileGraphing.Size = new Size(544, 22);
             labelErrorWhileGraphing.TabIndex = 20;
             labelErrorWhileGraphing.Text = "Error While Graphing: Click graph preview button for details";
             labelErrorWhileGraphing.Visible = false;
@@ -342,11 +342,11 @@ namespace GmicAnimate
             groupBoxNormalizeRadiosClone.Controls.Add(radioNormalizeMaxRangesClone);
             groupBoxNormalizeRadiosClone.Controls.Add(radioNormalizeExtendedRangesClone);
             groupBoxNormalizeRadiosClone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            groupBoxNormalizeRadiosClone.Location = new Point(433, 437);
-            groupBoxNormalizeRadiosClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBoxNormalizeRadiosClone.Location = new Point(619, 669);
+            groupBoxNormalizeRadiosClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             groupBoxNormalizeRadiosClone.Name = "groupBoxNormalizeRadiosClone";
-            groupBoxNormalizeRadiosClone.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBoxNormalizeRadiosClone.Size = new Size(195, 86);
+            groupBoxNormalizeRadiosClone.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            groupBoxNormalizeRadiosClone.Size = new Size(297, 143);
             groupBoxNormalizeRadiosClone.TabIndex = 45;
             groupBoxNormalizeRadiosClone.TabStop = false;
             // 
@@ -355,10 +355,10 @@ namespace GmicAnimate
             radioNormalizeStartEndClone.AutoSize = true;
             radioNormalizeStartEndClone.Checked = true;
             radioNormalizeStartEndClone.ForeColor = SystemColors.ControlText;
-            radioNormalizeStartEndClone.Location = new Point(7, 12);
-            radioNormalizeStartEndClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeStartEndClone.Location = new Point(10, 20);
+            radioNormalizeStartEndClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeStartEndClone.Name = "radioNormalizeStartEndClone";
-            radioNormalizeStartEndClone.Size = new Size(169, 19);
+            radioNormalizeStartEndClone.Size = new Size(251, 29);
             radioNormalizeStartEndClone.TabIndex = 40;
             radioNormalizeStartEndClone.TabStop = true;
             radioNormalizeStartEndClone.Text = "Normalize Within Start/End";
@@ -368,10 +368,10 @@ namespace GmicAnimate
             // radioNoNormalizeClone
             // 
             radioNoNormalizeClone.AutoSize = true;
-            radioNoNormalizeClone.Location = new Point(7, 63);
-            radioNoNormalizeClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNoNormalizeClone.Location = new Point(10, 105);
+            radioNoNormalizeClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNoNormalizeClone.Name = "radioNoNormalizeClone";
-            radioNoNormalizeClone.Size = new Size(111, 19);
+            radioNoNormalizeClone.Size = new Size(166, 29);
             radioNoNormalizeClone.TabIndex = 43;
             radioNoNormalizeClone.Text = "Don't Normalize";
             radioNoNormalizeClone.UseVisualStyleBackColor = true;
@@ -380,10 +380,10 @@ namespace GmicAnimate
             // radioNormalizeMaxRangesClone
             // 
             radioNormalizeMaxRangesClone.AutoSize = true;
-            radioNormalizeMaxRangesClone.Location = new Point(7, 29);
-            radioNormalizeMaxRangesClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeMaxRangesClone.Location = new Point(10, 48);
+            radioNormalizeMaxRangesClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeMaxRangesClone.Name = "radioNormalizeMaxRangesClone";
-            radioNormalizeMaxRangesClone.Size = new Size(184, 19);
+            radioNormalizeMaxRangesClone.Size = new Size(274, 29);
             radioNormalizeMaxRangesClone.TabIndex = 41;
             radioNormalizeMaxRangesClone.Text = "Normalize Within Max Ranges";
             radioNormalizeMaxRangesClone.UseVisualStyleBackColor = true;
@@ -392,10 +392,10 @@ namespace GmicAnimate
             // radioNormalizeExtendedRangesClone
             // 
             radioNormalizeExtendedRangesClone.AutoSize = true;
-            radioNormalizeExtendedRangesClone.Location = new Point(7, 46);
-            radioNormalizeExtendedRangesClone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioNormalizeExtendedRangesClone.Location = new Point(10, 77);
+            radioNormalizeExtendedRangesClone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             radioNormalizeExtendedRangesClone.Name = "radioNormalizeExtendedRangesClone";
-            radioNormalizeExtendedRangesClone.Size = new Size(172, 19);
+            radioNormalizeExtendedRangesClone.Size = new Size(258, 29);
             radioNormalizeExtendedRangesClone.TabIndex = 42;
             radioNormalizeExtendedRangesClone.Text = "Normalize Extended Ranges";
             radioNormalizeExtendedRangesClone.UseVisualStyleBackColor = true;
@@ -404,10 +404,10 @@ namespace GmicAnimate
             // checkBoxAbsoluteMode
             // 
             checkBoxAbsoluteMode.AutoSize = true;
-            checkBoxAbsoluteMode.Location = new Point(440, 525);
-            checkBoxAbsoluteMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBoxAbsoluteMode.Location = new Point(629, 816);
+            checkBoxAbsoluteMode.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxAbsoluteMode.Name = "checkBoxAbsoluteMode";
-            checkBoxAbsoluteMode.Size = new Size(107, 19);
+            checkBoxAbsoluteMode.Size = new Size(161, 29);
             checkBoxAbsoluteMode.TabIndex = 46;
             checkBoxAbsoluteMode.Text = "Absolute Mode";
             toolTipExpressionsForm.SetToolTip(checkBoxAbsoluteMode, resources.GetString("checkBoxAbsoluteMode.ToolTip"));
@@ -417,8 +417,8 @@ namespace GmicAnimate
             // infoIconCopyAnimated
             // 
             infoIconCopyAnimated.Image = (Image)resources.GetObject("infoIconCopyAnimated.Image");
-            infoIconCopyAnimated.Location = new Point(300, 820);
-            infoIconCopyAnimated.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconCopyAnimated.Location = new Point(432, 1270);
+            infoIconCopyAnimated.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconCopyAnimated.Name = "infoIconCopyAnimated";
             infoIconCopyAnimated.Size = new Size(16, 16);
             infoIconCopyAnimated.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -429,8 +429,8 @@ namespace GmicAnimate
             // infoIconModeChangesCheckbox
             // 
             infoIconModeChangesCheckbox.Image = (Image)resources.GetObject("infoIconModeChangesCheckbox.Image");
-            infoIconModeChangesCheckbox.Location = new Point(961, 416);
-            infoIconModeChangesCheckbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconModeChangesCheckbox.Location = new Point(1418, 640);
+            infoIconModeChangesCheckbox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconModeChangesCheckbox.Name = "infoIconModeChangesCheckbox";
             infoIconModeChangesCheckbox.Size = new Size(16, 16);
             infoIconModeChangesCheckbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -441,8 +441,8 @@ namespace GmicAnimate
             // infoIconImperfectLoops
             // 
             infoIconImperfectLoops.Image = (Image)resources.GetObject("infoIconImperfectLoops.Image");
-            infoIconImperfectLoops.Location = new Point(1016, 677);
-            infoIconImperfectLoops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconImperfectLoops.Location = new Point(1454, 1040);
+            infoIconImperfectLoops.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconImperfectLoops.Name = "infoIconImperfectLoops";
             infoIconImperfectLoops.Size = new Size(16, 16);
             infoIconImperfectLoops.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -453,8 +453,8 @@ namespace GmicAnimate
             // infoIconAbsoluteModeExpressions
             // 
             infoIconAbsoluteModeExpressions.Image = (Image)resources.GetObject("infoIconAbsoluteModeExpressions.Image");
-            infoIconAbsoluteModeExpressions.Location = new Point(544, 525);
-            infoIconAbsoluteModeExpressions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconAbsoluteModeExpressions.Location = new Point(784, 822);
+            infoIconAbsoluteModeExpressions.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconAbsoluteModeExpressions.Name = "infoIconAbsoluteModeExpressions";
             infoIconAbsoluteModeExpressions.Size = new Size(16, 16);
             infoIconAbsoluteModeExpressions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -464,9 +464,10 @@ namespace GmicAnimate
             // 
             // btnApplyToChecked
             // 
-            btnApplyToChecked.Location = new Point(176, 785);
+            btnApplyToChecked.Location = new Point(251, 1205);
+            btnApplyToChecked.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnApplyToChecked.Name = "btnApplyToChecked";
-            btnApplyToChecked.Size = new Size(122, 27);
+            btnApplyToChecked.Size = new Size(174, 45);
             btnApplyToChecked.TabIndex = 47;
             btnApplyToChecked.Text = "Copy To Checked";
             btnApplyToChecked.UseVisualStyleBackColor = true;
@@ -474,9 +475,10 @@ namespace GmicAnimate
             // 
             // btnApplyToAnimated
             // 
-            btnApplyToAnimated.Location = new Point(176, 815);
+            btnApplyToAnimated.Location = new Point(251, 1255);
+            btnApplyToAnimated.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnApplyToAnimated.Name = "btnApplyToAnimated";
-            btnApplyToAnimated.Size = new Size(122, 27);
+            btnApplyToAnimated.Size = new Size(174, 45);
             btnApplyToAnimated.TabIndex = 48;
             btnApplyToAnimated.Text = "Copy To Animated";
             btnApplyToAnimated.UseVisualStyleBackColor = true;
@@ -484,9 +486,10 @@ namespace GmicAnimate
             // 
             // btnUncheckAll
             // 
-            btnUncheckAll.Location = new Point(332, 815);
+            btnUncheckAll.Location = new Point(474, 1255);
+            btnUncheckAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnUncheckAll.Name = "btnUncheckAll";
-            btnUncheckAll.Size = new Size(88, 27);
+            btnUncheckAll.Size = new Size(126, 45);
             btnUncheckAll.TabIndex = 49;
             btnUncheckAll.Text = "Uncheck All";
             btnUncheckAll.UseVisualStyleBackColor = true;
@@ -494,9 +497,10 @@ namespace GmicAnimate
             // 
             // btnResetExpressions
             // 
-            btnResetExpressions.Location = new Point(332, 718);
+            btnResetExpressions.Location = new Point(474, 1094);
+            btnResetExpressions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnResetExpressions.Name = "btnResetExpressions";
-            btnResetExpressions.Size = new Size(83, 23);
+            btnResetExpressions.Size = new Size(119, 38);
             btnResetExpressions.TabIndex = 50;
             btnResetExpressions.Text = "Reset All";
             btnResetExpressions.UseVisualStyleBackColor = true;
@@ -504,9 +508,10 @@ namespace GmicAnimate
             // 
             // btnCheckAll
             // 
-            btnCheckAll.Location = new Point(332, 785);
+            btnCheckAll.Location = new Point(474, 1205);
+            btnCheckAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCheckAll.Name = "btnCheckAll";
-            btnCheckAll.Size = new Size(88, 27);
+            btnCheckAll.Size = new Size(126, 45);
             btnCheckAll.TabIndex = 51;
             btnCheckAll.Text = "Check All";
             btnCheckAll.UseVisualStyleBackColor = true;
@@ -515,10 +520,10 @@ namespace GmicAnimate
             // btnExampleExp
             // 
             btnExampleExp.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExampleExp.Location = new Point(829, 718);
-            btnExampleExp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnExampleExp.Location = new Point(1173, 1094);
+            btnExampleExp.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnExampleExp.Name = "btnExampleExp";
-            btnExampleExp.Size = new Size(185, 45);
+            btnExampleExp.Size = new Size(264, 75);
             btnExampleExp.TabIndex = 56;
             btnExampleExp.Text = "t^(2*e)";
             btnExampleExp.UseVisualStyleBackColor = true;
@@ -527,10 +532,10 @@ namespace GmicAnimate
             // btnExampleSine
             // 
             btnExampleSine.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExampleSine.Location = new Point(443, 718);
-            btnExampleSine.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnExampleSine.Location = new Point(622, 1094);
+            btnExampleSine.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnExampleSine.Name = "btnExampleSine";
-            btnExampleSine.Size = new Size(185, 45);
+            btnExampleSine.Size = new Size(264, 75);
             btnExampleSine.TabIndex = 17;
             btnExampleSine.Text = "sin(2*pi*t)";
             btnExampleSine.UseVisualStyleBackColor = true;
@@ -541,11 +546,12 @@ namespace GmicAnimate
             dropdownExamplesNonLoops.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             dropdownExamplesNonLoops.Font = new Font("Cascadia Code", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dropdownExamplesNonLoops.FormattingEnabled = true;
-            dropdownExamplesNonLoops.ItemHeight = 25;
+            dropdownExamplesNonLoops.ItemHeight = 37;
             dropdownExamplesNonLoops.Items.AddRange(new object[] { "-tanh(2*cos(0.5*pi*t+pi*0.5))", "e/(t/3+.01)", "t^t", "abs(sin(pi*t))", "atan(exp(t*5))", "atan(exp(t*-5))", "0.04*cos(3*t) + 0.02*cos(10*t)", "-1*(t+sin(t*5*pi)/4)", "(t+sin(t*5*pi)/4)", "cos(exp(t*pi))" });
-            dropdownExamplesNonLoops.Location = new Point(553, 587);
+            dropdownExamplesNonLoops.Location = new Point(797, 919);
+            dropdownExamplesNonLoops.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dropdownExamplesNonLoops.Name = "dropdownExamplesNonLoops";
-            dropdownExamplesNonLoops.Size = new Size(461, 33);
+            dropdownExamplesNonLoops.Size = new Size(650, 45);
             dropdownExamplesNonLoops.TabIndex = 64;
             dropdownExamplesNonLoops.SelectedIndexChanged += dropdownExampleNonLoops_SelectedIndexChanged;
             // 
@@ -553,9 +559,10 @@ namespace GmicAnimate
             // 
             labelExamplesNonLoops.AutoSize = true;
             labelExamplesNonLoops.Font = new Font("Segoe UI", 12F);
-            labelExamplesNonLoops.Location = new Point(456, 593);
+            labelExamplesNonLoops.Location = new Point(651, 929);
+            labelExamplesNonLoops.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelExamplesNonLoops.Name = "labelExamplesNonLoops";
-            labelExamplesNonLoops.Size = new Size(91, 21);
+            labelExamplesNonLoops.Size = new Size(138, 32);
             labelExamplesNonLoops.TabIndex = 65;
             labelExamplesNonLoops.Text = "Non-Loops:";
             // 
@@ -564,11 +571,12 @@ namespace GmicAnimate
             dropdownExampleLoops.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             dropdownExampleLoops.Font = new Font("Cascadia Code", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dropdownExampleLoops.FormattingEnabled = true;
-            dropdownExampleLoops.ItemHeight = 25;
+            dropdownExampleLoops.ItemHeight = 37;
             dropdownExampleLoops.Items.AddRange(new object[] { "exp(sin(2*pi*t))", "sin(2*pi*sin(2*pi*t))", "cos(2*pi*cos(pi*t))", "sin(2*pi*t)* exp(-sin(2*pi*t))", "(sin(2*pi*t))^3", "tanh(cos(2*pi*t))", "cos(2*pi*t)*exp(-cos(2*pi*t))", "atan(sin(2*pi*t))", "airyai(sin(2*pi*t))", "sech(tan(2*pi*t))", "-acsc(abs(sec(pi*(t))))", "atanh(sin(2*pi*t+.01))", "ln(abs(cos(pi*t)))", "abs(sin(2*pi*t) + cos(4*pi*t))", "acos(sech(tan(pi*t)))", "abs(sech(csc(2*pi*(t+.01))))" });
-            dropdownExampleLoops.Location = new Point(553, 626);
+            dropdownExampleLoops.Location = new Point(796, 971);
+            dropdownExampleLoops.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dropdownExampleLoops.Name = "dropdownExampleLoops";
-            dropdownExampleLoops.Size = new Size(461, 33);
+            dropdownExampleLoops.Size = new Size(650, 45);
             dropdownExampleLoops.TabIndex = 66;
             dropdownExampleLoops.SelectedIndexChanged += dropdownExamplePerfectLoops_SelectedIndexChanged;
             // 
@@ -576,10 +584,11 @@ namespace GmicAnimate
             // 
             labelExamplesPerfectLoops.AutoSize = true;
             labelExamplesPerfectLoops.Font = new Font("Segoe UI", 12F);
-            labelExamplesPerfectLoops.Location = new Point(441, 632);
+            labelExamplesPerfectLoops.Location = new Point(629, 981);
+            labelExamplesPerfectLoops.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelExamplesPerfectLoops.Name = "labelExamplesPerfectLoops";
             labelExamplesPerfectLoops.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            labelExamplesPerfectLoops.Size = new Size(106, 21);
+            labelExamplesPerfectLoops.Size = new Size(162, 32);
             labelExamplesPerfectLoops.TabIndex = 67;
             labelExamplesPerfectLoops.Text = "Perfect Loops:";
             // 
@@ -588,10 +597,10 @@ namespace GmicAnimate
             labelReplacingXWithT.AutoSize = true;
             labelReplacingXWithT.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelReplacingXWithT.ForeColor = Color.OrangeRed;
-            labelReplacingXWithT.Location = new Point(520, 27);
-            labelReplacingXWithT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelReplacingXWithT.Location = new Point(743, 45);
+            labelReplacingXWithT.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelReplacingXWithT.Name = "labelReplacingXWithT";
-            labelReplacingXWithT.Size = new Size(376, 30);
+            labelReplacingXWithT.Size = new Size(527, 44);
             labelReplacingXWithT.TabIndex = 68;
             labelReplacingXWithT.Text = "Warning: The 'x' in the expression will be evaluated as 't'.\r\nClick the graph preview button for details.";
             labelReplacingXWithT.Visible = false;
@@ -600,10 +609,11 @@ namespace GmicAnimate
             // 
             labelExamplesImperfectLoops.AutoSize = true;
             labelExamplesImperfectLoops.Font = new Font("Segoe UI", 12F);
-            labelExamplesImperfectLoops.Location = new Point(422, 672);
+            labelExamplesImperfectLoops.Location = new Point(603, 1038);
+            labelExamplesImperfectLoops.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelExamplesImperfectLoops.Name = "labelExamplesImperfectLoops";
             labelExamplesImperfectLoops.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            labelExamplesImperfectLoops.Size = new Size(125, 21);
+            labelExamplesImperfectLoops.Size = new Size(191, 32);
             labelExamplesImperfectLoops.TabIndex = 70;
             labelExamplesImperfectLoops.Text = "Imperfect Loops:";
             // 
@@ -612,19 +622,21 @@ namespace GmicAnimate
             dropdownExamplesImperfectLoops.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             dropdownExamplesImperfectLoops.Font = new Font("Cascadia Code", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dropdownExamplesImperfectLoops.FormattingEnabled = true;
-            dropdownExamplesImperfectLoops.ItemHeight = 25;
+            dropdownExamplesImperfectLoops.ItemHeight = 37;
             dropdownExamplesImperfectLoops.Items.AddRange(new object[] { "sin(4*pi*t)*exp(-t)", "coth(cos(2*pi*t))", "sec(tan(pi*(t)))", "atan(1/4*csc(pi/2+pi*(t)))" });
-            dropdownExamplesImperfectLoops.Location = new Point(553, 665);
+            dropdownExamplesImperfectLoops.Location = new Point(797, 1026);
+            dropdownExamplesImperfectLoops.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dropdownExamplesImperfectLoops.Name = "dropdownExamplesImperfectLoops";
-            dropdownExamplesImperfectLoops.Size = new Size(461, 33);
+            dropdownExamplesImperfectLoops.Size = new Size(650, 45);
             dropdownExamplesImperfectLoops.TabIndex = 69;
             dropdownExamplesImperfectLoops.SelectedIndexChanged += dropdownExamplesImperfectLoops_SelectedIndexChanged;
             // 
             // btnCompareSave
             // 
-            btnCompareSave.Location = new Point(740, 386);
+            btnCompareSave.Location = new Point(1087, 584);
+            btnCompareSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCompareSave.Name = "btnCompareSave";
-            btnCompareSave.Size = new Size(120, 23);
+            btnCompareSave.Size = new Size(171, 38);
             btnCompareSave.TabIndex = 71;
             btnCompareSave.Text = "Save to Compare";
             btnCompareSave.UseVisualStyleBackColor = true;
@@ -632,9 +644,10 @@ namespace GmicAnimate
             // 
             // btnResetCompare
             // 
-            btnResetCompare.Location = new Point(866, 386);
+            btnResetCompare.Location = new Point(1267, 584);
+            btnResetCompare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnResetCompare.Name = "btnResetCompare";
-            btnResetCompare.Size = new Size(120, 23);
+            btnResetCompare.Size = new Size(171, 38);
             btnResetCompare.TabIndex = 72;
             btnResetCompare.Text = "Reset Comparison";
             btnResetCompare.UseVisualStyleBackColor = true;
@@ -645,9 +658,10 @@ namespace GmicAnimate
             checkBoxCompareUpdateNormalization.AutoSize = true;
             checkBoxCompareUpdateNormalization.Checked = true;
             checkBoxCompareUpdateNormalization.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxCompareUpdateNormalization.Location = new Point(740, 415);
+            checkBoxCompareUpdateNormalization.Location = new Point(1087, 633);
+            checkBoxCompareUpdateNormalization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             checkBoxCompareUpdateNormalization.Name = "checkBoxCompareUpdateNormalization";
-            checkBoxCompareUpdateNormalization.Size = new Size(222, 19);
+            checkBoxCompareUpdateNormalization.Size = new Size(334, 29);
             checkBoxCompareUpdateNormalization.TabIndex = 73;
             checkBoxCompareUpdateNormalization.Text = "Apply Mode Changes to Comparison";
             checkBoxCompareUpdateNormalization.UseVisualStyleBackColor = true;
@@ -655,9 +669,10 @@ namespace GmicAnimate
             // 
             // btnShowFunctionInfo
             // 
-            btnShowFunctionInfo.Location = new Point(774, 827);
+            btnShowFunctionInfo.Location = new Point(1102, 1247);
+            btnShowFunctionInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnShowFunctionInfo.Name = "btnShowFunctionInfo";
-            btnShowFunctionInfo.Size = new Size(145, 32);
+            btnShowFunctionInfo.Size = new Size(207, 53);
             btnShowFunctionInfo.TabIndex = 77;
             btnShowFunctionInfo.Text = "Supported Functions";
             btnShowFunctionInfo.UseVisualStyleBackColor = true;
@@ -666,19 +681,21 @@ namespace GmicAnimate
             // txtComparedExpression
             // 
             txtComparedExpression.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtComparedExpression.Location = new Point(815, 437);
+            txtComparedExpression.Location = new Point(1194, 669);
+            txtComparedExpression.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtComparedExpression.Name = "txtComparedExpression";
             txtComparedExpression.ReadOnly = true;
-            txtComparedExpression.Size = new Size(171, 23);
+            txtComparedExpression.Size = new Size(243, 31);
             txtComparedExpression.TabIndex = 78;
             // 
             // labelComparisonExpressionTextBox
             // 
             labelComparisonExpressionTextBox.AutoSize = true;
             labelComparisonExpressionTextBox.Enabled = false;
-            labelComparisonExpressionTextBox.Location = new Point(734, 442);
+            labelComparisonExpressionTextBox.Location = new Point(1079, 678);
+            labelComparisonExpressionTextBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelComparisonExpressionTextBox.Name = "labelComparisonExpressionTextBox";
-            labelComparisonExpressionTextBox.Size = new Size(75, 15);
+            labelComparisonExpressionTextBox.Size = new Size(113, 25);
             labelComparisonExpressionTextBox.TabIndex = 79;
             labelComparisonExpressionTextBox.Text = "Comparison:";
             // 
@@ -687,18 +704,19 @@ namespace GmicAnimate
             checkBoxAutoUpdateMainWindow.AutoSize = true;
             checkBoxAutoUpdateMainWindow.Checked = true;
             checkBoxAutoUpdateMainWindow.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxAutoUpdateMainWindow.Location = new Point(669, 522);
+            checkBoxAutoUpdateMainWindow.Location = new Point(956, 811);
+            checkBoxAutoUpdateMainWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             checkBoxAutoUpdateMainWindow.Name = "checkBoxAutoUpdateMainWindow";
-            checkBoxAutoUpdateMainWindow.Size = new Size(279, 19);
+            checkBoxAutoUpdateMainWindow.Size = new Size(419, 29);
             checkBoxAutoUpdateMainWindow.TabIndex = 80;
             checkBoxAutoUpdateMainWindow.Text = "Auto Update Main Window Custom Expressions";
             checkBoxAutoUpdateMainWindow.UseVisualStyleBackColor = true;
             // 
             // ExpressionsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new Size(1045, 871);
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            ClientSize = new Size(1493, 1317);
             Controls.Add(checkBoxAutoUpdateMainWindow);
             Controls.Add(labelComparisonExpressionTextBox);
             Controls.Add(txtComparedExpression);
@@ -742,7 +760,6 @@ namespace GmicAnimate
             Controls.Add(labelCurrentExpressionString);
             Controls.Add(txtCurrentExpressionParamString);
             Controls.Add(dataGridViewExpressions);
-            Margin = new System.Windows.Forms.Padding(2);
             Name = "ExpressionsForm";
             Text = "Mathematical Expressions For Parameters";
             ((System.ComponentModel.ISupportInitialize)dataGridViewExpressions).EndInit();
