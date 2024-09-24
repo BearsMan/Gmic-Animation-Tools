@@ -2011,8 +2011,8 @@ namespace GmicFilterAnimatorApp
 
                     if (newIncrement != -1)
                     {
-                         increment = (double)newIncrement;
-                         totalFrames = CalcTotalFrames(startValue, endValue, increment);
+                        increment = (double)newIncrement;
+                        totalFrames = CalcTotalFrames(startValue, endValue, increment);
                     }
                     else
                     {
@@ -3158,6 +3158,11 @@ namespace GmicFilterAnimatorApp
                 System.Diagnostics.Debug.WriteLine($"GroupBox '{groupBoxName}' not found.");
             }
 
+        }
+
+        private void buttonClearFilterSearch_Click(object sender, EventArgs e)
+        {
+            txtSearchBoxMain.Text = "";
         }
     }
 

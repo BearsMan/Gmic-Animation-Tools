@@ -98,6 +98,7 @@
             groupBoxAdvancedOptions = new System.Windows.Forms.GroupBox();
             groupBoxTools = new System.Windows.Forms.GroupBox();
             groupBoxInterpolation = new System.Windows.Forms.GroupBox();
+            buttonClearFilterSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIndex).BeginInit();
@@ -745,7 +746,7 @@
             txtSearchBoxMain.Location = new System.Drawing.Point(177, 746);
             txtSearchBoxMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtSearchBoxMain.Name = "txtSearchBoxMain";
-            txtSearchBoxMain.Size = new System.Drawing.Size(527, 31);
+            txtSearchBoxMain.Size = new System.Drawing.Size(483, 31);
             txtSearchBoxMain.TabIndex = 48;
             txtSearchBoxMain.TextChanged += txtSearchBoxMain_TextChanged;
             // 
@@ -918,11 +919,25 @@
             groupBoxInterpolation.TabStop = false;
             groupBoxInterpolation.Text = "Interolation Modes";
             // 
+            // buttonClearFilterSearch
+            // 
+            buttonClearFilterSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            buttonClearFilterSearch.Location = new System.Drawing.Point(669, 746);
+            buttonClearFilterSearch.Name = "buttonClearFilterSearch";
+            buttonClearFilterSearch.Size = new System.Drawing.Size(35, 31);
+            buttonClearFilterSearch.TabIndex = 67;
+            buttonClearFilterSearch.Text = "X";
+            toolTip1.SetToolTip(buttonClearFilterSearch, "Clears the text in the search box");
+            buttonClearFilterSearch.UseCompatibleTextRendering = true;
+            buttonClearFilterSearch.UseVisualStyleBackColor = true;
+            buttonClearFilterSearch.Click += buttonClearFilterSearch_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             ClientSize = new System.Drawing.Size(1179, 1030);
+            Controls.Add(buttonClearFilterSearch);
             Controls.Add(groupBoxTools);
             Controls.Add(groupBoxAdvancedOptions);
             Controls.Add(groupBoxOptions);
@@ -1066,5 +1081,6 @@
         private System.Windows.Forms.GroupBox groupBoxAdvancedOptions;
         private System.Windows.Forms.GroupBox groupBoxTools;
         private System.Windows.Forms.GroupBox groupBoxInterpolation;
+        private System.Windows.Forms.Button buttonClearFilterSearch;
     }
 }
