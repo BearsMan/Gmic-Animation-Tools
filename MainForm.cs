@@ -2521,13 +2521,16 @@ namespace GmicFilterAnimatorApp
                 // Show the warning label and explainer button
                 labelWarnSameStartEnd.Visible = true;
                 buttonShowFramesDisabledWarningExplain.Visible = true;
+                // Make the button on top
+                buttonShowFramesDisabledWarningExplain.BringToFront();
 
             }
             else if (otherProblemReason == "invalidparams")
             {
-                labelWarnSameStartEnd.Text = "                Warning:\r\nInvalid start or end parameters.";
+                labelWarnSameStartEnd.Text = "                Warning:\r\nInvalid start/end parameters.";
                 labelWarnSameStartEnd.Visible = true;
                 buttonShowFramesDisabledWarningExplain.Visible = true;
+                buttonShowFramesDisabledWarningExplain.BringToFront();
             }
 
         }
@@ -3324,7 +3327,7 @@ namespace GmicFilterAnimatorApp
                     fixMessage = "How to Fix:  Ensure the starting and ending parameter values above are both valid.";
                     break;
                 case "samestartend":
-                    fixMessage = "How to Fix:  Just select a master parameter that has valid start/end values.";
+                    fixMessage = "How to Fix:  Just select a master parameter that has different start/end values.";
                     break;
             }
 

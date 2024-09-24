@@ -581,9 +581,9 @@
             // 
             buttonShowFramesDisabledWarningExplain.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             buttonShowFramesDisabledWarningExplain.ForeColor = System.Drawing.Color.DarkRed;
-            buttonShowFramesDisabledWarningExplain.Location = new System.Drawing.Point(266, 326);
+            buttonShowFramesDisabledWarningExplain.Location = new System.Drawing.Point(81, 307);
             buttonShowFramesDisabledWarningExplain.Name = "buttonShowFramesDisabledWarningExplain";
-            buttonShowFramesDisabledWarningExplain.Size = new System.Drawing.Size(26, 37);
+            buttonShowFramesDisabledWarningExplain.Size = new System.Drawing.Size(26, 29);
             buttonShowFramesDisabledWarningExplain.TabIndex = 70;
             buttonShowFramesDisabledWarningExplain.Text = "?";
             toolTip1.SetToolTip(buttonShowFramesDisabledWarningExplain, "Clears the text in the search box");
