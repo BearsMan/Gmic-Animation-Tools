@@ -1371,8 +1371,12 @@ namespace GmicFilterAnimatorApp
             string logFileName = "log.txt";
             StringBuilder logContents = new StringBuilder();  // Create a StringBuilder to accumulate log data
             string verbosity = ""; // Set it to the verbose setting for Gmic, such as '-verbose 3', '-debug' etc
-            bool useSingleThreadPerProcess = checkBoxSingleThreadMode.Checked;
 
+            bool useSingleThreadPerProcess = checkBoxSingleThreadMode.Checked;
+            if (useSingleThreadPerProcess)
+            {
+                parallelJobs = 1;
+            }
 
             double progressIncrement = 100.0 / totalFrames;
             double progressPercent = 0;
