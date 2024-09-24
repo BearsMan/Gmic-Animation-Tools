@@ -257,7 +257,10 @@ namespace GmicAnimate
             string[] expressionsList = string.IsNullOrEmpty(customExpressionStringFromMainWindow) ? null : customExpressionStringFromMainWindow.Split(',');
 
             // Update the data grid view
+            //Disable cell value change events
+            dataGridViewExpressions.CellValueChanged -= dataGridViewExpressions_CellValueChanged;
             UpdateExpressionsDataGridView(expressionsList, masterParamIndexFromMainWindow);
+            dataGridViewExpressions.CellValueChanged += dataGridViewExpressions_CellValueChanged;
         }
 
         private void UpdateExpressionsDataGridView(string[] expressions, int masterParamIndex)
@@ -625,8 +628,8 @@ namespace GmicAnimate
                 return;
             }
 
-            // If cell value is null, return (don't graph)
-            if (dataGridViewExpressions.Rows[masterParamIndexFromMainWindow].Cells["Expression"].Value == null)
+            // If cell value is null or doesn't exist, return (don't graph)
+            if ((masterParamIndexFromMainWindow > dataGridViewExpressions.Rows.Count) || (dataGridViewExpressions.Rows[masterParamIndexFromMainWindow].Cells["Expression"].Value == null))
             {
                 return;
             }
@@ -1189,6 +1192,7 @@ namespace GmicAnimate
             }
         }
 
+        // Get the indexes of parameters that are animated, in other words start/end values differ
         private List<int> GetAnimatedParamIndexes()
         {
             // First get the parameter values from the main form

@@ -2748,6 +2748,8 @@ namespace GmicFilterAnimatorApp
             // Set master parameter to the first one because if you switch to a new filter that doesn't have that many it will be problematic
             nudMasterParamIndex.Value = 1;
             nudMasterParamIndex.Maximum = FilterParameters.GetActiveParameterCount();
+            // Need to set the index itself, not just the nud value
+            nudMasterParamIndex_ValueChanged(null, null);
 
             // Reset the parameter info window
             if (Application.OpenForms["ParamNamesForm"] != null)
@@ -2999,8 +3001,10 @@ namespace GmicFilterAnimatorApp
             try
             {
                 FilterParameters.SetActiveFilter(filterFriendlyName);
-                // Set master parameter index 1 to ensure it's within the new filter's range
+                // Set master parameter index 1 to ensure it's within the new filter's range. Don't trigger handler
+                nudMasterParamIndex.ValueChanged -= nudMasterParamIndex_ValueChanged;
                 nudMasterParamIndex.Value = 1;
+                nudMasterParamIndex.ValueChanged += nudMasterParamIndex_ValueChanged;
 
                 UpdateParameterUI();  // Refresh UI with the new active filter's parameters
             }
