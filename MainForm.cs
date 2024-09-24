@@ -71,6 +71,9 @@ namespace GmicFilterAnimatorApp
         public int formDefaultHeight = 0;
         public int listBoxDefaultHeight = 0;
 
+        // Create variable to store strings for problems to display in messages
+        private string disabledTotalFramesProblem = null;
+
         public MainForm()
         {
             InitializeComponent();
@@ -2085,6 +2088,9 @@ namespace GmicFilterAnimatorApp
 
         private void txtStartParams_TextChanged(object sender, EventArgs e)
         {
+            bool? startEndSame = null;
+            string otherProblemReason = null;
+
             // Check if both parameter strings exist
             if (!string.IsNullOrEmpty(txtEndParams.Text) && !string.IsNullOrEmpty(txtStartParams.Text))
             {
@@ -2133,6 +2139,8 @@ namespace GmicFilterAnimatorApp
                     //Check if the start and end parameters for master parameter are different
                     if (startParamArray[(int)nudMasterParamIndex.Value - 1] != endParamArray[(int)nudMasterParamIndex.Value - 1])
                     {
+                        startEndSame = false;
+
                         // Enable the total frames and master increment boxes
                         EnableFrameAndMasterParamBoxes();
                         // Update total frames
@@ -2151,15 +2159,41 @@ namespace GmicFilterAnimatorApp
                         // Return so the rest of the code is not executed, otherwise will disable the boxes again
                         return;
                     }
+                    // Otherwise if they're the same but checkbox to auto switch is checked, find a parameter that has different start and end values and set it as the master parameter
+                    else if (checkBoxAutoMasterParamIndex.Checked)
+                    {
+                        bool successfulSwitchParms = AutoSwitchMasterParamIndex(startParamArray: startParamArray, endParamArray: endParamArray);
+
+                        if (successfulSwitchParms)
+                        {
+                            // Return so the rest of the code is not executed, otherwise will disable the boxes again
+                            return;
+                        }
+                        else
+                        {
+                            startEndSame = true;
+                            otherProblemReason = "allsame";
+                        }
+                        //return;
+
+                    }
+                    else
+                    {
+                        startEndSame = true;
+                    }
+
                     RefreshGraph();
                 }
             }
             // If proper start params are not set, disable the total frames and master increment boxes
-            DisableFrameAndMasterParamBoxes();
+            DisableFrameAndMasterParamBoxes(reasonSameStartEnd: startEndSame, otherProblemReason: otherProblemReason);
         }
 
         private void txtEndParams_TextChanged(object sender, EventArgs e)
         {
+            bool? startEndSame = null;
+            string otherProblemReason = null;
+
             // Silently check if both parameter strings exist
             if (!string.IsNullOrEmpty(txtEndParams.Text) && !string.IsNullOrEmpty(txtStartParams.Text))
             {
@@ -2205,8 +2239,10 @@ namespace GmicFilterAnimatorApp
                         paramNamesForm.UpdateParamValues(ParseParamsToDoublesArray(txtStartParams.Text, silent: true), ParseParamsToDoublesArray(txtEndParams.Text, silent: true), (int)nudMasterParamIndex.Value - 1);
                     }
 
+                    // Check if the start and end parameters for master parameter are different. If so, enable the total frames and master increment boxes
                     if (startParamArray[(int)nudMasterParamIndex.Value - 1] != endParamArray[(int)nudMasterParamIndex.Value - 1])
                     {
+                        startEndSame = false;
                         // Also ensure the parameter type is not text
                         if (!FilterParameters.ActiveFilter.Parameters[(int)nudMasterParamIndex.Value - 1].Type.ToLower().Equals("text"))
                         {
@@ -2222,12 +2258,56 @@ namespace GmicFilterAnimatorApp
                             return;
                         }
                     }
+                    // Otherwise if they're the same but checkbox to auto switch is checked, find a parameter that has different start and end values and set it as the master parameter
+                    else if (checkBoxAutoMasterParamIndex.Checked)
+                    {
+                        bool successfulSwitchParms = AutoSwitchMasterParamIndex(startParamArray: startParamArray, endParamArray: endParamArray);
+
+                        if (successfulSwitchParms)
+                        {
+                            // Return so the rest of the code is not executed, otherwise will disable the boxes again
+                            return;
+                        }
+                        else
+                        {
+                            startEndSame = true;
+                            otherProblemReason = "allsame";
+                        }
+                        //return;
+                    }
+                    else
+                    {
+                        startEndSame = true;
+                    }
+
                     RefreshGraph();
                 }
 
             }
             // If proper start params are not set, disable the total frames and master increment boxes
-            DisableFrameAndMasterParamBoxes();
+            DisableFrameAndMasterParamBoxes(reasonSameStartEnd: startEndSame, otherProblemReason: otherProblemReason);
+        }
+
+        private bool AutoSwitchMasterParamIndex(double[] startParamArray, double[] endParamArray, bool checkSameOnly = false)
+        {
+            for (int i = 0; i < FilterParameters.ActiveFilter.Parameters.Count; i++)
+            {
+                if (startParamArray[i] != endParamArray[i])
+                {
+                    // Also ensure the parameter type isn't text
+                    if (!FilterParameters.ActiveFilter.Parameters[i].Type.ToLower().Equals("text"))
+                    {
+                        if (!checkSameOnly)
+                        {
+                            // Set the master parameter index to the index of the parameter
+                            nudMasterParamIndex.Value = i + 1;
+                        }
+                        return true;
+                    }
+                }
+            }
+            // If reaching this point it means no different parameters were found, and will return false
+            return false;
         }
 
         // Function to parse out a filter name from the string with parameters in case it's there
@@ -2293,6 +2373,9 @@ namespace GmicFilterAnimatorApp
 
         private void nudMasterParamIndex_ValueChanged(object sender, EventArgs e)
         {
+            bool? startEndSame = null;
+            string otherProblemReason = null;
+
             // Update param info form if open with new index
             if (Application.OpenForms["ParamNamesForm"] != null)
             {
@@ -2341,16 +2424,32 @@ namespace GmicFilterAnimatorApp
 
                     return;
                 }
+                // Check if all parameters are the same start/end. Calls the auto switch function in check-only mode
+                else if (!AutoSwitchMasterParamIndex(startParamArray: startValueArray, endParamArray: endValueArray, checkSameOnly: true))
+                {
+                    // This means all the parameters are the same
+                    startEndSame = true;
+                    otherProblemReason = "allsame";
+                }
+                // If the current start/end value are the same, but not all of them
+                else if (startValue == endValue)
+                {
+                    startEndSame = true;
+                }
+            }
+            else
+            {
+                otherProblemReason = "invalidparams";
             }
 
-            DisableFrameAndMasterParamBoxes();
+            DisableFrameAndMasterParamBoxes(reasonSameStartEnd: startEndSame, otherProblemReason: otherProblemReason);
 
         }
 
         private void WriteLatestParamNameStringLabel()
         {
             // Update label to show current name corresponding to the index
-            string labelTextStr = "= ";
+            string labelTextStr = "⤷ ";
             if (nudMasterParamIndex.Value > 0 && nudMasterParamIndex.Value <= FilterParameters.GetActiveParameterCount())
             {
                 labelTextStr += FilterParameters.GetActiveFilterParameters()[(int)nudMasterParamIndex.Value - 1].Name;
@@ -2396,10 +2495,36 @@ namespace GmicFilterAnimatorApp
             }
         }
 
-        private void DisableFrameAndMasterParamBoxes()
+        private void DisableFrameAndMasterParamBoxes(bool? reasonSameStartEnd = false, string otherProblemReason = null)
         {
             nudMasterParamIncrement.Enabled = false;
             nudTotalFrames.Enabled = false;
+            disabledTotalFramesProblem = otherProblemReason;
+
+            if (reasonSameStartEnd == true)
+            {
+                if (otherProblemReason == "allsame")
+                {
+                    labelWarnSameStartEnd.Text = "                Warning:\r\nStart && End values are the same";
+                }
+                // This case if the start/end of the current master parameter is the same, but not necessarily all of them
+                else
+                {
+                    labelWarnSameStartEnd.Text = "                Warning:\r\nstart && end values of master\n" +
+                                                                            "parameter are the same";
+                    disabledTotalFramesProblem = "samestartend";
+                }
+                // Show the warning label and explainer button
+                labelWarnSameStartEnd.Visible = true;
+                buttonShowFramesDisabledWarningExplain.Visible = true;
+
+            }
+            else if (otherProblemReason == "invalidparams")
+            {
+                labelWarnSameStartEnd.Text = "                Warning:\r\nInvalid start or end parameters.";
+                labelWarnSameStartEnd.Visible = true;
+                buttonShowFramesDisabledWarningExplain.Visible = true;
+            }
 
         }
 
@@ -2409,6 +2534,10 @@ namespace GmicFilterAnimatorApp
             nudTotalFrames.Enabled = true;
             //nudMasterParamIncrement.ForeColor = SystemColors.WindowText; // To make the text visible
             //nudTotalFrames.ForeColor = SystemColors.WindowText; // To make the text visible
+
+            // Hide the warning label and explainer button
+            labelWarnSameStartEnd.Visible = false;
+            buttonShowFramesDisabledWarningExplain.Visible = false;
         }
 
         private void TestButton1_Click(object sender, EventArgs e)
@@ -3163,6 +3292,45 @@ namespace GmicFilterAnimatorApp
         private void buttonClearFilterSearch_Click(object sender, EventArgs e)
         {
             txtSearchBoxMain.Text = "";
+        }
+
+        private void checkBoxAutoMasterParamIndex_CheckedChanged(object sender, EventArgs e)
+        {
+            // If enabled, disable the master param index NUD
+            //if (checkBoxAutoMasterParamIndex.Checked)
+            //{
+            //    nudMasterParamIndex.Enabled = false;
+            //}
+            //else
+            //{
+            //    nudMasterParamIndex.Enabled = true;
+            //}
+        }
+
+        private void buttonShowFramesDisabledWarningExplain_Click(object sender, EventArgs e)
+        {
+            string fixMessage = "";
+            switch (disabledTotalFramesProblem)
+            {
+                // Choose full fix message based on total frames problem
+                case "allsame":
+                    fixMessage = "How to Fix:  Make sure at least one of the parameters has a different start and end value.";
+                    break;
+                case "invalidparams":
+                    fixMessage = "How to Fix:  Ensure the starting and ending parameter values above are both valid.";
+                    break;
+                case "samestartend":
+                    fixMessage = "How to Fix:  Just select a master parameter that has valid start/end values.";
+                    break;
+            }
+
+            MessageBox.Show("The start and end values of the master parameter are the same and therefore would result in no animation, so the Total Frames box is disabled." +
+                "\n\n" + fixMessage +
+                "\n\n" + "-----------------------------------------------------------" + "\n\n" +
+                "Technical Explanation:" +
+              "\nBehind the scenes, the starting and ending values of the master parameter are used when calculating the number of frames." +
+              "\nEven if multiple parameters will be animated, not just the master parameter, one must arbitrarily be chosen for this calculation, which is the master parameter."
+            );
         }
     }
 

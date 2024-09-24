@@ -68,6 +68,8 @@
             infoIconFilterSearch = new System.Windows.Forms.PictureBox();
             infoIconAbsoluteModeMain = new System.Windows.Forms.PictureBox();
             buttonClearFilterSearch = new System.Windows.Forms.Button();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            buttonShowFramesDisabledWarningExplain = new System.Windows.Forms.Button();
             btnShowParamNames = new System.Windows.Forms.Button();
             labelTotalFrames = new System.Windows.Forms.Label();
             TextLabelNearStartButton = new System.Windows.Forms.Label();
@@ -100,6 +102,8 @@
             groupBoxTools = new System.Windows.Forms.GroupBox();
             groupBoxInterpolation = new System.Windows.Forms.GroupBox();
             groupBoxAdvancedControl = new System.Windows.Forms.GroupBox();
+            checkBoxAutoMasterParamIndex = new System.Windows.Forms.CheckBox();
+            labelWarnSameStartEnd = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIndex).BeginInit();
@@ -116,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)infoIconRemoveBlankFrames).BeginInit();
             ((System.ComponentModel.ISupportInitialize)infoIconFilterSearch).BeginInit();
             ((System.ComponentModel.ISupportInitialize)infoIconAbsoluteModeMain).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBoxNormalizeRadios.SuspendLayout();
             statusStrip1.SuspendLayout();
             groupBoxOptions.SuspendLayout();
@@ -127,7 +132,7 @@
             // 
             // nudTotalFrames
             // 
-            nudTotalFrames.Location = new System.Drawing.Point(123, 264);
+            nudTotalFrames.Location = new System.Drawing.Point(147, 271);
             nudTotalFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudTotalFrames.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudTotalFrames.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
@@ -261,10 +266,10 @@
             rbNoExponents.Location = new System.Drawing.Point(28, 36);
             rbNoExponents.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             rbNoExponents.Name = "rbNoExponents";
-            rbNoExponents.Size = new System.Drawing.Size(201, 29);
+            rbNoExponents.Size = new System.Drawing.Size(260, 29);
             rbNoExponents.TabIndex = 11;
             rbNoExponents.TabStop = true;
-            rbNoExponents.Text = "Linear Interopolation";
+            rbNoExponents.Text = "Simple Linear Interopolation";
             rbNoExponents.UseVisualStyleBackColor = true;
             rbNoExponents.CheckedChanged += rbNoExponents_CheckedChanged;
             // 
@@ -441,7 +446,7 @@
             // InfoIconLinearInterpolation
             // 
             InfoIconLinearInterpolation.Image = (System.Drawing.Image)resources.GetObject("InfoIconLinearInterpolation.Image");
-            InfoIconLinearInterpolation.Location = new System.Drawing.Point(225, 43);
+            InfoIconLinearInterpolation.Location = new System.Drawing.Point(285, 44);
             InfoIconLinearInterpolation.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconLinearInterpolation.Name = "InfoIconLinearInterpolation";
             InfoIconLinearInterpolation.Size = new System.Drawing.Size(16, 16);
@@ -560,6 +565,32 @@
             buttonClearFilterSearch.UseVisualStyleBackColor = true;
             buttonClearFilterSearch.Click += buttonClearFilterSearch_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(360, 83);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(16, 16);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
+            toolTip1.SetToolTip(pictureBox2, resources.GetString("pictureBox2.ToolTip"));
+            // 
+            // buttonShowFramesDisabledWarningExplain
+            // 
+            buttonShowFramesDisabledWarningExplain.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            buttonShowFramesDisabledWarningExplain.ForeColor = System.Drawing.Color.DarkRed;
+            buttonShowFramesDisabledWarningExplain.Location = new System.Drawing.Point(266, 326);
+            buttonShowFramesDisabledWarningExplain.Name = "buttonShowFramesDisabledWarningExplain";
+            buttonShowFramesDisabledWarningExplain.Size = new System.Drawing.Size(26, 37);
+            buttonShowFramesDisabledWarningExplain.TabIndex = 70;
+            buttonShowFramesDisabledWarningExplain.Text = "?";
+            toolTip1.SetToolTip(buttonShowFramesDisabledWarningExplain, "Clears the text in the search box");
+            buttonShowFramesDisabledWarningExplain.UseCompatibleTextRendering = true;
+            buttonShowFramesDisabledWarningExplain.UseVisualStyleBackColor = true;
+            buttonShowFramesDisabledWarningExplain.Click += buttonShowFramesDisabledWarningExplain_Click;
+            // 
             // btnShowParamNames
             // 
             btnShowParamNames.BackColor = System.Drawing.Color.SkyBlue;
@@ -576,10 +607,11 @@
             // labelTotalFrames
             // 
             labelTotalFrames.AutoSize = true;
+            labelTotalFrames.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             labelTotalFrames.Location = new System.Drawing.Point(29, 269);
             labelTotalFrames.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelTotalFrames.Name = "labelTotalFrames";
-            labelTotalFrames.Size = new System.Drawing.Size(89, 25);
+            labelTotalFrames.Size = new System.Drawing.Size(112, 30);
             labelTotalFrames.TabIndex = 29;
             labelTotalFrames.Text = "# Frames:";
             // 
@@ -597,7 +629,7 @@
             // labelMasterExponent
             // 
             labelMasterExponent.AutoSize = true;
-            labelMasterExponent.Location = new System.Drawing.Point(279, 38);
+            labelMasterExponent.Location = new System.Drawing.Point(354, 38);
             labelMasterExponent.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterExponent.Name = "labelMasterExponent";
             labelMasterExponent.Size = new System.Drawing.Size(85, 25);
@@ -608,7 +640,7 @@
             // labelMasterParamName
             // 
             labelMasterParamName.AutoSize = true;
-            labelMasterParamName.Location = new System.Drawing.Point(61, 116);
+            labelMasterParamName.Location = new System.Drawing.Point(38, 112);
             labelMasterParamName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterParamName.Name = "labelMasterParamName";
             labelMasterParamName.Size = new System.Drawing.Size(248, 25);
@@ -932,29 +964,56 @@
             groupBoxInterpolation.Size = new System.Drawing.Size(664, 197);
             groupBoxInterpolation.TabIndex = 66;
             groupBoxInterpolation.TabStop = false;
-            groupBoxInterpolation.Text = "Interolation Modes";
+            groupBoxInterpolation.Text = "Interpolation Modes";
             // 
             // groupBoxAdvancedControl
             // 
+            groupBoxAdvancedControl.Controls.Add(pictureBox2);
             groupBoxAdvancedControl.Controls.Add(InfoIconMasterParamIncrement);
+            groupBoxAdvancedControl.Controls.Add(checkBoxAutoMasterParamIndex);
             groupBoxAdvancedControl.Controls.Add(lblMasterParamIndex);
             groupBoxAdvancedControl.Controls.Add(nudMasterParamIndex);
             groupBoxAdvancedControl.Controls.Add(lblMasterParamIncrement);
             groupBoxAdvancedControl.Controls.Add(nudMasterParamIncrement);
             groupBoxAdvancedControl.Controls.Add(InfoIconMasterParamIndex);
             groupBoxAdvancedControl.Controls.Add(labelMasterParamName);
-            groupBoxAdvancedControl.Location = new System.Drawing.Point(334, 256);
+            groupBoxAdvancedControl.Location = new System.Drawing.Point(301, 256);
             groupBoxAdvancedControl.Name = "groupBoxAdvancedControl";
-            groupBoxAdvancedControl.Size = new System.Drawing.Size(356, 150);
+            groupBoxAdvancedControl.Size = new System.Drawing.Size(389, 150);
             groupBoxAdvancedControl.TabIndex = 68;
             groupBoxAdvancedControl.TabStop = false;
             groupBoxAdvancedControl.Text = "Advanced";
+            // 
+            // checkBoxAutoMasterParamIndex
+            // 
+            checkBoxAutoMasterParamIndex.AutoSize = true;
+            checkBoxAutoMasterParamIndex.Checked = true;
+            checkBoxAutoMasterParamIndex.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxAutoMasterParamIndex.Location = new System.Drawing.Point(290, 76);
+            checkBoxAutoMasterParamIndex.Name = "checkBoxAutoMasterParamIndex";
+            checkBoxAutoMasterParamIndex.Size = new System.Drawing.Size(77, 29);
+            checkBoxAutoMasterParamIndex.TabIndex = 69;
+            checkBoxAutoMasterParamIndex.Text = "Auto";
+            checkBoxAutoMasterParamIndex.UseVisualStyleBackColor = true;
+            checkBoxAutoMasterParamIndex.CheckedChanged += checkBoxAutoMasterParamIndex_CheckedChanged;
+            // 
+            // labelWarnSameStartEnd
+            // 
+            labelWarnSameStartEnd.AutoSize = true;
+            labelWarnSameStartEnd.ForeColor = System.Drawing.Color.DarkRed;
+            labelWarnSameStartEnd.Location = new System.Drawing.Point(26, 308);
+            labelWarnSameStartEnd.Name = "labelWarnSameStartEnd";
+            labelWarnSameStartEnd.Size = new System.Drawing.Size(233, 50);
+            labelWarnSameStartEnd.TabIndex = 69;
+            labelWarnSameStartEnd.Text = "                Warning:\r\nStart && End values the same";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             ClientSize = new System.Drawing.Size(1179, 1030);
+            Controls.Add(buttonShowFramesDisabledWarningExplain);
+            Controls.Add(labelWarnSameStartEnd);
             Controls.Add(groupBoxAdvancedControl);
             Controls.Add(buttonClearFilterSearch);
             Controls.Add(groupBoxTools);
@@ -1006,6 +1065,7 @@
             ((System.ComponentModel.ISupportInitialize)infoIconRemoveBlankFrames).EndInit();
             ((System.ComponentModel.ISupportInitialize)infoIconFilterSearch).EndInit();
             ((System.ComponentModel.ISupportInitialize)infoIconAbsoluteModeMain).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBoxNormalizeRadios.ResumeLayout(false);
             groupBoxNormalizeRadios.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -1097,5 +1157,9 @@
         private System.Windows.Forms.GroupBox groupBoxInterpolation;
         private System.Windows.Forms.Button buttonClearFilterSearch;
         private System.Windows.Forms.GroupBox groupBoxAdvancedControl;
+        private System.Windows.Forms.CheckBox checkBoxAutoMasterParamIndex;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelWarnSameStartEnd;
+        private System.Windows.Forms.Button buttonShowFramesDisabledWarningExplain;
     }
 }

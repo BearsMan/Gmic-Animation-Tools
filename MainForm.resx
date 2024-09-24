@@ -424,13 +424,14 @@ the log file's frame numbers anymore.</value>
     <value>Start typing the name of the filter (such as "Continuous Droste") or
 its corresponding command (such as "souphead_droste10").
 
-You can also paste in the full string copied from the GMIC GUI
-and it will automatically filter for that.
+Double click a filter in the list to activate it.
 
-For example, if you click copy from the GMIC GUI it will copy something
-like this: whatever_command 10,10,50,30,50
-Then you can just paste that whole thing into the search box and it will
-filter to anything matching "whatever_command"</value>
+Tip:  You can also paste in the full string copied from the GMIC GUI
+and it will automatically filter for that.
+  &gt;  For example, if you click copy from the GMIC GUI it will copy something
+      like this: whatever_command 10,10,50,30,50
+      Then you can just paste that whole thing into the search box and it will
+      filter to anything matching "whatever_command"</value>
   </data>
   <data name="infoIconAbsoluteModeMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -454,6 +455,25 @@ to 1 will also make it interpolate linearly as nomal.
 
 When absolute mode is enabled, you may use an additional variable 'x'.
 This represents the frame number, as opposed to 't', the normalized time value.</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAANdJREFUOE+lk7ENwjAQRb0ALEGXCWgtpcgCLEQXiQoGgCId1JkACDOhSOFedLaO
+        4ERAiied/7/7ih3bee9dnueWtXAWWqFTqC8CXuxl1hVFYTkKnXIX9gp10E9CnOmTdHEVaNgJS9UsCwGP
+        nhsasyGgUmODYTgoVqOH3ioEZCrwqbYR0GGo08vZZATULIxpWSkpj4CaAIabgRl4KCmvYTYElAMzMLYF
+        KL8JeCop7y1gbAtTAXELU4fYKikvHuLs34gwdpG2itU+LlIw/rvKFIbfH9O85+zdC8b3LMIYY2EGAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox2.ToolTip" xml:space="preserve">
+    <value>When new parameter values are entered, this will switch
+the master parameter if necessary to one that has
+different start/end values.
+
+This just avoids having to manually scroll through the
+various parameters when it doesn't really matter.
+It does not calculate a "best" parameter or anything.</value>
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>142, 17</value>
