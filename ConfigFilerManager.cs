@@ -32,6 +32,11 @@ namespace GmicDrosteAnimate
         public int DefaultFrameCount => defaultFrameCount_Validated;
         public bool AutoSwitchMasterParameter => AutoSwitchMasterParameter_Validated;
 
+        public bool OpenParameterWindowOnStart => OpenParameterWindowOnStart_Validated;
+        public bool OpenExpressionsWindowOnStart => OpenExpressionsWindowOnStart_Validated;
+        public int[] CustomMainWindowPosition => CustomMainWindowPosition_Validated;
+
+
         // -------------------------------------------------------------------------
         // -------------------------- CONFIGURATION SETUP --------------------------
         // -------------------------------------------------------------------------
@@ -61,6 +66,11 @@ namespace GmicDrosteAnimate
         static string defaultFilterStartParams_Validated = "";
         static string defaultFilterEndParams_Validated = "";
 
+        static bool OpenParameterWindowOnStart_Validated = false;
+        static bool OpenExpressionsWindowOnStart_Validated = false;
+
+        static int[] CustomMainWindowPosition_Validated = null;
+
         // ---------------------- DEFAULT CONFIG FILE CONTENT ----------------------
         // File will be created upon first run if it doesn't exist
         private string DefaultConfigContent => ""
@@ -87,6 +97,14 @@ namespace GmicDrosteAnimate
 
             + $"Default_Frame_Count = {defaultFrameCount_Validated}" + "\n"
             + $"Auto_Switch_Master_Parameter = {AutoSwitchMasterParameter_Validated}" + "\n"
+            + "\n\n"
+
+            + "    # Advanced Launch Preferences" + "\n"
+            + $"Open_Parameter_Window_On_Start = {OpenParameterWindowOnStart_Validated}" + "\n"
+            + $"Open_Expressions_Window_On_Start = {OpenExpressionsWindowOnStart_Validated}" + "\n"
+            + "    # Optionally set the starting position of the main window, or leave blank. Put the X and Y coordinates separated by a comma, like:  150,150" + "\n"
+            + $"Custom_Main_Window_Coordinates = " + "\n" // Empty by default
+
             ; // End of default config content
 
 
@@ -101,20 +119,55 @@ namespace GmicDrosteAnimate
             string _defaultFilter =                 ValidateString(_configuration["Preferences:Default_Filter"]);
             string _defaultFilterStartParams =      ValidateString(_configuration["Preferences:Default_Filter_Start_Params"]);
             string _defaultFilterEndParams =        ValidateString(_configuration["Preferences:Default_Filter_End_Params"]);
+            string _customMainWindowPosition =      ValidateString(_configuration["Preferences:Custom_Main_Window_Coordinates"]);
 
             // Validate booleans Directly - If a null value is returned, the original value is used
-            SingleThreadMode_Validated =            ValidateBool(_configuration["Preferences:Single_Thread_Mode"])              ?? SingleThreadMode_Validated;
-            CreateGIF_Validated =                   ValidateBool(_configuration["Preferences:Create_GIF"])                      ?? CreateGIF_Validated;
-            DontCreateImages_Validated =            ValidateBool(_configuration["Preferences:Dont_Create_Images"])              ?? DontCreateImages_Validated;
-            UseSameOutputDirectory_Validated =      ValidateBool(_configuration["Preferences:Use_Same_Output_Directory"])       ?? UseSameOutputDirectory_Validated;
-            AutoSwitchMasterParameter_Validated =   ValidateBool(_configuration["Preferences:Auto_Switch_Master_Parameter"])    ?? AutoSwitchMasterParameter_Validated;
+            SingleThreadMode_Validated =             ValidateBool(_configuration["Preferences:Single_Thread_Mode"])                ?? SingleThreadMode_Validated;
+            CreateGIF_Validated =                    ValidateBool(_configuration["Preferences:Create_GIF"])                        ?? CreateGIF_Validated;
+            DontCreateImages_Validated =             ValidateBool(_configuration["Preferences:Dont_Create_Images"])                ?? DontCreateImages_Validated;
+            UseSameOutputDirectory_Validated =       ValidateBool(_configuration["Preferences:Use_Same_Output_Directory"])         ?? UseSameOutputDirectory_Validated;
+            AutoSwitchMasterParameter_Validated =    ValidateBool(_configuration["Preferences:Auto_Switch_Master_Parameter"])      ?? AutoSwitchMasterParameter_Validated;
+            OpenParameterWindowOnStart_Validated =   ValidateBool(_configuration["Preferences:Open_Parameter_Window_On_Start"])    ?? OpenParameterWindowOnStart_Validated;
+            OpenExpressionsWindowOnStart_Validated = ValidateBool(_configuration["Preferences:Open_Expressions_Window_On_Start"])  ?? OpenExpressionsWindowOnStart_Validated;
 
             // Validate Integers Directly - If null is returned, the original value is used. If the value is outside the range, the min or max will be returned and used
             defaultFrameCount_Validated = ValidateInt(value: _configuration["Preferences:Default_Frame_Count"], min: 1, max: 10000) ?? defaultFrameCount_Validated;
 
             // ---------- Further Validation ----------
 
-            // Validate file path either relative or absolute
+            // Validate: Custom main window position
+            if (!string.IsNullOrWhiteSpace(_customMainWindowPosition))
+            {
+                string[] coordinates = _customMainWindowPosition.Split(',');
+                if (coordinates.Length == 2)
+                {
+                    // Trim whitespace from each coordinate
+                    coordinates[0] = coordinates[0].Trim();
+                    coordinates[1] = coordinates[1].Trim();
+
+                    // Check if both are integers
+                    if (int.TryParse(coordinates[0], out int x) && int.TryParse(coordinates[1], out int y))
+                    {
+                        CustomMainWindowPosition_Validated = new int[] { x, y };
+                    }
+                    else
+                    {
+                        ShowValidationError(
+                            "Custom Main Window Coordinates in config file should be two whole numbers separated by a comma. It seems one or both of the values aren't integers." +
+                            $"\n\nValue in config file:\n{_customMainWindowPosition}");
+                    }
+                }
+                else
+                {
+                    ShowValidationError(
+                         "Custom Main Window Coordinates in config file should be two whole numbers separated by a comma.\n" +
+                        $"Incorrect number of values found in config file. Need 2 coordinates, found {coordinates.Length}" +
+                        $"\n\nValue in config file:\n{_customMainWindowPosition}");
+                }
+                // If the coordinates are invalid, CustomMainWindowPosition_Validated will remain as null
+            }
+
+            // Validate: File path either relative or absolute
             if (!string.IsNullOrWhiteSpace(_inputFilePath))
             {
                 //string fullPath = Path.Combine(AppContext.BaseDirectory, _inputFilePath);
@@ -136,7 +189,7 @@ namespace GmicDrosteAnimate
                 inputFilePath_Validated = "";
             }
 
-            // Validate debug log level, must be 0 to 4
+            // Validate: Debug log level, must be 0 to 4
             if (!string.IsNullOrWhiteSpace(_debugLogLevel))
             {
                 if (int.TryParse(_debugLogLevel, out int result) && result >= 0 && result <= 4)
@@ -156,7 +209,7 @@ namespace GmicDrosteAnimate
                 // Nothing to do, default value is already set to 0
             }
 
-            // Validate filter name
+            // Validate: Filter name
             // Check if the filter name is in the list of available filters
             if (!String.IsNullOrWhiteSpace(FilterParameters.FilterExists(_defaultFilter)))
             {
@@ -171,7 +224,7 @@ namespace GmicDrosteAnimate
                 defaultFilter_Validated = presetDefaultFilter;
             }
 
-            // Validate master parameter is a whole number greater than 0 and is within the range of the number of parameters in the filter
+            // Validate: Master parameter is a whole number greater than 0 and is within the range of the number of parameters in the filter
             if (!string.IsNullOrWhiteSpace(_defaultMasterParameterIndex))
             {
                 // If it's a whole number greater than 0
@@ -205,7 +258,7 @@ namespace GmicDrosteAnimate
                 DefaultMasterParamIndex_Validated = 1;
             }
 
-            // Validate start and end params for the selected default filter
+            // Validate: Start and end params for the selected default filter
             // Filter name should have already been validated at this point, so just checking if correct number of parameters
             if (!String.IsNullOrWhiteSpace(_defaultFilterStartParams))
             {
@@ -233,7 +286,7 @@ namespace GmicDrosteAnimate
                 defaultFilterStartParams_Validated = "";
             }
 
-            // Validate end params for the selected default filter same as start
+            // Validate: End params for the selected default filter same as start
             if (!String.IsNullOrWhiteSpace(_defaultFilterEndParams))
             {
 

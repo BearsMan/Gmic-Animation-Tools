@@ -50,6 +50,9 @@ namespace GmicFilterAnimatorApp
 
         decimal totalFramesDefault = 100;
 
+        // Track if the main form has been loaded
+        private bool mainFormLoaded = false;
+
         // Setting a default array of exponents for use with exponential interpolation if no custom array is provided.
         // These are arbitrarily chosen values based on experience.
         //private static double[] defaultExponents = new double[] { 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
@@ -140,7 +143,6 @@ namespace GmicFilterAnimatorApp
             // This has to go after the parameter strings are loaded or else it won't be able to tell if it's a valid parameter
             nudMasterParamIndex.Value = Program.Config.DefaultMasterParameterIndex;
 
-
             //  -------------------------------------------------------------------------------------------------
 
             // Set the master frame default value to default (probably 100)
@@ -149,6 +151,24 @@ namespace GmicFilterAnimatorApp
             // Pseudo-disable group box with normalize radio options instead of actually disabling, so tooltip still works
             // This will disable the controls inside but not the picturebox with tooltip
             PseudoEnableDisable_Groupbox(enable: false, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
+
+            // Launch the parameters and expressions windows if set to do so in the config
+            if (Program.Config.OpenParameterWindowOnStart || Program.Config.OpenExpressionsWindowOnStart)
+            {
+                if (Program.Config.OpenParameterWindowOnStart)
+                {
+                    btnShowParamNames_Click(null, null);
+                }
+                if (Program.Config.OpenExpressionsWindowOnStart)
+                {
+                    btnShowExpressionForm_Click(null, null);
+                }
+                // Bring main form to front
+                this.BringToFront();
+                // Arrange the windows so they don't overlap
+                ArrangeWindows(userPreferenceMainWindowLocation: Program.Config.CustomMainWindowPosition);
+            }
+
         }
 
         private void InitializeDefaults()
@@ -3338,6 +3358,82 @@ namespace GmicFilterAnimatorApp
               "\nBehind the scenes, the starting and ending values of the master parameter are used when calculating the number of frames." +
               "\nEven if multiple parameters will be animated, not just the master parameter, one must arbitrarily be chosen for this calculation, which is the master parameter."
             );
+        }
+
+        private void ArrangeWindows(int[] userPreferenceMainWindowLocation)
+        {
+            // First get mainform location setting type. If it's actually custom and set to 0,0
+            if (userPreferenceMainWindowLocation != null)
+            {
+                // Move the main form to the user's preferred location
+                this.StartPosition = FormStartPosition.Manual;
+                this.Location = new Point(userPreferenceMainWindowLocation[0], userPreferenceMainWindowLocation[1]);
+            }
+
+            // Create a timer to check if the main form has spawned yet
+            System.Windows.Forms.Timer positionCheckTimer = new System.Windows.Forms.Timer();
+            positionCheckTimer.Interval = 25; // Check every 100 milliseconds
+
+            positionCheckTimer.Tick += (sender, e) =>
+            {
+                // Check if the main form has a non-zero position
+                //if (this.Left != 0 || this.Top != 0)
+                if (mainFormLoaded)
+                {
+                    positionCheckTimer.Stop();
+
+                    // Define the preferred window order
+                    List<string> preferredWindowOrder = new List<string> { "ParamNamesForm", "ExpressionsForm" };
+
+                    // Get the screen dimensions
+                    int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                    int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                    // Set the desired offset between windows
+                    int offset = 20;
+
+                    // Get the actual position of the main form window
+                    int mainFormX = this.Left;
+                    int mainFormY = this.Top;
+
+                    // Initialize the position for the first secondary window
+                    int secondaryFormX = mainFormX + this.Width + offset;
+                    int secondaryFormY = mainFormY;
+
+                    // Arrange the secondary windows based on the preferred order
+                    foreach (string formName in preferredWindowOrder)
+                    {
+                        Form secondaryForm = Application.OpenForms[formName];
+                        if (secondaryForm != null && secondaryForm != this)
+                        {
+                            // Check if the window fits within the screen horizontally
+                            if (secondaryFormX + secondaryForm.Width > screenWidth)
+                            {
+                                // Adjust the X position to keep the window within the screen
+                                secondaryFormX = Math.Max(0, screenWidth - secondaryForm.Width);
+                            }
+
+                            // Set the position of the secondary window
+                            secondaryForm.Left = secondaryFormX;
+                            secondaryForm.Top = secondaryFormY;
+
+                            // Update the position for the next secondary window
+                            secondaryFormX += secondaryForm.Width + offset;
+                        }
+                    }
+
+                    // Dispose the timer
+                    positionCheckTimer.Dispose();
+                }
+            };
+
+            // Start the timer
+            positionCheckTimer.Start();
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            mainFormLoaded = true;
         }
     }
 

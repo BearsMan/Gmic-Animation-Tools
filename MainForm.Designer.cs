@@ -1048,6 +1048,7 @@
             Name = "MainForm";
             Text = "G'MIC Animator";
             Load += MainForm_Load;
+            Shown += MainForm_Shown;
             Resize += MainForm_Resize;
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).EndInit();
