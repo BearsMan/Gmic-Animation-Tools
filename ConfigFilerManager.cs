@@ -11,12 +11,35 @@ namespace GmicDrosteAnimate
     [SupportedOSPlatform("windows")]
     internal class ConfigFilerManager
     {
+        // ------------------------------------------------------------------------------------
+        // --------------------------------- PROPERTIES ---------------------------------------
+        // ------------------------------------------------------------------------------------
 
-        static string presetDefaultFilter = "Continuous Droste (Custom)";
+        // Properties to access validated configuration settings
+        public string InputFilePath => inputFilePath_Validated;
+        public bool SingleThreadMode => SingleThreadMode_Validated;
+        public int DebugLogLevel => DebugLogLevel_Validated;
+
+        public bool CreateGIF => CreateGIF_Validated;
+        public bool DontCreateImages => DontCreateImages_Validated;
+        public bool UseSameOutputDirectory => UseSameOutputDirectory_Validated;
+
+        public string DefaultFilter => defaultFilter_Validated;
+        public string DefaultFilterStartParams => defaultFilterStartParams_Validated;
+        public string DefaultFilterEndParams => defaultFilterEndParams_Validated;
+        public decimal DefaultMasterParameterIndex => DefaultMasterParamIndex_Validated; // This should be the value of the nud control, so starting at 1
+
+        public int DefaultFrameCount => defaultFrameCount_Validated;
+        public bool AutoSwitchMasterParameter => AutoSwitchMasterParameter_Validated;
+
+        // -------------------------------------------------------------------------
+        // -------------------------- CONFIGURATION SETUP --------------------------
+        // -------------------------------------------------------------------------
 
         private IConfigurationRoot _configuration;
         private readonly string _configFilePath;
 
+        // ---------------------- DEFAULT VALUES ----------------------
         // Create validated versions of each setting to keep track of which validation checks have been created
         // Also set default values for each setting
         static string inputFilePath_Validated = "";
@@ -32,111 +55,64 @@ namespace GmicDrosteAnimate
         static int DebugLogLevel_Validated = 0;
         static int DefaultMasterParamIndex_Validated = 1;
 
+        static string presetDefaultFilter = "Continuous Droste (Custom)";
         static string defaultFilter_Validated = presetDefaultFilter;
+
         static string defaultFilterStartParams_Validated = "";
         static string defaultFilterEndParams_Validated = "";
 
+        // ---------------------- DEFAULT CONFIG FILE CONTENT ----------------------
+        // File will be created upon first run if it doesn't exist
         private string DefaultConfigContent => ""
             + "# In this file you can change the default startup values for various settings. You can also leave anything blank and it will use the default."
-            + "\n[Preferences]\n"
+            + "\n[Preferences]\n\n"
+
             + "Input_File_Path = " + "\n"
             + "\n"
-            + $"Single_Thread_Mode = {SingleThreadMode_Validated}" + "\n\n"
-            + "# Debug log level from 0 to 4. 0 is no logging, 4 is maximum debug logging." + "\n"
+
+            + $"Single_Thread_Mode = {SingleThreadMode_Validated}" + "\n"
             + $"Debug_Log_Level = {DebugLogLevel_Validated}" + "\n"
             + "\n"
+
             + $"Create_GIF = {CreateGIF_Validated}" + "\n"
             + $"Dont_Create_Images = {DontCreateImages_Validated}" + "\n"
             + $"Use_Same_Output_Directory = {UseSameOutputDirectory_Validated}" + "\n"
             + "\n"
+
             + $"Default_Filter = {presetDefaultFilter}" + "\n"
             + "Default_Filter_Start_Params = " + "\n"
             + "Default_Filter_End_Params = " + "\n"
             + "Default_Master_Parameter_Index = " + "\n"
             + "\n"
+
             + $"Default_Frame_Count = {defaultFrameCount_Validated}" + "\n"
             + $"Auto_Switch_Master_Parameter = {AutoSwitchMasterParameter_Validated}" + "\n"
             ; // End of default config content
 
 
-
-        public ConfigFilerManager(string configFilePath)
-        {
-            _configFilePath = configFilePath;
-            EnsureConfigFileExists();
-            LoadConfiguration();
-            //ValidateConfiguration();
-        }
-
-        private void EnsureConfigFileExists()
-        {
-            if (!File.Exists(_configFilePath))
-            {
-                File.WriteAllText(_configFilePath, DefaultConfigContent);
-            }
-        }
-
-        private void LoadConfiguration()
-        {
-            var configurationBuilder = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)
-                .AddIniFile(_configFilePath, optional: true, reloadOnChange: false);
-
-            _configuration = configurationBuilder.Build();
-        }
-        public void RefreshConfiguration()
-        {
-            LoadConfiguration();
-            ValidateConfiguration();
-        }
-
+        // ---------------------- USER CONFIG VALIDATION ----------------------
+        // Takes settings from the config file and validates them. If valid, the validated setting is used. If invalid, the default setting is used.
         private void ValidateConfiguration()
         {
+            // Create intermediate variables for those requiring additional processing
+            string _inputFilePath =                 ValidateString(_configuration["Preferences:Input_File_Path"]);
+            string _debugLogLevel =                 ValidateString(_configuration["Preferences:Debug_Log_Level"]);
+            string _defaultMasterParameterIndex =   ValidateString(_configuration["Preferences:Default_Master_Parameter_Index"]);
+            string _defaultFilter =                 ValidateString(_configuration["Preferences:Default_Filter"]);
+            string _defaultFilterStartParams =      ValidateString(_configuration["Preferences:Default_Filter_Start_Params"]);
+            string _defaultFilterEndParams =        ValidateString(_configuration["Preferences:Default_Filter_End_Params"]);
 
-            // Variables to store intermediate values
-            string _inputFilePath;
-            string _singleThreadMode;
-            string _debugLogLevel;
+            // Validate booleans Directly - If a null value is returned, the original value is used
+            SingleThreadMode_Validated =            ValidateBool(_configuration["Preferences:Single_Thread_Mode"])              ?? SingleThreadMode_Validated;
+            CreateGIF_Validated =                   ValidateBool(_configuration["Preferences:Create_GIF"])                      ?? CreateGIF_Validated;
+            DontCreateImages_Validated =            ValidateBool(_configuration["Preferences:Dont_Create_Images"])              ?? DontCreateImages_Validated;
+            UseSameOutputDirectory_Validated =      ValidateBool(_configuration["Preferences:Use_Same_Output_Directory"])       ?? UseSameOutputDirectory_Validated;
+            AutoSwitchMasterParameter_Validated =   ValidateBool(_configuration["Preferences:Auto_Switch_Master_Parameter"])    ?? AutoSwitchMasterParameter_Validated;
 
-            string _createGIF;
-            string _dontCreateImages;
-            string _useSameOutputDirectory;
+            // Validate Integers Directly - If null is returned, the original value is used. If the value is outside the range, the min or max will be returned and used
+            defaultFrameCount_Validated = ValidateInt(value: _configuration["Preferences:Default_Frame_Count"], min: 1, max: 10000) ?? defaultFrameCount_Validated;
 
-            string _defaultFilter;
-            string _defaultFilterStartParams;
-            string _defaultFilterEndParams;
-            string _defaultMasterParameterIndex;
-
-            string _defaultFrameCount;
-            string _autoSwitchMasterParameter;
-
-            // Create intermediate variables for processing
-            _inputFilePath = ValidateString(_configuration["Preferences:Input_File_Path"]);
-
-            _singleThreadMode = _configuration["Preferences:Single_Thread_Mode"];
-            _createGIF = _configuration["Preferences:Create_GIF"];
-            _dontCreateImages = _configuration["Preferences:Dont_Create_Images"];
-            _useSameOutputDirectory = _configuration["Preferences:Use_Same_Output_Directory"];
-
-            _debugLogLevel = ValidateString(_configuration["Preferences:Debug_Log_Level"]);
-            _defaultMasterParameterIndex = ValidateString(_configuration["Preferences:Default_Master_Parameter_Index"]);
-
-            _defaultFilter = ValidateString(_configuration["Preferences:Default_Filter"]);
-            _defaultFilterStartParams = ValidateString(_configuration["Preferences:Default_Filter_Start_Params"]);
-            _defaultFilterEndParams = ValidateString(_configuration["Preferences:Default_Filter_End_Params"]);
-
-            _autoSwitchMasterParameter = _configuration["Preferences:Auto_Switch_Master_Parameter"];
-            _defaultFrameCount = _configuration["Preferences:Default_Frame_Count"];
-
-
-            // Validate booleans - If a null value is returned, the original value is used
-            SingleThreadMode_Validated = ValidateBool(_singleThreadMode) ?? SingleThreadMode_Validated;
-            CreateGIF_Validated = ValidateBool(_createGIF) ?? CreateGIF_Validated;
-            DontCreateImages_Validated = ValidateBool(_dontCreateImages) ?? DontCreateImages_Validated;
-            UseSameOutputDirectory_Validated = ValidateBool(_useSameOutputDirectory) ?? UseSameOutputDirectory_Validated;
-
-            defaultFrameCount_Validated = ValidateInt(_defaultFrameCount, min: 1, max: 10000) ?? defaultFrameCount_Validated;
-            AutoSwitchMasterParameter_Validated = ValidateBool(_autoSwitchMasterParameter) ?? AutoSwitchMasterParameter_Validated;
+            // ---------- Further Validation ----------
 
             // Validate file path either relative or absolute
             if (!string.IsNullOrWhiteSpace(_inputFilePath))
@@ -286,6 +262,38 @@ namespace GmicDrosteAnimate
 
         }
 
+        // ----------------------- GENERAL FUNCTIONS -----------------------
+
+        public ConfigFilerManager(string configFilePath)
+        {
+            _configFilePath = configFilePath;
+            EnsureConfigFileExists();
+            LoadConfiguration();
+            //ValidateConfiguration();
+        }
+
+        private void EnsureConfigFileExists()
+        {
+            if (!File.Exists(_configFilePath))
+            {
+                File.WriteAllText(_configFilePath, DefaultConfigContent);
+            }
+        }
+
+        private void LoadConfiguration()
+        {
+            var configurationBuilder = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddIniFile(_configFilePath, optional: true, reloadOnChange: false);
+
+            _configuration = configurationBuilder.Build();
+        }
+        public void RefreshConfiguration()
+        {
+            LoadConfiguration();
+            ValidateConfiguration();
+        }
+
         int countParametersInString(string parameterString)
         {
             int count = 0;
@@ -297,6 +305,8 @@ namespace GmicDrosteAnimate
             }
             return count;
         }
+
+        // ------------------ VALIDATION FUNCTIONS ------------------
 
         // Validation methods (you can expand these as needed)
         private string ValidateString(string value)
@@ -347,21 +357,5 @@ namespace GmicDrosteAnimate
             MessageBox.Show(message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        // Properties to access validated configuration settings
-        public string InputFilePath => inputFilePath_Validated;
-        public bool SingleThreadMode => SingleThreadMode_Validated;
-        public int DebugLogLevel => DebugLogLevel_Validated;
-
-        public bool CreateGIF => CreateGIF_Validated;
-        public bool DontCreateImages => DontCreateImages_Validated;
-        public bool UseSameOutputDirectory => UseSameOutputDirectory_Validated;
-
-        public string DefaultFilter => defaultFilter_Validated;
-        public string DefaultFilterStartParams => defaultFilterStartParams_Validated;
-        public string DefaultFilterEndParams => defaultFilterEndParams_Validated;
-        public decimal DefaultMasterParameterIndex => DefaultMasterParamIndex_Validated; // This should be the value of the nud control, so starting at 1
-
-        public int DefaultFrameCount => defaultFrameCount_Validated;
-        public bool AutoSwitchMasterParameter => AutoSwitchMasterParameter_Validated;
     }
 }
