@@ -139,6 +139,9 @@ namespace GmicFilterAnimatorApp
             // Set the master frame default value to default (probably 100)
             nudTotalFrames.Value = totalFramesDefault;
 
+            // Pseudo-disable group box with normalize radio options instead of actually disabling, so tooltip still works
+            // This will disable the controls inside but not the picturebox with tooltip
+            PseudoEnableDisable_Groupbox(enable: false, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
         }
 
         private void InitializeDefaults()
@@ -1838,11 +1841,11 @@ namespace GmicFilterAnimatorApp
             // If this and custom exponents are unchecked, disable the normalize radio buttons
             if (!rbMasterExponent.Checked && !rbCustomExponents.Checked)
             {
-                groupBoxNormalizeRadios.Enabled = false;
+                PseudoEnableDisable_Groupbox(enable: false, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
             }
             else
             {
-                groupBoxNormalizeRadios.Enabled = true;
+                PseudoEnableDisable_Groupbox(enable: true, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
             }
             RefreshGraph();
         }
@@ -1862,11 +1865,11 @@ namespace GmicFilterAnimatorApp
             // If this and master exponent are unchecked, disable the normalize radio buttons
             if (!rbMasterExponent.Checked && !rbCustomExponents.Checked)
             {
-                groupBoxNormalizeRadios.Enabled = false;
+                PseudoEnableDisable_Groupbox(enable: false, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
             }
             else
             {
-                groupBoxNormalizeRadios.Enabled = true;
+                PseudoEnableDisable_Groupbox(enable: true, groupBoxName: "groupBoxNormalizeRadios", alwaysEnabledControls: ["infoIconAbsoluteModeMain"]);
             }
             RefreshGraph();
         }
@@ -3127,6 +3130,33 @@ namespace GmicFilterAnimatorApp
         private void MainForm_Resize(object sender, EventArgs e)
         {
             listBoxFiltersMain.Height = listBoxDefaultHeight + (this.Height - formDefaultHeight);
+
+        }
+
+        // Disable the controls within the groupbox except for the controls specified
+        private void PseudoEnableDisable_Groupbox(bool enable, string groupBoxName, params string[] alwaysEnabledControls)
+        {
+            // Find the GroupBox by name
+            var groupBox = this.Controls.Find(groupBoxName, true).FirstOrDefault() as GroupBox;
+
+            if (groupBox != null)
+            {
+                foreach (Control control in groupBox.Controls)
+                {
+                    if (!alwaysEnabledControls.Contains(control.Name))
+                    {
+                        control.Enabled = enable;
+                    }
+                }
+
+                // Update the GroupBox appearance to look disabled/enabled
+                //groupBox.ForeColor = enable ? SystemColors.ControlText : SystemColors.GrayText;
+            }
+            else
+            {
+                // Optionally, handle the case where the GroupBox is not found
+                System.Diagnostics.Debug.WriteLine($"GroupBox '{groupBoxName}' not found.");
+            }
 
         }
     }

@@ -705,7 +705,6 @@
             groupBoxNormalizeRadios.Controls.Add(radioNoNormalize);
             groupBoxNormalizeRadios.Controls.Add(radioNormalizeMaxRanges);
             groupBoxNormalizeRadios.Controls.Add(radioNormalizeExtendedRanges);
-            groupBoxNormalizeRadios.Enabled = false;
             groupBoxNormalizeRadios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             groupBoxNormalizeRadios.Location = new System.Drawing.Point(723, 394);
             groupBoxNormalizeRadios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
