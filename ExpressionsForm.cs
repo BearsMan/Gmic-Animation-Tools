@@ -245,6 +245,10 @@ namespace GmicAnimate
             // Get parameter names and other info from FilterParameters
             paramNames = FilterParameters.GetParameterNamesList();
             filterParameterCount = FilterParameters.GetActiveParameterCount();
+            // Update max value of NUD master index
+            nudMasterParamIndexClone.Maximum = filterParameterCount;
+            // Reset NUD master index
+            nudMasterParamIndexClone.Value = masterParamIndexFromMainWindow + 1; // Need to add 1 because the variable is the parameter index, not the NUD value
 
             customExpressionStringFromMainWindow = FilterParameters.GetParameterValuesAsString("DefaultExponent");
             masterParamExpressionStringFromMainWindow = FilterParameters.GetParameterValuesAsList("DefaultExponent")[masterParamIndexFromMainWindow].ToString();
