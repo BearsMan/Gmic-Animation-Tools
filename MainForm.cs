@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
+
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Globalization;
 using System.IO;
@@ -77,6 +79,9 @@ namespace GmicFilterAnimatorApp
         // Create variable to store strings for problems to display in messages
         private string disabledTotalFramesProblem = null;
 
+        // Other variables
+        private int maxParallelJobs = 10;
+
         public MainForm()
         {
             InitializeComponent();
@@ -127,6 +132,7 @@ namespace GmicFilterAnimatorApp
             dropdownDebugLog.SelectedIndex = Program.Config.DebugLogLevel;
             checkBoxAutoMasterParamIndex.Checked = Program.Config.AutoSwitchMasterParameter;
             totalFramesDefault = Program.Config.DefaultFrameCount;
+            maxParallelJobs = Program.Config.MaxParallelJobs;
 
             ActivateFilter(Program.Config.DefaultFilter);
 
@@ -1339,7 +1345,10 @@ namespace GmicFilterAnimatorApp
 
         private async Task ProcessFrames(string outputDir, List<string> interpolatedParams, int frameNumberStart, int debugSetting)
         {
-            int parallelJobs = 10;
+            // Replace the Timer instantiation with System.Diagnostics.Stopwatch
+            Stopwatch timer = new Stopwatch();
+
+            int parallelJobs = maxParallelJobs;
             int maxAttempts = 7;
             int attempt = 1;
 
@@ -1390,6 +1399,7 @@ namespace GmicFilterAnimatorApp
                 verbosity = "-debug";
             }
 
+            timer.Start();
             while (attempt <= maxAttempts)
             {
                 await Task.Run(() =>
@@ -1471,6 +1481,11 @@ namespace GmicFilterAnimatorApp
                 attempt++;
             }
 
+            // Stop the timer and a string with total seconds taken
+            timer.Stop();
+            string timeTaken = timer.Elapsed.TotalSeconds.ToString("0.00");
+
+
             // Determine if any files are still missing after the final attempt
             List<string> missingFilesAfterRerun = expectedFiles.Where(file => !File.Exists(file)).ToList();
 
@@ -1499,7 +1514,7 @@ namespace GmicFilterAnimatorApp
                     //Set label next to start button with success message in green
                     TextLabelNearStartButton.Visible = true;
                     TextLabelNearStartButton.ForeColor = Color.Green;
-                    TextLabelNearStartButton.Text = $"Done!\n{totalFrames} frames created in:\n{outputDir}.";
+                    TextLabelNearStartButton.Text = $"Done! (Took {timeTaken} Seconds)\n{totalFrames} frames created in:\n{outputDir}.";
 
                 }));
             }

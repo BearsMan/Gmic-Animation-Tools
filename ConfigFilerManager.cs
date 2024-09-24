@@ -31,6 +31,7 @@ namespace GmicDrosteAnimate
 
         public int DefaultFrameCount => defaultFrameCount_Validated;
         public bool AutoSwitchMasterParameter => AutoSwitchMasterParameter_Validated;
+        public int MaxParallelJobs => MaxParallelThreads_Validated;
 
         public bool OpenParameterWindowOnStart => OpenParameterWindowOnStart_Validated;
         public bool OpenExpressionsWindowOnStart => OpenExpressionsWindowOnStart_Validated;
@@ -68,8 +69,9 @@ namespace GmicDrosteAnimate
 
         static bool OpenParameterWindowOnStart_Validated = false;
         static bool OpenExpressionsWindowOnStart_Validated = false;
-
         static int[] CustomMainWindowPosition_Validated = null;
+
+        static int MaxParallelThreads_Validated = 10;
 
         // ---------------------- DEFAULT CONFIG FILE CONTENT ----------------------
         // File will be created upon first run if it doesn't exist
@@ -103,7 +105,9 @@ namespace GmicDrosteAnimate
             + $"Open_Parameter_Window_On_Start = {OpenParameterWindowOnStart_Validated}" + "\n"
             + $"Open_Expressions_Window_On_Start = {OpenExpressionsWindowOnStart_Validated}" + "\n"
             + "    # Optionally set the starting position of the main window, or leave blank. Put the X and Y coordinates separated by a comma, like:  150,150" + "\n"
-            + $"Custom_Main_Window_Coordinates = " + "\n" // Empty by default
+            + $"Custom_Main_Window_Coordinates = "  // Empty by default
+            + "\n\n"
+            + $"Max_Parallel_Threads = {MaxParallelThreads_Validated}" + "\n"
 
             ; // End of default config content
 
@@ -113,25 +117,26 @@ namespace GmicDrosteAnimate
         private void ValidateConfiguration()
         {
             // Create intermediate variables for those requiring additional processing
-            string _inputFilePath =                 ValidateString(_configuration["Preferences:Input_File_Path"]);
-            string _debugLogLevel =                 ValidateString(_configuration["Preferences:Debug_Log_Level"]);
-            string _defaultMasterParameterIndex =   ValidateString(_configuration["Preferences:Default_Master_Parameter_Index"]);
-            string _defaultFilter =                 ValidateString(_configuration["Preferences:Default_Filter"]);
-            string _defaultFilterStartParams =      ValidateString(_configuration["Preferences:Default_Filter_Start_Params"]);
-            string _defaultFilterEndParams =        ValidateString(_configuration["Preferences:Default_Filter_End_Params"]);
-            string _customMainWindowPosition =      ValidateString(_configuration["Preferences:Custom_Main_Window_Coordinates"]);
+            string _inputFilePath =                 ValidateString(_configuration["Preferences:Input_File_Path"], settingName: "Input_File_Path");
+            string _debugLogLevel =                 ValidateString(_configuration["Preferences:Debug_Log_Level"], settingName: "Debug_Log_Level");
+            string _defaultMasterParameterIndex =   ValidateString(_configuration["Preferences:Default_Master_Parameter_Index"], settingName: "Debug_Log_Level");
+            string _defaultFilter =                 ValidateString(_configuration["Preferences:Default_Filter"], settingName: "Default_Filter");
+            string _defaultFilterStartParams =      ValidateString(_configuration["Preferences:Default_Filter_Start_Params"], settingName: "Default_Filter_Start_Params");
+            string _defaultFilterEndParams =        ValidateString(_configuration["Preferences:Default_Filter_End_Params"], settingName: "Default_Filter_End_Params");
+            string _customMainWindowPosition =      ValidateString(_configuration["Preferences:Custom_Main_Window_Coordinates"], settingName: "Custom_Main_Window_Coordinates");
 
             // Validate booleans Directly - If a null value is returned, the original value is used
-            SingleThreadMode_Validated =             ValidateBool(_configuration["Preferences:Single_Thread_Mode"])                ?? SingleThreadMode_Validated;
-            CreateGIF_Validated =                    ValidateBool(_configuration["Preferences:Create_GIF"])                        ?? CreateGIF_Validated;
-            DontCreateImages_Validated =             ValidateBool(_configuration["Preferences:Dont_Create_Images"])                ?? DontCreateImages_Validated;
-            UseSameOutputDirectory_Validated =       ValidateBool(_configuration["Preferences:Use_Same_Output_Directory"])         ?? UseSameOutputDirectory_Validated;
-            AutoSwitchMasterParameter_Validated =    ValidateBool(_configuration["Preferences:Auto_Switch_Master_Parameter"])      ?? AutoSwitchMasterParameter_Validated;
-            OpenParameterWindowOnStart_Validated =   ValidateBool(_configuration["Preferences:Open_Parameter_Window_On_Start"])    ?? OpenParameterWindowOnStart_Validated;
-            OpenExpressionsWindowOnStart_Validated = ValidateBool(_configuration["Preferences:Open_Expressions_Window_On_Start"])  ?? OpenExpressionsWindowOnStart_Validated;
+            SingleThreadMode_Validated =             ValidateBool(_configuration["Preferences:Single_Thread_Mode"], settingName: "Single_Thread_Mode")                              ?? SingleThreadMode_Validated;
+            CreateGIF_Validated =                    ValidateBool(_configuration["Preferences:Create_GIF"], settingName: "Create_GIF")                                              ?? CreateGIF_Validated;
+            DontCreateImages_Validated =             ValidateBool(_configuration["Preferences:Dont_Create_Images"], settingName: "Dont_Create_Images")                              ?? DontCreateImages_Validated;
+            UseSameOutputDirectory_Validated =       ValidateBool(_configuration["Preferences:Use_Same_Output_Directory"], settingName: "Use_Same_Output_Directory")                ?? UseSameOutputDirectory_Validated;
+            AutoSwitchMasterParameter_Validated =    ValidateBool(_configuration["Preferences:Auto_Switch_Master_Parameter"], settingName: "Auto_Switch_Master_Parameter")          ?? AutoSwitchMasterParameter_Validated;
+            OpenParameterWindowOnStart_Validated =   ValidateBool(_configuration["Preferences:Open_Parameter_Window_On_Start"], settingName: "Open_Parameter_Window_On_Start")      ?? OpenParameterWindowOnStart_Validated;
+            OpenExpressionsWindowOnStart_Validated = ValidateBool(_configuration["Preferences:Open_Expressions_Window_On_Start"], settingName: "Open_Expressions_Window_On_Start")  ?? OpenExpressionsWindowOnStart_Validated;
 
             // Validate Integers Directly - If null is returned, the original value is used. If the value is outside the range, the min or max will be returned and used
-            defaultFrameCount_Validated = ValidateInt(value: _configuration["Preferences:Default_Frame_Count"], min: 1, max: 10000) ?? defaultFrameCount_Validated;
+            defaultFrameCount_Validated = ValidateInt(value: _configuration["Preferences:Default_Frame_Count"], min: 1, max: 10000, settingName: "Default_Frame_Count") ?? defaultFrameCount_Validated;
+            MaxParallelThreads_Validated = ValidateInt(value: _configuration["Preferences:Max_Parallel_Threads"], min: 1, max: null, settingName: "Max_Parallel_Threads") ?? MaxParallelThreads_Validated;
 
             // ---------- Further Validation ----------
 
@@ -362,7 +367,7 @@ namespace GmicDrosteAnimate
         // ------------------ VALIDATION FUNCTIONS ------------------
 
         // Validation methods (you can expand these as needed)
-        private string ValidateString(string value)
+        private string ValidateString(string value, string settingName)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -372,36 +377,38 @@ namespace GmicDrosteAnimate
             return value;
         }
 
-        private bool? ValidateBool(string value)
+        private bool? ValidateBool(string value, string settingName)
         {
             if (bool.TryParse(value, out bool result))
             {
                 return result;
             }
-            ShowValidationError("Boolean value is invalid.");
+            ShowValidationError($"Error in config file for setting: {settingName}\n\nBoolean value is invalid.");
             return null;
         }
 
-        private int? ValidateInt(string value, int? max, int? min)
+        private int? ValidateInt(string value, int? min, int? max, string settingName)
         {
             if (int.TryParse(value, out int result))
             {
-                if (result >= min && result <= max)
+                if ((min == null || result >= min) && (max == null || result <= max))
                 {
                     return result;
                 }
-                else if (result < min)
+
+                if (min != null && result < min)
                 {
-                    ShowValidationError($"Integer value ({value} is too small. Using minimum: {min}");
+                    ShowValidationError($"Error in config file for setting: {settingName}\n\nInteger value ({value} is too small. Using minimum: {min}");
                     return min;
                 }
-                else if (result > max)
+
+                if (max != null && result > max)
                 {
-                    ShowValidationError($"Integer value ({value} is too large. Using maximum: {max}");
+                    ShowValidationError($"Error in config file for setting: {settingName}\n\nInteger value ({value} is too large. Using maximum: {max}");
                     return max;
                 }
             }
-            ShowValidationError("Integer value is invalid.");
+            ShowValidationError("Error in config file for setting: {settingName}\n\nInteger value is invalid.");
             return null;
         }
 
