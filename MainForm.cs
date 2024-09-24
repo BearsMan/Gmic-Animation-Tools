@@ -1950,7 +1950,7 @@ namespace GmicFilterAnimatorApp
                 }
             }
 
-            UpdateTotalFrames();
+            UpdateTotalFrames(newIncrement: nudMasterParamIncrement.Value);
             RefreshGraph();
         }
 
@@ -1986,7 +1986,7 @@ namespace GmicFilterAnimatorApp
 
         }
 
-        private void UpdateTotalFrames()
+        private void UpdateTotalFrames(decimal newIncrement = -1)
         {
             if (!string.IsNullOrEmpty(txtStartParams.Text) && !string.IsNullOrEmpty(txtEndParams.Text))
             {
@@ -2002,27 +2002,38 @@ namespace GmicFilterAnimatorApp
                 {
                     double startValue = double.Parse(startParamsArray[(int)nudMasterParamIndex.Value - 1]);
                     double endValue = double.Parse(endParamsArray[(int)nudMasterParamIndex.Value - 1]);
-                    double increment = (double)nudMasterParamIncrement.Value;
 
-                    int totalFrames = CalcTotalFrames(startValue, endValue, increment); // Is this even necessary if just getting from the NUD next anyway?
+                    double increment = 0;
+                    int totalFrames = 0;
 
-                    // Ensure increment will not cause total frames to go above its maximum value, if so set total frames to max and change increment accordingly
-                    // Also check for negative because of overflow
-                    if (totalFrames > nudTotalFrames.Maximum || totalFrames < 2)
+                    if (newIncrement != -1)
                     {
+                         increment = (double)newIncrement;
+                         totalFrames = CalcTotalFrames(startValue, endValue, increment);
+                    }
+                    else
+                    {
+                        increment = (double)nudMasterParamIncrement.Value;
                         totalFrames = (int)nudTotalFrames.Value;
+                        // Ensure increment will not cause total frames to go above its maximum value, if so set total frames to max and change increment accordingly
+                        // Also check for negative because of overflow
                         increment = Math.Abs(endValue - startValue) / (totalFrames - 1);
+                    }
 
-                        // If increment is zero at this point it means absolute mode is enabled, so total frames was set directly
-                        if (increment != 0)
-                        {
-                            //Disable the ValueChanged event of nudMasterParamIncrement so it doesn't create circular calls
-                            nudMasterParamIncrement.ValueChanged -= nudMasterParamIncrement_ValueChanged;
-                            nudMasterParamIncrement.Value = (decimal)increment;
-                            //Re-enable the ValueChanged event of nudMasterParamIncrement
-                            nudMasterParamIncrement.ValueChanged += nudMasterParamIncrement_ValueChanged;
-                        }
+                    // If increment is zero at this point it means absolute mode is enabled, so total frames was set directly
+                    if (increment != 0)
+                    {
+                        //Disable the ValueChanged event of nudMasterParamIncrement so it doesn't create circular calls
+                        nudMasterParamIncrement.ValueChanged -= nudMasterParamIncrement_ValueChanged;
+                        nudMasterParamIncrement.Value = (decimal)increment;
+                        //Re-enable the ValueChanged event of nudMasterParamIncrement
+                        nudMasterParamIncrement.ValueChanged += nudMasterParamIncrement_ValueChanged;
+                    }
 
+                    // If totalFrames is negative it was an overflow, or if too big, set it to the maximum value
+                    if ((totalFrames < 0) || (totalFrames > (int)nudTotalFrames.Maximum))
+                    {
+                        totalFrames = (int)nudTotalFrames.Maximum;
                     }
 
                     // Disable the ValueChanged event of nudTotalFrames so it doesn't create circular calls
@@ -2132,6 +2143,8 @@ namespace GmicFilterAnimatorApp
                             paramNamesForm.UpdateParamValues(ParseParamsToDoublesArray(txtStartParams.Text, silent: true), ParseParamsToDoublesArray(txtEndParams.Text, silent: true), (int)nudMasterParamIndex.Value - 1);
                         }
 
+                        UpdateMasterParamIncrement();
+
                         // Return so the rest of the code is not executed, otherwise will disable the boxes again
                         return;
                     }
@@ -2199,6 +2212,8 @@ namespace GmicFilterAnimatorApp
                             // Update total frames
                             //UpdateTotalFrames();
                             nudTotalFrames.Value = totalFramesDefault;
+
+                            UpdateMasterParamIncrement();
 
                             // Return so the rest of the code is not executed, otherwise will disable the boxes again
                             return;
