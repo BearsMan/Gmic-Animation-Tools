@@ -67,10 +67,18 @@ namespace GmicFilterAnimatorApp
         // Add lock object for thread safety when logging console outputs
         private readonly object logLock = new object();
 
+        // Set dimensions for certain components to use later when resizing
+        public int formDefaultHeight = 0;
+        public int listBoxDefaultHeight = 0;
+
         public MainForm()
         {
             InitializeComponent();
             InitializeDefaults();
+
+            // Set form starting height and 
+            formDefaultHeight = this.Height;
+            listBoxDefaultHeight = listBoxFiltersMain.Height;
 
             // Create mouse scroll handler to properly scroll increment on master increment numeric updown
             nudMasterParamIndex.MouseWheel += new MouseEventHandler(this.ScrollHandlerFunction);
@@ -3099,13 +3107,7 @@ namespace GmicFilterAnimatorApp
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            // Resize the listbox to fit the window height
-            int initialListboxHeight = listBoxFiltersMain.Height;
-            int initialFormHeight = this.Height;
-            int initialListBoxBottom = listBoxFiltersMain.Bottom;
-            int buffer = initialListboxHeight - initialListBoxBottom;
-
-            listBoxFiltersMain.Height = initialFormHeight - initialListBoxBottom - buffer;
+            listBoxFiltersMain.Height = listBoxDefaultHeight + (this.Height - formDefaultHeight);
 
         }
     }

@@ -955,7 +955,6 @@
             Controls.Add(btnCancel);
             Controls.Add(groupBoxNormalizeRadios);
             Controls.Add(groupBoxInterpolation);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             MaximizeBox = false;
