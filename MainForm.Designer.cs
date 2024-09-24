@@ -341,10 +341,11 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new System.Drawing.Point(96, 609);
+            btnStart.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnStart.Location = new System.Drawing.Point(281, 626);
             btnStart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnStart.Name = "btnStart";
-            btnStart.Size = new System.Drawing.Size(293, 58);
+            btnStart.Size = new System.Drawing.Size(289, 74);
             btnStart.TabIndex = 17;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
@@ -352,10 +353,10 @@
             // 
             // btnViewOutputDirectory
             // 
-            btnViewOutputDirectory.Location = new System.Drawing.Point(436, 609);
+            btnViewOutputDirectory.Location = new System.Drawing.Point(110, 626);
             btnViewOutputDirectory.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnViewOutputDirectory.Name = "btnViewOutputDirectory";
-            btnViewOutputDirectory.Size = new System.Drawing.Size(155, 91);
+            btnViewOutputDirectory.Size = new System.Drawing.Size(144, 74);
             btnViewOutputDirectory.TabIndex = 18;
             btnViewOutputDirectory.Text = "View Output Directory";
             btnViewOutputDirectory.UseVisualStyleBackColor = true;
@@ -363,10 +364,11 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(96, 609);
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnCancel.Location = new System.Drawing.Point(281, 626);
             btnCancel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(200, 58);
+            btnCancel.Size = new System.Drawing.Size(289, 74);
             btnCancel.TabIndex = 19;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -568,7 +570,7 @@
             // TextLabelNearStartButton
             // 
             TextLabelNearStartButton.AutoSize = true;
-            TextLabelNearStartButton.Location = new System.Drawing.Point(96, 705);
+            TextLabelNearStartButton.Location = new System.Drawing.Point(586, 626);
             TextLabelNearStartButton.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             TextLabelNearStartButton.Name = "TextLabelNearStartButton";
             TextLabelNearStartButton.Size = new System.Drawing.Size(60, 25);
@@ -823,7 +825,7 @@
             // 
             // progressBarGeneration
             // 
-            progressBarGeneration.Location = new System.Drawing.Point(100, 677);
+            progressBarGeneration.Location = new System.Drawing.Point(281, 705);
             progressBarGeneration.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             progressBarGeneration.Name = "progressBarGeneration";
             progressBarGeneration.Size = new System.Drawing.Size(289, 23);
