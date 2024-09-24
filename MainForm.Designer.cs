@@ -141,6 +141,7 @@
             nudTotalFrames.TabIndex = 28;
             nudTotalFrames.Value = new decimal(new int[] { 2, 0, 0, 0 });
             nudTotalFrames.ValueChanged += nudTotalFrames_ValueChanged;
+            nudTotalFrames.EnabledChanged += nudTotalFrames_EnabledChanged;
             // 
             // nudMasterParamIncrement
             // 

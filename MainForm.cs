@@ -3435,6 +3435,16 @@ namespace GmicFilterAnimatorApp
         {
             mainFormLoaded = true;
         }
+
+        private void nudTotalFrames_EnabledChanged(object sender, EventArgs e)
+        {
+            // If the NUD is enabled, like by changing absolute mode settings, hide warning label
+            if (nudTotalFrames.Enabled)
+            {
+                labelWarnSameStartEnd.Visible = false;
+                buttonShowFramesDisabledWarningExplain.Visible = false;
+            }
+        }
     }
 
 }
