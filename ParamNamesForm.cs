@@ -19,6 +19,10 @@ namespace GmicAnimate
         private int masterParamIndexFromMainWindow;
         private static readonly Random random = new Random();
 
+        // Create variables to hold starting window sizes
+        public int formDefaultHeight = 0;
+        public int gridDefaultHeight = 0;
+
         //Global checkbox for whether to sync with other window
         public bool syncWithOtherWindow = true;
 
@@ -41,6 +45,9 @@ namespace GmicAnimate
 
             InitializeComponent();
             InitializeDataGridView();
+
+            // Set form starting height
+            formDefaultHeight = this.Height;
 
             // Initialize my custom checkbox for option to randomize start and/or end
             CustomToggleCheckBox customCheckBox = new CustomToggleCheckBox();
@@ -122,6 +129,9 @@ namespace GmicAnimate
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            // Set the default height of the data grid view
+            gridDefaultHeight = dataGridView1.Height;
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -957,6 +967,12 @@ namespace GmicAnimate
         {
             float scaleFactor = this.DeviceDpi / 96f; // 96 is the default DPI
             return (int)(originalValue * scaleFactor);
+        }
+
+        private void ParamNamesForm_Resize(object sender, EventArgs e)
+        {
+            // Resize the DataGridView to fit the form
+            dataGridView1.Height = gridDefaultHeight + (this.Height - formDefaultHeight);
         }
     }
 

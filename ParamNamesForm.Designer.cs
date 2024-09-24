@@ -53,8 +53,9 @@
             // 
             // btnRandom
             // 
+            btnRandom.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             btnRandom.ForeColor = System.Drawing.Color.Red;
-            btnRandom.Location = new System.Drawing.Point(50, 1395);
+            btnRandom.Location = new System.Drawing.Point(50, 1201);
             btnRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnRandom.Name = "btnRandom";
             btnRandom.Size = new System.Drawing.Size(197, 45);
@@ -65,7 +66,8 @@
             // 
             // txtCurrentStartParamString
             // 
-            txtCurrentStartParamString.Location = new System.Drawing.Point(44, 1203);
+            txtCurrentStartParamString.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            txtCurrentStartParamString.Location = new System.Drawing.Point(44, 1009);
             txtCurrentStartParamString.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtCurrentStartParamString.Name = "txtCurrentStartParamString";
             txtCurrentStartParamString.ReadOnly = true;
@@ -74,8 +76,9 @@
             // 
             // labelCurrentStartParamString
             // 
+            labelCurrentStartParamString.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             labelCurrentStartParamString.AutoSize = true;
-            labelCurrentStartParamString.Location = new System.Drawing.Point(44, 1175);
+            labelCurrentStartParamString.Location = new System.Drawing.Point(44, 981);
             labelCurrentStartParamString.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCurrentStartParamString.Name = "labelCurrentStartParamString";
             labelCurrentStartParamString.Size = new System.Drawing.Size(280, 25);
@@ -84,8 +87,9 @@
             // 
             // labelCurrentEndParamString
             // 
+            labelCurrentEndParamString.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             labelCurrentEndParamString.AutoSize = true;
-            labelCurrentEndParamString.Location = new System.Drawing.Point(44, 1258);
+            labelCurrentEndParamString.Location = new System.Drawing.Point(44, 1064);
             labelCurrentEndParamString.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCurrentEndParamString.Name = "labelCurrentEndParamString";
             labelCurrentEndParamString.Size = new System.Drawing.Size(274, 25);
@@ -94,7 +98,8 @@
             // 
             // txtCurrentEndParamString
             // 
-            txtCurrentEndParamString.Location = new System.Drawing.Point(44, 1287);
+            txtCurrentEndParamString.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            txtCurrentEndParamString.Location = new System.Drawing.Point(44, 1093);
             txtCurrentEndParamString.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtCurrentEndParamString.Name = "txtCurrentEndParamString";
             txtCurrentEndParamString.ReadOnly = true;
@@ -103,7 +108,8 @@
             // 
             // btnCheckAll
             // 
-            btnCheckAll.Location = new System.Drawing.Point(254, 1348);
+            btnCheckAll.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            btnCheckAll.Location = new System.Drawing.Point(254, 1154);
             btnCheckAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnCheckAll.Name = "btnCheckAll";
             btnCheckAll.Size = new System.Drawing.Size(126, 45);
@@ -114,7 +120,8 @@
             // 
             // btnUncheckAll
             // 
-            btnUncheckAll.Location = new System.Drawing.Point(254, 1395);
+            btnUncheckAll.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            btnUncheckAll.Location = new System.Drawing.Point(254, 1201);
             btnUncheckAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnUncheckAll.Name = "btnUncheckAll";
             btnUncheckAll.Size = new System.Drawing.Size(126, 45);
@@ -125,7 +132,8 @@
             // 
             // btnResetAll
             // 
-            btnResetAll.Location = new System.Drawing.Point(586, 1150);
+            btnResetAll.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            btnResetAll.Location = new System.Drawing.Point(586, 956);
             btnResetAll.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnResetAll.Name = "btnResetAll";
             btnResetAll.Size = new System.Drawing.Size(126, 45);
@@ -136,10 +144,11 @@
             // 
             // checkBoxDisableBinaryRandom
             // 
+            checkBoxDisableBinaryRandom.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             checkBoxDisableBinaryRandom.AutoSize = true;
             checkBoxDisableBinaryRandom.Checked = true;
             checkBoxDisableBinaryRandom.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxDisableBinaryRandom.Location = new System.Drawing.Point(409, 1450);
+            checkBoxDisableBinaryRandom.Location = new System.Drawing.Point(409, 1256);
             checkBoxDisableBinaryRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxDisableBinaryRandom.Name = "checkBoxDisableBinaryRandom";
             checkBoxDisableBinaryRandom.Size = new System.Drawing.Size(321, 29);
@@ -150,10 +159,11 @@
             // 
             // checkBoxSyncFromOtherWindow
             // 
+            checkBoxSyncFromOtherWindow.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             checkBoxSyncFromOtherWindow.AutoSize = true;
             checkBoxSyncFromOtherWindow.Checked = true;
             checkBoxSyncFromOtherWindow.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxSyncFromOtherWindow.Location = new System.Drawing.Point(20, 1485);
+            checkBoxSyncFromOtherWindow.Location = new System.Drawing.Point(20, 1291);
             checkBoxSyncFromOtherWindow.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxSyncFromOtherWindow.Name = "checkBoxSyncFromOtherWindow";
             checkBoxSyncFromOtherWindow.Size = new System.Drawing.Size(315, 29);
@@ -164,10 +174,11 @@
             // 
             // checkBoxDisableStepRandom
             // 
+            checkBoxDisableStepRandom.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             checkBoxDisableStepRandom.AutoSize = true;
             checkBoxDisableStepRandom.Checked = true;
             checkBoxDisableStepRandom.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxDisableStepRandom.Location = new System.Drawing.Point(409, 1415);
+            checkBoxDisableStepRandom.Location = new System.Drawing.Point(409, 1221);
             checkBoxDisableStepRandom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxDisableStepRandom.Name = "checkBoxDisableStepRandom";
             checkBoxDisableStepRandom.Size = new System.Drawing.Size(339, 29);
@@ -178,8 +189,9 @@
             // 
             // checkBoxExtendedRange
             // 
+            checkBoxExtendedRange.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             checkBoxExtendedRange.AutoSize = true;
-            checkBoxExtendedRange.Location = new System.Drawing.Point(409, 1380);
+            checkBoxExtendedRange.Location = new System.Drawing.Point(409, 1186);
             checkBoxExtendedRange.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxExtendedRange.Name = "checkBoxExtendedRange";
             checkBoxExtendedRange.Size = new System.Drawing.Size(281, 29);
@@ -190,9 +202,10 @@
             // 
             // btnSendParmsToMain
             // 
+            btnSendParmsToMain.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             btnSendParmsToMain.BackColor = System.Drawing.Color.LightGreen;
             btnSendParmsToMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            btnSendParmsToMain.Location = new System.Drawing.Point(50, 1348);
+            btnSendParmsToMain.Location = new System.Drawing.Point(50, 1154);
             btnSendParmsToMain.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnSendParmsToMain.Name = "btnSendParmsToMain";
             btnSendParmsToMain.Size = new System.Drawing.Size(194, 45);
@@ -206,23 +219,24 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(50, 25);
+            dataGridView1.Location = new System.Drawing.Point(44, 25);
             dataGridView1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 18;
-            dataGridView1.Size = new System.Drawing.Size(651, 1117);
+            dataGridView1.Size = new System.Drawing.Size(663, 921);
             dataGridView1.TabIndex = 14;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // checkBoxRecommendedRules
             // 
+            checkBoxRecommendedRules.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             checkBoxRecommendedRules.AutoSize = true;
             checkBoxRecommendedRules.Checked = true;
             checkBoxRecommendedRules.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBoxRecommendedRules.Location = new System.Drawing.Point(409, 1347);
+            checkBoxRecommendedRules.Location = new System.Drawing.Point(409, 1153);
             checkBoxRecommendedRules.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             checkBoxRecommendedRules.Name = "checkBoxRecommendedRules";
             checkBoxRecommendedRules.Size = new System.Drawing.Size(321, 29);
@@ -233,11 +247,12 @@
             // 
             // toggleRandomEnd
             // 
+            toggleRandomEnd.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             toggleRandomEnd.Appearance = System.Windows.Forms.Appearance.Button;
             toggleRandomEnd.BackColor = System.Drawing.Color.White;
             toggleRandomEnd.Checked = true;
             toggleRandomEnd.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomEnd.Location = new System.Drawing.Point(6, 1287);
+            toggleRandomEnd.Location = new System.Drawing.Point(6, 1093);
             toggleRandomEnd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomEnd.Name = "toggleRandomEnd";
             toggleRandomEnd.Size = new System.Drawing.Size(33, 38);
@@ -247,11 +262,12 @@
             // 
             // toggleRandomStart
             // 
+            toggleRandomStart.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             toggleRandomStart.Appearance = System.Windows.Forms.Appearance.Button;
             toggleRandomStart.BackColor = System.Drawing.Color.White;
             toggleRandomStart.Checked = true;
             toggleRandomStart.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomStart.Location = new System.Drawing.Point(6, 1203);
+            toggleRandomStart.Location = new System.Drawing.Point(6, 1009);
             toggleRandomStart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomStart.Name = "toggleRandomStart";
             toggleRandomStart.Size = new System.Drawing.Size(33, 38);
@@ -263,7 +279,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            ClientSize = new System.Drawing.Size(761, 1530);
+            ClientSize = new System.Drawing.Size(761, 1336);
             Controls.Add(checkBoxRecommendedRules);
             Controls.Add(dataGridView1);
             Controls.Add(btnSendParmsToMain);
@@ -284,6 +300,7 @@
             Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             Name = "ParamNamesForm";
             Text = "Advanced Parameter Control";
+            Resize += ParamNamesForm_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
