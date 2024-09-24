@@ -836,5 +836,10 @@ namespace GmicAnimate
             }
             MessageBox.Show("Data saved to log file.", "Save Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void labelFrameRateSelect_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

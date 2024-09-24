@@ -45,6 +45,7 @@
             dropdownFFmpegMode = new System.Windows.Forms.ComboBox();
             infoIconFFmpegMode = new System.Windows.Forms.PictureBox();
             toolTip1 = new System.Windows.Forms.ToolTip(components);
+            infoIconAlphaThreshold = new System.Windows.Forms.PictureBox();
             labelCalcGifDuration = new System.Windows.Forms.Label();
             nudFrameRateSelect = new System.Windows.Forms.NumericUpDown();
             labelFrameRateSelect = new System.Windows.Forms.Label();
@@ -52,20 +53,19 @@
             btnCheckAlpha = new System.Windows.Forms.Button();
             nudAlphaThreshold = new System.Windows.Forms.NumericUpDown();
             labelAlphaThreshold = new System.Windows.Forms.Label();
-            infoIconAlphaThreshold = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)nudFadeDurationSeconds).BeginInit();
             ((System.ComponentModel.ISupportInitialize)infoIconFFmpegMode).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)infoIconAlphaThreshold).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudFrameRateSelect).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudAlphaThreshold).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)infoIconAlphaThreshold).BeginInit();
             SuspendLayout();
             // 
             // buttonOpenFile
             // 
-            buttonOpenFile.Location = new System.Drawing.Point(264, 84);
-            buttonOpenFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonOpenFile.Location = new System.Drawing.Point(377, 140);
+            buttonOpenFile.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonOpenFile.Name = "buttonOpenFile";
-            buttonOpenFile.Size = new System.Drawing.Size(88, 33);
+            buttonOpenFile.Size = new System.Drawing.Size(126, 55);
             buttonOpenFile.TabIndex = 0;
             buttonOpenFile.Text = "Load GIF";
             buttonOpenFile.UseVisualStyleBackColor = true;
@@ -75,50 +75,50 @@
             // 
             txtAnalysisOutput.AcceptsReturn = true;
             txtAnalysisOutput.AcceptsTab = true;
-            txtAnalysisOutput.Location = new System.Drawing.Point(33, 152);
-            txtAnalysisOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtAnalysisOutput.Location = new System.Drawing.Point(47, 253);
+            txtAnalysisOutput.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtAnalysisOutput.Multiline = true;
             txtAnalysisOutput.Name = "txtAnalysisOutput";
             txtAnalysisOutput.ReadOnly = true;
             txtAnalysisOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            txtAnalysisOutput.Size = new System.Drawing.Size(318, 74);
+            txtAnalysisOutput.Size = new System.Drawing.Size(453, 121);
             txtAnalysisOutput.TabIndex = 1;
             // 
             // txtGifFilePath
             // 
-            txtGifFilePath.Location = new System.Drawing.Point(33, 90);
-            txtGifFilePath.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtGifFilePath.Location = new System.Drawing.Point(47, 150);
+            txtGifFilePath.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtGifFilePath.Name = "txtGifFilePath";
-            txtGifFilePath.Size = new System.Drawing.Size(223, 23);
+            txtGifFilePath.Size = new System.Drawing.Size(317, 31);
             txtGifFilePath.TabIndex = 2;
             txtGifFilePath.TextChanged += txtGifFilePath_TextChanged;
             // 
             // labelGifFilePath
             // 
             labelGifFilePath.AutoSize = true;
-            labelGifFilePath.Location = new System.Drawing.Point(33, 72);
-            labelGifFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelGifFilePath.Location = new System.Drawing.Point(47, 120);
+            labelGifFilePath.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelGifFilePath.Name = "labelGifFilePath";
-            labelGifFilePath.Size = new System.Drawing.Size(75, 15);
+            labelGifFilePath.Size = new System.Drawing.Size(112, 25);
             labelGifFilePath.TabIndex = 3;
             labelGifFilePath.Text = "GIF File Path:";
             // 
             // labelAnalysisOutput
             // 
             labelAnalysisOutput.AutoSize = true;
-            labelAnalysisOutput.Location = new System.Drawing.Point(33, 134);
-            labelAnalysisOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelAnalysisOutput.Location = new System.Drawing.Point(47, 223);
+            labelAnalysisOutput.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelAnalysisOutput.Name = "labelAnalysisOutput";
-            labelAnalysisOutput.Size = new System.Drawing.Size(73, 15);
+            labelAnalysisOutput.Size = new System.Drawing.Size(111, 25);
             labelAnalysisOutput.TabIndex = 4;
             labelAnalysisOutput.Text = "GIF Analysis:";
             // 
             // buttonImportAnotherFolder
             // 
-            buttonImportAnotherFolder.Location = new System.Drawing.Point(610, 237);
-            buttonImportAnotherFolder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonImportAnotherFolder.Location = new System.Drawing.Point(884, 395);
+            buttonImportAnotherFolder.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonImportAnotherFolder.Name = "buttonImportAnotherFolder";
-            buttonImportAnotherFolder.Size = new System.Drawing.Size(112, 27);
+            buttonImportAnotherFolder.Size = new System.Drawing.Size(147, 45);
             buttonImportAnotherFolder.TabIndex = 5;
             buttonImportAnotherFolder.Text = "Import Folder";
             buttonImportAnotherFolder.UseVisualStyleBackColor = true;
@@ -127,28 +127,28 @@
             // labelFramesFolderPath
             // 
             labelFramesFolderPath.AutoSize = true;
-            labelFramesFolderPath.Location = new System.Drawing.Point(404, 72);
-            labelFramesFolderPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFramesFolderPath.Location = new System.Drawing.Point(577, 120);
+            labelFramesFolderPath.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFramesFolderPath.Name = "labelFramesFolderPath";
-            labelFramesFolderPath.Size = new System.Drawing.Size(147, 15);
+            labelFramesFolderPath.Size = new System.Drawing.Size(222, 25);
             labelFramesFolderPath.TabIndex = 8;
             labelFramesFolderPath.Text = "Image Frames Folder Path:";
             // 
             // txtFramesFolderPath
             // 
-            txtFramesFolderPath.Location = new System.Drawing.Point(404, 90);
-            txtFramesFolderPath.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtFramesFolderPath.Location = new System.Drawing.Point(577, 150);
+            txtFramesFolderPath.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtFramesFolderPath.Name = "txtFramesFolderPath";
-            txtFramesFolderPath.Size = new System.Drawing.Size(223, 23);
+            txtFramesFolderPath.Size = new System.Drawing.Size(317, 31);
             txtFramesFolderPath.TabIndex = 7;
             txtFramesFolderPath.TextChanged += txtFramesFolderPath_TextChanged;
             // 
             // buttonOpenFolder
             // 
-            buttonOpenFolder.Location = new System.Drawing.Point(635, 84);
-            buttonOpenFolder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonOpenFolder.Location = new System.Drawing.Point(907, 140);
+            buttonOpenFolder.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonOpenFolder.Name = "buttonOpenFolder";
-            buttonOpenFolder.Size = new System.Drawing.Size(88, 33);
+            buttonOpenFolder.Size = new System.Drawing.Size(126, 55);
             buttonOpenFolder.TabIndex = 6;
             buttonOpenFolder.Text = "Load Folder";
             buttonOpenFolder.UseVisualStyleBackColor = true;
@@ -157,10 +157,10 @@
             // labelFramesFolderDetails
             // 
             labelFramesFolderDetails.AutoSize = true;
-            labelFramesFolderDetails.Location = new System.Drawing.Point(404, 134);
-            labelFramesFolderDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFramesFolderDetails.Location = new System.Drawing.Point(577, 223);
+            labelFramesFolderDetails.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFramesFolderDetails.Name = "labelFramesFolderDetails";
-            labelFramesFolderDetails.Size = new System.Drawing.Size(45, 15);
+            labelFramesFolderDetails.Size = new System.Drawing.Size(69, 25);
             labelFramesFolderDetails.TabIndex = 10;
             labelFramesFolderDetails.Text = "Details:";
             // 
@@ -168,23 +168,23 @@
             // 
             txtFramesFolderDetails.AcceptsReturn = true;
             txtFramesFolderDetails.AcceptsTab = true;
-            txtFramesFolderDetails.Location = new System.Drawing.Point(404, 152);
-            txtFramesFolderDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtFramesFolderDetails.Location = new System.Drawing.Point(577, 253);
+            txtFramesFolderDetails.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             txtFramesFolderDetails.Multiline = true;
             txtFramesFolderDetails.Name = "txtFramesFolderDetails";
             txtFramesFolderDetails.ReadOnly = true;
             txtFramesFolderDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            txtFramesFolderDetails.Size = new System.Drawing.Size(318, 74);
+            txtFramesFolderDetails.Size = new System.Drawing.Size(453, 121);
             txtFramesFolderDetails.TabIndex = 9;
             txtFramesFolderDetails.TextChanged += txtFramesFolderDetails_TextChanged;
             // 
             // labelImportAnotherFolder
             // 
             labelImportAnotherFolder.AutoSize = true;
-            labelImportAnotherFolder.Location = new System.Drawing.Point(404, 242);
-            labelImportAnotherFolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelImportAnotherFolder.Location = new System.Drawing.Point(577, 403);
+            labelImportAnotherFolder.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelImportAnotherFolder.Name = "labelImportAnotherFolder";
-            labelImportAnotherFolder.Size = new System.Drawing.Size(201, 15);
+            labelImportAnotherFolder.Size = new System.Drawing.Size(305, 25);
             labelImportAnotherFolder.TabIndex = 11;
             labelImportAnotherFolder.Text = "Merge Frames From Another Folder: ";
             // 
@@ -192,10 +192,10 @@
             // 
             labelGifEditTitle.AutoSize = true;
             labelGifEditTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            labelGifEditTitle.Location = new System.Drawing.Point(122, 22);
-            labelGifEditTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelGifEditTitle.Location = new System.Drawing.Point(174, 37);
+            labelGifEditTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelGifEditTitle.Name = "labelGifEditTitle";
-            labelGifEditTitle.Size = new System.Drawing.Size(129, 24);
+            labelGifEditTitle.Size = new System.Drawing.Size(194, 32);
             labelGifEditTitle.TabIndex = 12;
             labelGifEditTitle.Text = "GIF Edit Tools";
             // 
@@ -203,29 +203,29 @@
             // 
             labelGifCreationTitle.AutoSize = true;
             labelGifCreationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            labelGifCreationTitle.Location = new System.Drawing.Point(470, 22);
-            labelGifCreationTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelGifCreationTitle.Location = new System.Drawing.Point(671, 37);
+            labelGifCreationTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelGifCreationTitle.Name = "labelGifCreationTitle";
-            labelGifCreationTitle.Size = new System.Drawing.Size(167, 24);
+            labelGifCreationTitle.Size = new System.Drawing.Size(252, 32);
             labelGifCreationTitle.TabIndex = 13;
             labelGifCreationTitle.Text = "GIF Creation Tools";
             // 
             // labelFixFileSequence
             // 
             labelFixFileSequence.AutoSize = true;
-            labelFixFileSequence.Location = new System.Drawing.Point(425, 277);
-            labelFixFileSequence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFixFileSequence.Location = new System.Drawing.Point(618, 462);
+            labelFixFileSequence.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFixFileSequence.Name = "labelFixFileSequence";
-            labelFixFileSequence.Size = new System.Drawing.Size(171, 15);
+            labelFixFileSequence.Size = new System.Drawing.Size(254, 25);
             labelFixFileSequence.TabIndex = 14;
             labelFixFileSequence.Text = "Fix File Sequencing && Padding:";
             // 
             // buttonFixFileSequence
             // 
-            buttonFixFileSequence.Location = new System.Drawing.Point(610, 271);
-            buttonFixFileSequence.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonFixFileSequence.Location = new System.Drawing.Point(884, 452);
+            buttonFixFileSequence.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonFixFileSequence.Name = "buttonFixFileSequence";
-            buttonFixFileSequence.Size = new System.Drawing.Size(112, 27);
+            buttonFixFileSequence.Size = new System.Drawing.Size(147, 45);
             buttonFixFileSequence.TabIndex = 15;
             buttonFixFileSequence.Text = "Fix";
             buttonFixFileSequence.UseVisualStyleBackColor = true;
@@ -233,10 +233,10 @@
             // 
             // buttonCreateGifFromFolder
             // 
-            buttonCreateGifFromFolder.Location = new System.Drawing.Point(404, 397);
-            buttonCreateGifFromFolder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonCreateGifFromFolder.Location = new System.Drawing.Point(577, 662);
+            buttonCreateGifFromFolder.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonCreateGifFromFolder.Name = "buttonCreateGifFromFolder";
-            buttonCreateGifFromFolder.Size = new System.Drawing.Size(164, 43);
+            buttonCreateGifFromFolder.Size = new System.Drawing.Size(234, 72);
             buttonCreateGifFromFolder.TabIndex = 16;
             buttonCreateGifFromFolder.Text = "Create GIF From Folder";
             buttonCreateGifFromFolder.UseVisualStyleBackColor = true;
@@ -245,20 +245,20 @@
             // labelGifCreateStatus
             // 
             labelGifCreateStatus.AutoSize = true;
-            labelGifCreateStatus.Location = new System.Drawing.Point(404, 443);
-            labelGifCreateStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelGifCreateStatus.Location = new System.Drawing.Point(577, 738);
+            labelGifCreateStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelGifCreateStatus.Name = "labelGifCreateStatus";
-            labelGifCreateStatus.Size = new System.Drawing.Size(39, 15);
+            labelGifCreateStatus.Size = new System.Drawing.Size(60, 25);
             labelGifCreateStatus.TabIndex = 17;
             labelGifCreateStatus.Text = "Status";
             labelGifCreateStatus.Visible = false;
             // 
             // buttonAddCrossfade
             // 
-            buttonAddCrossfade.Location = new System.Drawing.Point(33, 291);
-            buttonAddCrossfade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonAddCrossfade.Location = new System.Drawing.Point(47, 485);
+            buttonAddCrossfade.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonAddCrossfade.Name = "buttonAddCrossfade";
-            buttonAddCrossfade.Size = new System.Drawing.Size(149, 27);
+            buttonAddCrossfade.Size = new System.Drawing.Size(213, 45);
             buttonAddCrossfade.TabIndex = 21;
             buttonAddCrossfade.Text = "Add Loop Crossfade";
             buttonAddCrossfade.UseVisualStyleBackColor = true;
@@ -268,12 +268,12 @@
             // 
             nudFadeDurationSeconds.DecimalPlaces = 2;
             nudFadeDurationSeconds.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            nudFadeDurationSeconds.Location = new System.Drawing.Point(189, 257);
-            nudFadeDurationSeconds.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudFadeDurationSeconds.Location = new System.Drawing.Point(270, 428);
+            nudFadeDurationSeconds.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudFadeDurationSeconds.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudFadeDurationSeconds.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
             nudFadeDurationSeconds.Name = "nudFadeDurationSeconds";
-            nudFadeDurationSeconds.Size = new System.Drawing.Size(62, 23);
+            nudFadeDurationSeconds.Size = new System.Drawing.Size(89, 31);
             nudFadeDurationSeconds.TabIndex = 22;
             nudFadeDurationSeconds.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudFadeDurationSeconds.ValueChanged += nudFadeDurationSeconds_ValueChanged;
@@ -281,20 +281,20 @@
             // labelFadeDuration
             // 
             labelFadeDuration.AutoSize = true;
-            labelFadeDuration.Location = new System.Drawing.Point(33, 261);
-            labelFadeDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFadeDuration.Location = new System.Drawing.Point(47, 435);
+            labelFadeDuration.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFadeDuration.Name = "labelFadeDuration";
-            labelFadeDuration.Size = new System.Drawing.Size(139, 15);
+            labelFadeDuration.Size = new System.Drawing.Size(209, 25);
             labelFadeDuration.TabIndex = 23;
             labelFadeDuration.Text = "Fade Duration (Seconds):";
             // 
             // labelCrossfadeStatus
             // 
             labelCrossfadeStatus.AutoSize = true;
-            labelCrossfadeStatus.Location = new System.Drawing.Point(34, 325);
-            labelCrossfadeStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCrossfadeStatus.Location = new System.Drawing.Point(49, 542);
+            labelCrossfadeStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCrossfadeStatus.Name = "labelCrossfadeStatus";
-            labelCrossfadeStatus.Size = new System.Drawing.Size(39, 15);
+            labelCrossfadeStatus.Size = new System.Drawing.Size(60, 25);
             labelCrossfadeStatus.TabIndex = 24;
             labelCrossfadeStatus.Text = "Status";
             labelCrossfadeStatus.Visible = false;
@@ -303,28 +303,28 @@
             // 
             LeftBorder.BackColor = System.Drawing.Color.Transparent;
             LeftBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            LeftBorder.Location = new System.Drawing.Point(14, 10);
-            LeftBorder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            LeftBorder.Location = new System.Drawing.Point(20, 17);
+            LeftBorder.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             LeftBorder.Name = "LeftBorder";
-            LeftBorder.Size = new System.Drawing.Size(352, 485);
+            LeftBorder.Size = new System.Drawing.Size(502, 807);
             LeftBorder.TabIndex = 25;
             // 
             // RightBorder
             // 
             RightBorder.BackColor = System.Drawing.Color.Transparent;
             RightBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            RightBorder.Location = new System.Drawing.Point(391, 10);
-            RightBorder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            RightBorder.Location = new System.Drawing.Point(559, 17);
+            RightBorder.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             RightBorder.Name = "RightBorder";
-            RightBorder.Size = new System.Drawing.Size(346, 485);
+            RightBorder.Size = new System.Drawing.Size(493, 807);
             RightBorder.TabIndex = 26;
             // 
             // buttonCreationHelp
             // 
-            buttonCreationHelp.Location = new System.Drawing.Point(635, 453);
-            buttonCreationHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonCreationHelp.Location = new System.Drawing.Point(907, 755);
+            buttonCreationHelp.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonCreationHelp.Name = "buttonCreationHelp";
-            buttonCreationHelp.Size = new System.Drawing.Size(88, 27);
+            buttonCreationHelp.Size = new System.Drawing.Size(126, 45);
             buttonCreationHelp.TabIndex = 27;
             buttonCreationHelp.Text = "Help";
             buttonCreationHelp.UseVisualStyleBackColor = true;
@@ -332,10 +332,10 @@
             // 
             // buttonEditHelp
             // 
-            buttonEditHelp.Location = new System.Drawing.Point(264, 453);
-            buttonEditHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonEditHelp.Location = new System.Drawing.Point(377, 755);
+            buttonEditHelp.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             buttonEditHelp.Name = "buttonEditHelp";
-            buttonEditHelp.Size = new System.Drawing.Size(88, 27);
+            buttonEditHelp.Size = new System.Drawing.Size(126, 45);
             buttonEditHelp.TabIndex = 28;
             buttonEditHelp.Text = "Help";
             buttonEditHelp.UseVisualStyleBackColor = true;
@@ -345,16 +345,17 @@
             // 
             dropdownFFmpegMode.FormattingEnabled = true;
             dropdownFFmpegMode.Items.AddRange(new object[] { "FFMPEG Mode 1", "FFMPEG Mode 2" });
-            dropdownFFmpegMode.Location = new System.Drawing.Point(575, 408);
+            dropdownFFmpegMode.Location = new System.Drawing.Point(821, 683);
+            dropdownFFmpegMode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dropdownFFmpegMode.Name = "dropdownFFmpegMode";
-            dropdownFFmpegMode.Size = new System.Drawing.Size(114, 23);
+            dropdownFFmpegMode.Size = new System.Drawing.Size(177, 33);
             dropdownFFmpegMode.TabIndex = 29;
             // 
             // infoIconFFmpegMode
             // 
             infoIconFFmpegMode.Image = (System.Drawing.Image)resources.GetObject("infoIconFFmpegMode.Image");
-            infoIconFFmpegMode.Location = new System.Drawing.Point(696, 411);
-            infoIconFFmpegMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            infoIconFFmpegMode.Location = new System.Drawing.Point(1003, 692);
+            infoIconFFmpegMode.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             infoIconFFmpegMode.Name = "infoIconFFmpegMode";
             infoIconFFmpegMode.Size = new System.Drawing.Size(16, 16);
             infoIconFFmpegMode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -362,24 +363,36 @@
             infoIconFFmpegMode.TabStop = false;
             toolTip1.SetToolTip(infoIconFFmpegMode, resources.GetString("infoIconFFmpegMode.ToolTip"));
             // 
+            // infoIconAlphaThreshold
+            // 
+            infoIconAlphaThreshold.Image = (System.Drawing.Image)resources.GetObject("infoIconAlphaThreshold.Image");
+            infoIconAlphaThreshold.Location = new System.Drawing.Point(762, 554);
+            infoIconAlphaThreshold.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            infoIconAlphaThreshold.Name = "infoIconAlphaThreshold";
+            infoIconAlphaThreshold.Size = new System.Drawing.Size(16, 16);
+            infoIconAlphaThreshold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            infoIconAlphaThreshold.TabIndex = 43;
+            infoIconAlphaThreshold.TabStop = false;
+            toolTip1.SetToolTip(infoIconAlphaThreshold, resources.GetString("infoIconAlphaThreshold.ToolTip"));
+            // 
             // labelCalcGifDuration
             // 
             labelCalcGifDuration.AutoSize = true;
-            labelCalcGifDuration.Location = new System.Drawing.Point(609, 384);
-            labelCalcGifDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelCalcGifDuration.Location = new System.Drawing.Point(870, 640);
+            labelCalcGifDuration.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelCalcGifDuration.Name = "labelCalcGifDuration";
-            labelCalcGifDuration.Size = new System.Drawing.Size(109, 15);
+            labelCalcGifDuration.Size = new System.Drawing.Size(164, 25);
             labelCalcGifDuration.TabIndex = 20;
             labelCalcGifDuration.Text = "Total Duration: N/A";
             // 
             // nudFrameRateSelect
             // 
-            nudFrameRateSelect.Location = new System.Drawing.Point(654, 358);
-            nudFrameRateSelect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudFrameRateSelect.Location = new System.Drawing.Point(934, 597);
+            nudFrameRateSelect.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudFrameRateSelect.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
             nudFrameRateSelect.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudFrameRateSelect.Name = "nudFrameRateSelect";
-            nudFrameRateSelect.Size = new System.Drawing.Size(64, 23);
+            nudFrameRateSelect.Size = new System.Drawing.Size(91, 31);
             nudFrameRateSelect.TabIndex = 18;
             nudFrameRateSelect.Value = new decimal(new int[] { 25, 0, 0, 0 });
             nudFrameRateSelect.ValueChanged += nudFrameRateSelect_ValueChanged;
@@ -387,20 +400,21 @@
             // labelFrameRateSelect
             // 
             labelFrameRateSelect.AutoSize = true;
-            labelFrameRateSelect.Location = new System.Drawing.Point(539, 360);
-            labelFrameRateSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelFrameRateSelect.Location = new System.Drawing.Point(756, 599);
+            labelFrameRateSelect.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelFrameRateSelect.Name = "labelFrameRateSelect";
-            labelFrameRateSelect.Size = new System.Drawing.Size(110, 15);
+            labelFrameRateSelect.Size = new System.Drawing.Size(166, 25);
             labelFrameRateSelect.TabIndex = 19;
             labelFrameRateSelect.Text = "Frames Per Second:";
+            labelFrameRateSelect.Click += labelFrameRateSelect_Click;
             // 
             // btnViewOutputDirectory
             // 
             btnViewOutputDirectory.Enabled = false;
-            btnViewOutputDirectory.Location = new System.Drawing.Point(586, 124);
-            btnViewOutputDirectory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnViewOutputDirectory.Location = new System.Drawing.Point(837, 207);
+            btnViewOutputDirectory.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             btnViewOutputDirectory.Name = "btnViewOutputDirectory";
-            btnViewOutputDirectory.Size = new System.Drawing.Size(136, 22);
+            btnViewOutputDirectory.Size = new System.Drawing.Size(194, 37);
             btnViewOutputDirectory.TabIndex = 39;
             btnViewOutputDirectory.Text = "View Output Directory";
             btnViewOutputDirectory.UseVisualStyleBackColor = true;
@@ -408,9 +422,10 @@
             // 
             // btnCheckAlpha
             // 
-            btnCheckAlpha.Location = new System.Drawing.Point(24, 457);
+            btnCheckAlpha.Location = new System.Drawing.Point(34, 762);
+            btnCheckAlpha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCheckAlpha.Name = "btnCheckAlpha";
-            btnCheckAlpha.Size = new System.Drawing.Size(148, 23);
+            btnCheckAlpha.Size = new System.Drawing.Size(211, 38);
             btnCheckAlpha.TabIndex = 40;
             btnCheckAlpha.Text = "Check Alpha Channel";
             btnCheckAlpha.UseVisualStyleBackColor = true;
@@ -419,39 +434,29 @@
             // 
             // nudAlphaThreshold
             // 
-            nudAlphaThreshold.Location = new System.Drawing.Point(654, 325);
+            nudAlphaThreshold.Location = new System.Drawing.Point(934, 542);
+            nudAlphaThreshold.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             nudAlphaThreshold.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             nudAlphaThreshold.Name = "nudAlphaThreshold";
-            nudAlphaThreshold.Size = new System.Drawing.Size(64, 23);
+            nudAlphaThreshold.Size = new System.Drawing.Size(91, 31);
             nudAlphaThreshold.TabIndex = 41;
             nudAlphaThreshold.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // labelAlphaThreshold
             // 
             labelAlphaThreshold.AutoSize = true;
-            labelAlphaThreshold.Location = new System.Drawing.Point(553, 328);
+            labelAlphaThreshold.Location = new System.Drawing.Point(781, 548);
+            labelAlphaThreshold.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelAlphaThreshold.Name = "labelAlphaThreshold";
-            labelAlphaThreshold.Size = new System.Drawing.Size(96, 15);
+            labelAlphaThreshold.Size = new System.Drawing.Size(145, 25);
             labelAlphaThreshold.TabIndex = 42;
             labelAlphaThreshold.Text = "Alpha Threshold:";
             // 
-            // infoIconAlphaThreshold
-            // 
-            infoIconAlphaThreshold.Image = (System.Drawing.Image)resources.GetObject("infoIconAlphaThreshold.Image");
-            infoIconAlphaThreshold.Location = new System.Drawing.Point(535, 328);
-            infoIconAlphaThreshold.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            infoIconAlphaThreshold.Name = "infoIconAlphaThreshold";
-            infoIconAlphaThreshold.Size = new System.Drawing.Size(16, 16);
-            infoIconAlphaThreshold.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            infoIconAlphaThreshold.TabIndex = 43;
-            infoIconAlphaThreshold.TabStop = false;
-            toolTip1.SetToolTip(infoIconAlphaThreshold, resources.GetString("infoIconAlphaThreshold.ToolTip"));
-            // 
             // ToolForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(744, 504);
+            ClientSize = new System.Drawing.Size(1063, 840);
             Controls.Add(infoIconAlphaThreshold);
             Controls.Add(labelAlphaThreshold);
             Controls.Add(nudAlphaThreshold);
@@ -488,14 +493,14 @@
             Controls.Add(buttonOpenFile);
             Controls.Add(LeftBorder);
             Controls.Add(RightBorder);
-            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             Name = "ToolForm";
             Text = "GIF Tools";
             ((System.ComponentModel.ISupportInitialize)nudFadeDurationSeconds).EndInit();
             ((System.ComponentModel.ISupportInitialize)infoIconFFmpegMode).EndInit();
+            ((System.ComponentModel.ISupportInitialize)infoIconAlphaThreshold).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudFrameRateSelect).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudAlphaThreshold).EndInit();
-            ((System.ComponentModel.ISupportInitialize)infoIconAlphaThreshold).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
