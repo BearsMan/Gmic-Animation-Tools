@@ -252,10 +252,10 @@
             toggleRandomEnd.BackColor = System.Drawing.Color.White;
             toggleRandomEnd.Checked = true;
             toggleRandomEnd.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomEnd.Location = new System.Drawing.Point(6, 1093);
+            toggleRandomEnd.Location = new System.Drawing.Point(15, 1093);
             toggleRandomEnd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomEnd.Name = "toggleRandomEnd";
-            toggleRandomEnd.Size = new System.Drawing.Size(33, 38);
+            toggleRandomEnd.Size = new System.Drawing.Size(24, 31);
             toggleRandomEnd.TabIndex = 17;
             paramNamesTooltip.SetToolTip(toggleRandomEnd, "This toggle enables/disables the randomization of end values");
             toggleRandomEnd.UseVisualStyleBackColor = true;
@@ -267,12 +267,12 @@
             toggleRandomStart.BackColor = System.Drawing.Color.White;
             toggleRandomStart.Checked = true;
             toggleRandomStart.CheckState = System.Windows.Forms.CheckState.Checked;
-            toggleRandomStart.Location = new System.Drawing.Point(6, 1009);
+            toggleRandomStart.Location = new System.Drawing.Point(15, 1009);
             toggleRandomStart.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             toggleRandomStart.Name = "toggleRandomStart";
-            toggleRandomStart.Size = new System.Drawing.Size(33, 38);
+            toggleRandomStart.Size = new System.Drawing.Size(24, 31);
             toggleRandomStart.TabIndex = 16;
-            paramNamesTooltip.SetToolTip(toggleRandomStart, "This toggle enables/disables the randomization of end values");
+            paramNamesTooltip.SetToolTip(toggleRandomStart, "This toggle enables/disables the randomization of start values");
             toggleRandomStart.UseVisualStyleBackColor = true;
             // 
             // ParamNamesForm

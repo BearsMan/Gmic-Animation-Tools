@@ -85,7 +85,7 @@ namespace GmicFilterAnimatorApp
 
             // For the box with the list of filters
             listBoxFiltersMain.DrawMode = DrawMode.OwnerDrawFixed;
-            listBoxFiltersMain.ItemHeight = 15;  // Make sure this is enough to show the text.
+            listBoxFiltersMain.ItemHeight = CompensateDPI(15);  // Make sure this is enough to show the text.
             listBoxFiltersMain.DrawItem += ListBoxFiltersMain_DrawItem;
             Load += MainForm_Load;
             // Run method to load filters file not silent, will display message asking user to update files
@@ -3089,6 +3089,24 @@ namespace GmicFilterAnimatorApp
                 // Set color to system window
                 txtExponentArray.BackColor = SystemColors.Window;
             }
+        }
+
+        private int CompensateDPI(int originalValue)
+        {
+            float scaleFactor = this.DeviceDpi / 96f; // 96 is the default DPI
+            return (int)(originalValue * scaleFactor);
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            // Resize the listbox to fit the window height
+            int initialListboxHeight = listBoxFiltersMain.Height;
+            int initialFormHeight = this.Height;
+            int initialListBoxBottom = listBoxFiltersMain.Bottom;
+            int buffer = initialListboxHeight - initialListBoxBottom;
+
+            listBoxFiltersMain.Height = initialFormHeight - initialListBoxBottom - buffer;
+
         }
     }
 

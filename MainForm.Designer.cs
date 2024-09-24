@@ -808,6 +808,7 @@
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
             statusStrip1.Size = new System.Drawing.Size(683, 32);
+            statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 57;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -912,6 +913,7 @@
             Name = "MainForm";
             Text = "G'MIC Animator";
             Load += MainForm_Load;
+            Resize += MainForm_Resize;
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIndex).EndInit();
