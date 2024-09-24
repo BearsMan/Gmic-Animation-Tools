@@ -67,6 +67,7 @@
             infoIconRemoveBlankFrames = new System.Windows.Forms.PictureBox();
             infoIconFilterSearch = new System.Windows.Forms.PictureBox();
             infoIconAbsoluteModeMain = new System.Windows.Forms.PictureBox();
+            buttonClearFilterSearch = new System.Windows.Forms.Button();
             btnShowParamNames = new System.Windows.Forms.Button();
             labelTotalFrames = new System.Windows.Forms.Label();
             TextLabelNearStartButton = new System.Windows.Forms.Label();
@@ -95,10 +96,10 @@
             btnGifTools = new System.Windows.Forms.Button();
             checkBoxRemoveBlankFrames = new System.Windows.Forms.CheckBox();
             groupBoxOptions = new System.Windows.Forms.GroupBox();
-            groupBoxAdvancedOptions = new System.Windows.Forms.GroupBox();
+            groupBoxDebugOptions = new System.Windows.Forms.GroupBox();
             groupBoxTools = new System.Windows.Forms.GroupBox();
             groupBoxInterpolation = new System.Windows.Forms.GroupBox();
-            buttonClearFilterSearch = new System.Windows.Forms.Button();
+            groupBoxAdvancedControl = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIndex).BeginInit();
@@ -118,14 +119,15 @@
             groupBoxNormalizeRadios.SuspendLayout();
             statusStrip1.SuspendLayout();
             groupBoxOptions.SuspendLayout();
-            groupBoxAdvancedOptions.SuspendLayout();
+            groupBoxDebugOptions.SuspendLayout();
             groupBoxTools.SuspendLayout();
             groupBoxInterpolation.SuspendLayout();
+            groupBoxAdvancedControl.SuspendLayout();
             SuspendLayout();
             // 
             // nudTotalFrames
             // 
-            nudTotalFrames.Location = new System.Drawing.Point(113, 315);
+            nudTotalFrames.Location = new System.Drawing.Point(123, 264);
             nudTotalFrames.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudTotalFrames.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudTotalFrames.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
@@ -139,7 +141,7 @@
             // 
             nudMasterParamIncrement.DecimalPlaces = 2;
             nudMasterParamIncrement.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            nudMasterParamIncrement.Location = new System.Drawing.Point(474, 318);
+            nudMasterParamIncrement.Location = new System.Drawing.Point(198, 33);
             nudMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudMasterParamIncrement.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudMasterParamIncrement.Minimum = new decimal(new int[] { 1, 0, 0, 589824 });
@@ -221,16 +223,16 @@
             // lblMasterParamIndex
             // 
             lblMasterParamIndex.AutoSize = true;
-            lblMasterParamIndex.Location = new System.Drawing.Point(21, 272);
+            lblMasterParamIndex.Location = new System.Drawing.Point(38, 80);
             lblMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblMasterParamIndex.Name = "lblMasterParamIndex";
-            lblMasterParamIndex.Size = new System.Drawing.Size(202, 25);
+            lblMasterParamIndex.Size = new System.Drawing.Size(154, 25);
             lblMasterParamIndex.TabIndex = 7;
-            lblMasterParamIndex.Text = "Master Parameter Index:";
+            lblMasterParamIndex.Text = "Master Parameter:";
             // 
             // nudMasterParamIndex
             // 
-            nudMasterParamIndex.Location = new System.Drawing.Point(227, 268);
+            nudMasterParamIndex.Location = new System.Drawing.Point(198, 76);
             nudMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             nudMasterParamIndex.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nudMasterParamIndex.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -243,13 +245,13 @@
             // lblMasterParamIncrement
             // 
             lblMasterParamIncrement.AutoSize = true;
-            lblMasterParamIncrement.Location = new System.Drawing.Point(249, 321);
+            lblMasterParamIncrement.Location = new System.Drawing.Point(38, 35);
             lblMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblMasterParamIncrement.Name = "lblMasterParamIncrement";
             lblMasterParamIncrement.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            lblMasterParamIncrement.Size = new System.Drawing.Size(222, 25);
+            lblMasterParamIncrement.Size = new System.Drawing.Size(154, 25);
             lblMasterParamIncrement.TabIndex = 9;
-            lblMasterParamIncrement.Text = ".................Master Increment:";
+            lblMasterParamIncrement.Text = "Master Increment:";
             lblMasterParamIncrement.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // rbNoExponents
@@ -379,7 +381,7 @@
             // InfoIconMasterParamIndex
             // 
             InfoIconMasterParamIndex.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIndex.Image");
-            InfoIconMasterParamIndex.Location = new System.Drawing.Point(315, 275);
+            InfoIconMasterParamIndex.Location = new System.Drawing.Point(19, 86);
             InfoIconMasterParamIndex.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIndex.Name = "InfoIconMasterParamIndex";
             InfoIconMasterParamIndex.Size = new System.Drawing.Size(16, 16);
@@ -391,7 +393,7 @@
             // InfoIconMasterParamIncrement
             // 
             InfoIconMasterParamIncrement.Image = (System.Drawing.Image)resources.GetObject("InfoIconMasterParamIncrement.Image");
-            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(615, 327);
+            InfoIconMasterParamIncrement.Location = new System.Drawing.Point(20, 41);
             InfoIconMasterParamIncrement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             InfoIconMasterParamIncrement.Name = "InfoIconMasterParamIncrement";
             InfoIconMasterParamIncrement.Size = new System.Drawing.Size(16, 16);
@@ -545,6 +547,19 @@
             infoIconAbsoluteModeMain.TabStop = false;
             toolTip1.SetToolTip(infoIconAbsoluteModeMain, resources.GetString("infoIconAbsoluteModeMain.ToolTip"));
             // 
+            // buttonClearFilterSearch
+            // 
+            buttonClearFilterSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            buttonClearFilterSearch.Location = new System.Drawing.Point(669, 746);
+            buttonClearFilterSearch.Name = "buttonClearFilterSearch";
+            buttonClearFilterSearch.Size = new System.Drawing.Size(35, 31);
+            buttonClearFilterSearch.TabIndex = 67;
+            buttonClearFilterSearch.Text = "X";
+            toolTip1.SetToolTip(buttonClearFilterSearch, "Clears the text in the search box");
+            buttonClearFilterSearch.UseCompatibleTextRendering = true;
+            buttonClearFilterSearch.UseVisualStyleBackColor = true;
+            buttonClearFilterSearch.Click += buttonClearFilterSearch_Click;
+            // 
             // btnShowParamNames
             // 
             btnShowParamNames.BackColor = System.Drawing.Color.SkyBlue;
@@ -561,7 +576,7 @@
             // labelTotalFrames
             // 
             labelTotalFrames.AutoSize = true;
-            labelTotalFrames.Location = new System.Drawing.Point(19, 320);
+            labelTotalFrames.Location = new System.Drawing.Point(29, 269);
             labelTotalFrames.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelTotalFrames.Name = "labelTotalFrames";
             labelTotalFrames.Size = new System.Drawing.Size(89, 25);
@@ -593,7 +608,7 @@
             // labelMasterParamName
             // 
             labelMasterParamName.AutoSize = true;
-            labelMasterParamName.Location = new System.Drawing.Point(343, 270);
+            labelMasterParamName.Location = new System.Drawing.Point(61, 116);
             labelMasterParamName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelMasterParamName.Name = "labelMasterParamName";
             labelMasterParamName.Size = new System.Drawing.Size(248, 25);
@@ -873,19 +888,19 @@
             groupBoxOptions.TabStop = false;
             groupBoxOptions.Text = "Output Options";
             // 
-            // groupBoxAdvancedOptions
+            // groupBoxDebugOptions
             // 
-            groupBoxAdvancedOptions.Controls.Add(infoIconSingleThread);
-            groupBoxAdvancedOptions.Controls.Add(labelDebugLog);
-            groupBoxAdvancedOptions.Controls.Add(dropdownDebugLog);
-            groupBoxAdvancedOptions.Controls.Add(pictureBox1);
-            groupBoxAdvancedOptions.Controls.Add(checkBoxSingleThreadMode);
-            groupBoxAdvancedOptions.Location = new System.Drawing.Point(723, 250);
-            groupBoxAdvancedOptions.Name = "groupBoxAdvancedOptions";
-            groupBoxAdvancedOptions.Size = new System.Drawing.Size(435, 136);
-            groupBoxAdvancedOptions.TabIndex = 64;
-            groupBoxAdvancedOptions.TabStop = false;
-            groupBoxAdvancedOptions.Text = "Advanced Options";
+            groupBoxDebugOptions.Controls.Add(infoIconSingleThread);
+            groupBoxDebugOptions.Controls.Add(labelDebugLog);
+            groupBoxDebugOptions.Controls.Add(dropdownDebugLog);
+            groupBoxDebugOptions.Controls.Add(pictureBox1);
+            groupBoxDebugOptions.Controls.Add(checkBoxSingleThreadMode);
+            groupBoxDebugOptions.Location = new System.Drawing.Point(723, 250);
+            groupBoxDebugOptions.Name = "groupBoxDebugOptions";
+            groupBoxDebugOptions.Size = new System.Drawing.Size(435, 136);
+            groupBoxDebugOptions.TabIndex = 64;
+            groupBoxDebugOptions.TabStop = false;
+            groupBoxDebugOptions.Text = "Debugging";
             // 
             // groupBoxTools
             // 
@@ -912,34 +927,38 @@
             groupBoxInterpolation.Controls.Add(InfoIconMasterExponent);
             groupBoxInterpolation.Controls.Add(InfoIconCustomExponents);
             groupBoxInterpolation.Controls.Add(labelMasterExponent);
-            groupBoxInterpolation.Location = new System.Drawing.Point(25, 394);
+            groupBoxInterpolation.Location = new System.Drawing.Point(26, 406);
             groupBoxInterpolation.Name = "groupBoxInterpolation";
             groupBoxInterpolation.Size = new System.Drawing.Size(664, 197);
             groupBoxInterpolation.TabIndex = 66;
             groupBoxInterpolation.TabStop = false;
             groupBoxInterpolation.Text = "Interolation Modes";
             // 
-            // buttonClearFilterSearch
+            // groupBoxAdvancedControl
             // 
-            buttonClearFilterSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            buttonClearFilterSearch.Location = new System.Drawing.Point(669, 746);
-            buttonClearFilterSearch.Name = "buttonClearFilterSearch";
-            buttonClearFilterSearch.Size = new System.Drawing.Size(35, 31);
-            buttonClearFilterSearch.TabIndex = 67;
-            buttonClearFilterSearch.Text = "X";
-            toolTip1.SetToolTip(buttonClearFilterSearch, "Clears the text in the search box");
-            buttonClearFilterSearch.UseCompatibleTextRendering = true;
-            buttonClearFilterSearch.UseVisualStyleBackColor = true;
-            buttonClearFilterSearch.Click += buttonClearFilterSearch_Click;
+            groupBoxAdvancedControl.Controls.Add(InfoIconMasterParamIncrement);
+            groupBoxAdvancedControl.Controls.Add(lblMasterParamIndex);
+            groupBoxAdvancedControl.Controls.Add(nudMasterParamIndex);
+            groupBoxAdvancedControl.Controls.Add(lblMasterParamIncrement);
+            groupBoxAdvancedControl.Controls.Add(nudMasterParamIncrement);
+            groupBoxAdvancedControl.Controls.Add(InfoIconMasterParamIndex);
+            groupBoxAdvancedControl.Controls.Add(labelMasterParamName);
+            groupBoxAdvancedControl.Location = new System.Drawing.Point(334, 256);
+            groupBoxAdvancedControl.Name = "groupBoxAdvancedControl";
+            groupBoxAdvancedControl.Size = new System.Drawing.Size(356, 150);
+            groupBoxAdvancedControl.TabIndex = 68;
+            groupBoxAdvancedControl.TabStop = false;
+            groupBoxAdvancedControl.Text = "Advanced";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             ClientSize = new System.Drawing.Size(1179, 1030);
+            Controls.Add(groupBoxAdvancedControl);
             Controls.Add(buttonClearFilterSearch);
             Controls.Add(groupBoxTools);
-            Controls.Add(groupBoxAdvancedOptions);
+            Controls.Add(groupBoxDebugOptions);
             Controls.Add(groupBoxOptions);
             Controls.Add(infoIconFilterSearch);
             Controls.Add(progressBarGeneration);
@@ -949,18 +968,11 @@
             Controls.Add(txtSearchBoxMain);
             Controls.Add(btnLoadFilters);
             Controls.Add(btnSwapStartEndStrings);
-            Controls.Add(labelMasterParamName);
             Controls.Add(TextLabelNearStartButton);
             Controls.Add(labelTotalFrames);
             Controls.Add(nudTotalFrames);
-            Controls.Add(InfoIconMasterParamIncrement);
-            Controls.Add(InfoIconMasterParamIndex);
             Controls.Add(btnViewOutputDirectory);
             Controls.Add(btnStart);
-            Controls.Add(nudMasterParamIncrement);
-            Controls.Add(lblMasterParamIncrement);
-            Controls.Add(nudMasterParamIndex);
-            Controls.Add(lblMasterParamIndex);
             Controls.Add(txtEndParams);
             Controls.Add(lblEndParams);
             Controls.Add(txtStartParams);
@@ -1000,11 +1012,13 @@
             statusStrip1.PerformLayout();
             groupBoxOptions.ResumeLayout(false);
             groupBoxOptions.PerformLayout();
-            groupBoxAdvancedOptions.ResumeLayout(false);
-            groupBoxAdvancedOptions.PerformLayout();
+            groupBoxDebugOptions.ResumeLayout(false);
+            groupBoxDebugOptions.PerformLayout();
             groupBoxTools.ResumeLayout(false);
             groupBoxInterpolation.ResumeLayout(false);
             groupBoxInterpolation.PerformLayout();
+            groupBoxAdvancedControl.ResumeLayout(false);
+            groupBoxAdvancedControl.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1078,9 +1092,10 @@
         private System.Windows.Forms.PictureBox infoIconFilterSearch;
         private System.Windows.Forms.PictureBox infoIconAbsoluteModeMain;
         private System.Windows.Forms.GroupBox groupBoxOptions;
-        private System.Windows.Forms.GroupBox groupBoxAdvancedOptions;
+        private System.Windows.Forms.GroupBox groupBoxDebugOptions;
         private System.Windows.Forms.GroupBox groupBoxTools;
         private System.Windows.Forms.GroupBox groupBoxInterpolation;
         private System.Windows.Forms.Button buttonClearFilterSearch;
+        private System.Windows.Forms.GroupBox groupBoxAdvancedControl;
     }
 }
