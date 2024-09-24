@@ -108,21 +108,22 @@ namespace GmicFilterAnimatorApp
 
             // Load parameters of current filter
             LoadActiveFilterParameters();
-
             UpdateParameterUI();
+
+
             Console.WriteLine("Finished Loading Main Form.");
 
+            //  -----------------------  Apply config preferences from Program.Config -----------------------
             Program.Config.RefreshConfiguration();
 
-            // Apply config preferences from Program.Config
             txtInputFilePath.Text = Program.Config.InputFilePath;
-
             checkBoxSingleThreadMode.Checked = Program.Config.SingleThreadMode;
             chkCreateGif.Checked = Program.Config.CreateGIF;
             checkBoxLogOnly.Checked = Program.Config.DontCreateImages;
             checkBoxUseSameOutputDir.Checked = Program.Config.UseSameOutputDirectory;
-
             dropdownDebugLog.SelectedIndex = Program.Config.DebugLogLevel;
+            checkBoxAutoMasterParamIndex.Checked = Program.Config.AutoSwitchMasterParameter;
+            totalFramesDefault = Program.Config.DefaultFrameCount;
 
             ActivateFilter(Program.Config.DefaultFilter);
 
@@ -138,6 +139,9 @@ namespace GmicFilterAnimatorApp
 
             // This has to go after the parameter strings are loaded or else it won't be able to tell if it's a valid parameter
             nudMasterParamIndex.Value = Program.Config.DefaultMasterParameterIndex;
+
+
+            //  -------------------------------------------------------------------------------------------------
 
             // Set the master frame default value to default (probably 100)
             nudTotalFrames.Value = totalFramesDefault;

@@ -26,6 +26,9 @@ namespace GmicDrosteAnimate
         static bool DontCreateImages_Validated = false;
         static bool UseSameOutputDirectory_Validated = false;
 
+        static int defaultFrameCount_Validated = 100;
+        static bool AutoSwitchMasterParameter_Validated = true;
+
         static int DebugLogLevel_Validated = 0;
         static int DefaultMasterParamIndex_Validated = 1;
 
@@ -49,7 +52,12 @@ namespace GmicDrosteAnimate
             + $"Default_Filter = {presetDefaultFilter}" + "\n"
             + "Default_Filter_Start_Params = " + "\n"
             + "Default_Filter_End_Params = " + "\n"
-            + "Default_Master_Parameter_Index = " + "\n";
+            + "Default_Master_Parameter_Index = " + "\n"
+            + "\n"
+            + $"Default_Frame_Count = {defaultFrameCount_Validated}" + "\n"
+            + $"Auto_Switch_Master_Parameter = {AutoSwitchMasterParameter_Validated}" + "\n"
+            ; // End of default config content
+
 
 
         public ConfigFilerManager(string configFilePath)
@@ -99,6 +107,9 @@ namespace GmicDrosteAnimate
             string _defaultFilterEndParams;
             string _defaultMasterParameterIndex;
 
+            string _defaultFrameCount;
+            string _autoSwitchMasterParameter;
+
             // Create intermediate variables for processing
             _inputFilePath = ValidateString(_configuration["Preferences:Input_File_Path"]);
 
@@ -114,6 +125,9 @@ namespace GmicDrosteAnimate
             _defaultFilterStartParams = ValidateString(_configuration["Preferences:Default_Filter_Start_Params"]);
             _defaultFilterEndParams = ValidateString(_configuration["Preferences:Default_Filter_End_Params"]);
 
+            _autoSwitchMasterParameter = _configuration["Preferences:Auto_Switch_Master_Parameter"];
+            _defaultFrameCount = _configuration["Preferences:Default_Frame_Count"];
+
 
             // Validate booleans - If a null value is returned, the original value is used
             SingleThreadMode_Validated = ValidateBool(_singleThreadMode) ?? SingleThreadMode_Validated;
@@ -121,6 +135,8 @@ namespace GmicDrosteAnimate
             DontCreateImages_Validated = ValidateBool(_dontCreateImages) ?? DontCreateImages_Validated;
             UseSameOutputDirectory_Validated = ValidateBool(_useSameOutputDirectory) ?? UseSameOutputDirectory_Validated;
 
+            defaultFrameCount_Validated = ValidateInt(_defaultFrameCount, min: 1, max: 10000) ?? defaultFrameCount_Validated;
+            AutoSwitchMasterParameter_Validated = ValidateBool(_autoSwitchMasterParameter) ?? AutoSwitchMasterParameter_Validated;
 
             // Validate file path either relative or absolute
             if (!string.IsNullOrWhiteSpace(_inputFilePath))
@@ -179,7 +195,7 @@ namespace GmicDrosteAnimate
                 defaultFilter_Validated = presetDefaultFilter;
             }
 
-            // Validate masteer parameter is a whole number greater than 0 and is within the range of the number of parameters in the filter
+            // Validate master parameter is a whole number greater than 0 and is within the range of the number of parameters in the filter
             if (!string.IsNullOrWhiteSpace(_defaultMasterParameterIndex))
             {
                 // If it's a whole number greater than 0
@@ -303,6 +319,29 @@ namespace GmicDrosteAnimate
             return null;
         }
 
+        private int? ValidateInt(string value, int? max, int? min)
+        {
+            if (int.TryParse(value, out int result))
+            {
+                if (result >= min && result <= max)
+                {
+                    return result;
+                }
+                else if (result < min)
+                {
+                    ShowValidationError($"Integer value ({value} is too small. Using minimum: {min}");
+                    return min;
+                }
+                else if (result > max)
+                {
+                    ShowValidationError($"Integer value ({value} is too large. Using maximum: {max}");
+                    return max;
+                }
+            }
+            ShowValidationError("Integer value is invalid.");
+            return null;
+        }
+
         private void ShowValidationError(string message)
         {
             MessageBox.Show(message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -321,5 +360,8 @@ namespace GmicDrosteAnimate
         public string DefaultFilterStartParams => defaultFilterStartParams_Validated;
         public string DefaultFilterEndParams => defaultFilterEndParams_Validated;
         public decimal DefaultMasterParameterIndex => DefaultMasterParamIndex_Validated; // This should be the value of the nud control, so starting at 1
+
+        public int DefaultFrameCount => defaultFrameCount_Validated;
+        public bool AutoSwitchMasterParameter => AutoSwitchMasterParameter_Validated;
     }
 }
