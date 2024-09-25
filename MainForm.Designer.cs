@@ -104,6 +104,7 @@
             groupBoxAdvancedControl = new System.Windows.Forms.GroupBox();
             checkBoxAutoMasterParamIndex = new System.Windows.Forms.CheckBox();
             labelWarnSameStartEnd = new System.Windows.Forms.Label();
+            labelVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)nudTotalFrames).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIncrement).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMasterParamIndex).BeginInit();
@@ -1008,11 +1009,23 @@
             labelWarnSameStartEnd.TabIndex = 69;
             labelWarnSameStartEnd.Text = "                Warning:\r\nStart && End values the same";
             // 
+            // labelVersion
+            // 
+            labelVersion.AutoSize = true;
+            labelVersion.ForeColor = System.Drawing.SystemColors.ControlDark;
+            labelVersion.Location = new System.Drawing.Point(1049, 13);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new System.Drawing.Size(70, 25);
+            labelVersion.TabIndex = 71;
+            labelVersion.Text = "Version";
+            labelVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             ClientSize = new System.Drawing.Size(1179, 1030);
+            Controls.Add(labelVersion);
             Controls.Add(buttonShowFramesDisabledWarningExplain);
             Controls.Add(labelWarnSameStartEnd);
             Controls.Add(groupBoxAdvancedControl);
@@ -1163,5 +1176,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelWarnSameStartEnd;
         private System.Windows.Forms.Button buttonShowFramesDisabledWarningExplain;
+        private System.Windows.Forms.Label labelVersion;
     }
 }

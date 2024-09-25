@@ -82,12 +82,19 @@ namespace GmicFilterAnimatorApp
         // Other variables
         private int maxParallelJobs = 10;
 
+        // Get version number from assembly
+        static System.Version versionFull = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+        public readonly string versionString = $"{versionFull.Major}.{versionFull.Minor}.{versionFull.Build}";
+
         public MainForm()
         {
             InitializeComponent();
             InitializeDefaults();
 
-            // Set form starting height and 
+            // Set the version number label
+            labelVersion.Text = $"Version {versionString}";
+
+            // Store form starting height and and listbox height to be used later when resizing
             formDefaultHeight = this.Height;
             listBoxDefaultHeight = listBoxFiltersMain.Height;
 
