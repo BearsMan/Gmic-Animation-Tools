@@ -11,6 +11,9 @@ namespace GmicDrosteAnimate
     [SupportedOSPlatform("windows")]
     internal class ConfigFilerManager
     {
+        // Config version identifier to tell if the config file is compatible with the current version of the app
+        public const int configVersion = 2;
+
         // ------------------------------------------------------------------------------------
         // --------------------------------- PROPERTIES ---------------------------------------
         // ------------------------------------------------------------------------------------
@@ -108,6 +111,11 @@ namespace GmicDrosteAnimate
             + $"Custom_Main_Window_Coordinates = "  // Empty by default
             + "\n\n"
             + $"Max_Parallel_Threads = {MaxParallelThreads_Validated}" + "\n"
+            + "\n\n\n"
+
+            + "# ----- Do not change anything below! -----" + "\n"
+            + "[ConfigVersion]" + "\n"
+            + "Version = " + configVersion + "\n"
 
             ; // End of default config content
 
@@ -116,6 +124,19 @@ namespace GmicDrosteAnimate
         // Takes settings from the config file and validates them. If valid, the validated setting is used. If invalid, the default setting is used.
         private void ValidateConfiguration()
         {
+            // If the version number in the config file is less than the current version, show a warning
+            if ((versionStringToInt(_configuration["ConfigVersion:Version"]) < 0 ) || (versionStringToInt(_configuration["ConfigVersion:Version"]) < configVersion))
+            {
+                MessageBox.Show(
+                    "The config file is from an older version and doesn't have all the settings. The app will still work but you'll get errors about invalid settings values.\n\n" +
+                    "Delete or rename your current config file to have a new version generated. " +
+                    "\n\nConfig file version: " + _configuration["ConfigVersion:Version"] +
+                    "\nCurrent app version: " + configVersion,
+                    "Config File Warning",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
             // Create intermediate variables for those requiring additional processing
             string _inputFilePath =                 ValidateString(_configuration["Preferences:Input_File_Path"], settingName: "Input_File_Path");
             string _debugLogLevel =                 ValidateString(_configuration["Preferences:Debug_Log_Level"], settingName: "Debug_Log_Level");
@@ -362,6 +383,16 @@ namespace GmicDrosteAnimate
                 count++;
             }
             return count;
+        }
+
+        // The version number is just an integer so it basically just handles whether it's a number or not, and nulls
+        int versionStringToInt(string versionString)
+        {
+            if (int.TryParse(versionString, out int result))
+            {
+                return result;
+            }
+            return -1;
         }
 
         // ------------------ VALIDATION FUNCTIONS ------------------
